@@ -1,6 +1,6 @@
 body{
-    width: 1500px;
-    height: 850px;
+    width: auto;
+    height: 650px;
     margin: 0;
     padding: 0;
     background: url(./image/02bl.jpeg);
@@ -16,6 +16,7 @@ body{
     color: rgb(0, 0, 0);
     top: 50%;
     left: 50%;
+    border-radius: 20px;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
@@ -58,5 +59,39 @@ h1{
     font-size: 16px;
 }
 
-/* https://www.youtube.com/watch?v=OWNxUVnY3pg */
-/* https://www.youtube.com/watch?v=NomcZddqBfs */
+.loginbox input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000;
+}
+
+.loginbox a:hover{
+    color: #ffc107;
+}
+
+.loginbox select{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(180, 180, 180);
+    height: 30px;
+    color: rgb(70, 70, 70);
+    font-size: 16px;
+}
