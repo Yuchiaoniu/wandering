@@ -6,15 +6,15 @@ body{
     width: auto;
     margin: 0;
     padding: 0;
-    background: url(./image/02bl.jpeg) no-repeat;
+    background: url(./image/cute-cat.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
 }
 
-.loginbox{
+.regbox{
     width: 420px;
-    height: 520px;
+    height: 720px;
     background: rgb(230, 220, 220);
     color: rgb(0, 0, 0);
     top: 50%;
@@ -44,18 +44,18 @@ h1{
     font-size: 22px;
 }
 
-.loginbox p{
+.regbox p{
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
 
-.loginbox input{
+.regbox input{
     width: 100%;
     margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"]{
+.regbox input[type="text"], input[type="password"], input[type="date"]{
     border-radius: 5px;
     border: 1px solid rgb(180, 180, 180);
     /* outline: none; */
@@ -64,7 +64,7 @@ h1{
     font-size: 16px;
 }
 
-.loginbox input[type="submit"]{
+.regbox input[type="submit"]{
     border: none;
     outline: none;
     height: 40px;
@@ -74,24 +74,24 @@ h1{
     border-radius: 20px;
 }
 
-.loginbox input[type="submit"]:hover{
+.regbox input[type="submit"]:hover{
     cursor: pointer;
     background: #ffc107;
     color: #000;
 }
 
-.loginbox a{
+.regbox a{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
     color: #000;
 }
 
-.loginbox a:hover{
+.regbox a:hover{
     color: #ffc107;
 }
 
-.loginbox select{
+.regbox select{
     width: 100%;
     margin-bottom: 20px;
     border-radius: 5px;
