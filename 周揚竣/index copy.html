@@ -13,42 +13,60 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css" />
-
+	
 	<link rel="stylesheet" href="assets/css/my.css" />
 
-
 	<script src="assets/js/jquery.min.js"></script>
+
+	
+
+
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("navbar.html");//以ID找DOM，更改裡面的html
+        });
+    </script> 
 
 
 </head>
 
 <body>
-
-
+	
 	<div id="page-wrapper">
-
-		<!-- 匯入NAVBAR  -->
 		<div id="navbar"></div>
-		<script>
-			$(document).ready(function () {
-				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
-			});
-		</script>
-		<!-- 匯入NAVBAR  END -->
+		<!-- Header -->
+		<!-- <div id="header-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
 
+						<header id="header">
+							<h1><a href="index.html" id="logo">浪跡天涯</a></h1>
+							<nav id="nav">
+								<a href="index.html" class="current-page-item">首頁</a>
+								<a href="#">動物救援</a>
+								<a href="#">動物認養</a>
+								<a href="#">寵物協尋</a>
+								<a href="#">會員登入</a>
+							</nav>
+						</header>
+
+					</div>
+				</div>
+			</div>
+		</div> -->
 
 		<!-- Banner 幻燈片 -->
+		<div id="banner-wrapper">
+			<div class="container">
 
-		<div id="banner123"></div>
-		<script>
-			$(document).ready(function () {
-				$("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
-			});
-		</script>
+				<div id="banner">
+					<h2>可以放幻燈片或照片之類的</h2>
+					<span>... ...</span>
+				</div>
 
-		<!-- Banner 幻燈片 END-->
-
-
+			</div>
+		</div>
 
 		<!-- Main -->
 		<div id="main">
@@ -56,30 +74,31 @@
 				<div class="row main-row">
 
 					<!-- 搜尋列 -->
-					<!-- <div class="col-12  ">
+					<div class="col-12  " >
 						<form method="GET">
 
 							<div class="row mg-10">
-
+								
 								<div class="pd-10 col-md-12">
 									<div class="form-group">
 										<input type="text" class="form-control" name="keyword" value=""
 											placeholder="請輸入關鍵字">
 									</div>
-
+							
 								</div>
 							</div>
-
-							<div class="row mg-10">
+							
+							<div class="row mg-10"  >
 								<div class="pd-10 col-md-3">
 									<div class="form-group">
-
-										<input type="text" class="form-control" name="no" value="" placeholder="案件編號">
+									
+										<input   type="text" class="form-control" name="no" value=""
+										 placeholder="案件編號">
 									</div>
 								</div>
 								<div class="pd-10 col-md-3">
 									<div class="form-group">
-
+									
 										<select class="form-control" name="status" id="status">
 											<option value="0">救援狀態</option>
 											<option value="1">等待救援</option>
@@ -90,7 +109,7 @@
 								</div>
 								<div class="pd-10 col-md-3">
 									<div class="form-group">
-
+									
 										<select class="form-control" name="city" id="city">
 											<option value="0">縣市</option>
 											<option value="1">台北市</option>
@@ -122,7 +141,7 @@
 								</div>
 								<div class="pd-10 col-md-3">
 									<div class="form-group">
-
+								
 										<select name="town" id="town" class="form-control" data-value="">
 											<option value="0">鄉鎮區</option>
 										</select>
@@ -133,7 +152,7 @@
 								<div class="check-list">
 									<label class="list check-style1">
 										狗
-										<input type="checkbox">
+									 <input type="checkbox">
 										<span class="checkmark"></span>
 									</label>
 									<label class="list check-style1">
@@ -152,7 +171,7 @@
 
 
 						</form>
-					</div> -->
+					</div>
 					<!-- 搜尋列END  -->
 
 					<!-- 最新公佈欄 -->

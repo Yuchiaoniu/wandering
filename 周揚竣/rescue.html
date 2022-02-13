@@ -1,11 +1,12 @@
-<!DOCTYPE HTML>
+<!-- 流浪救援 -->
+流浪救援 <!DOCTYPE HTML>
 <!--
 	Minimaxing by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-
+    
 <head>
 	<title>浪跡天涯</title>
 	<meta charset="utf-8" />
@@ -37,16 +38,7 @@
 		<!-- 匯入NAVBAR  END -->
 
 
-		<!-- Banner 幻燈片 -->
-
-		<div id="banner123"></div>
-		<script>
-			$(document).ready(function () {
-				$("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
-			});
-		</script>
-
-		<!-- Banner 幻燈片 END-->
+	
 
 
 
@@ -56,104 +48,15 @@
 				<div class="row main-row">
 
 					<!-- 搜尋列 -->
-					<!-- <div class="col-12  ">
-						<form method="GET">
-
-							<div class="row mg-10">
-
-								<div class="pd-10 col-md-12">
-									<div class="form-group">
-										<input type="text" class="form-control" name="keyword" value=""
-											placeholder="請輸入關鍵字">
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row mg-10">
-								<div class="pd-10 col-md-3">
-									<div class="form-group">
-
-										<input type="text" class="form-control" name="no" value="" placeholder="案件編號">
-									</div>
-								</div>
-								<div class="pd-10 col-md-3">
-									<div class="form-group">
-
-										<select class="form-control" name="status" id="status">
-											<option value="0">救援狀態</option>
-											<option value="1">等待救援</option>
-											<option value="2">完成救援</option>
-											<option value="3">暫時安置</option>
-										</select>
-									</div>
-								</div>
-								<div class="pd-10 col-md-3">
-									<div class="form-group">
-
-										<select class="form-control" name="city" id="city">
-											<option value="0">縣市</option>
-											<option value="1">台北市</option>
-											<option value="2">基隆市</option>
-											<option value="4">宜蘭縣</option>
-											<option value="3">新北市</option>
-											<option value="5">新竹市</option>
-											<option value="6">新竹縣</option>
-											<option value="7">桃園市</option>
-											<option value="11">南投縣</option>
-											<option value="9">台中市</option>
-											<option value="10">彰化縣</option>
-											<option value="8">苗栗縣</option>
-											<option value="12">雲林縣</option>
-											<option value="15">台南市</option>
-											<option value="13">嘉義市</option>
-											<option value="14">嘉義縣</option>
-											<option value="19">屏東縣</option>
-											<option value="16">高雄市</option>
-											<option value="20">台東縣</option>
-											<option value="21">花蓮縣</option>
-											<option value="17">南海諸島</option>
-											<option value="18">澎湖縣</option>
-											<option value="23">連江縣(馬祖)</option>
-											<option value="22">金門縣</option>
-
-										</select>
-									</div>
-								</div>
-								<div class="pd-10 col-md-3">
-									<div class="form-group">
-
-										<select name="town" id="town" class="form-control" data-value="">
-											<option value="0">鄉鎮區</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="check-list">
-									<label class="list check-style1">
-										狗
-										<input type="checkbox">
-										<span class="checkmark"></span>
-									</label>
-									<label class="list check-style1">
-										貓
-										<input type="checkbox" name="class[]" value="2">
-										<span class="checkmark"></span>
-									</label>
-									<label class="list check-style1">
-										走失標記
-										<small class="text-red">(如果是疑似走失，請勾選。)</small>
-										<input type="checkbox" name="stray" id="stray" value="1">
-										<span class="checkmark"></span>
-									</label>
-								</div>
-							</div>
-
-
-						</form>
-					</div> -->
+                    <div id="research"></div>
+                    <script>
+                        $(document).ready(function () {
+                            $("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+                        });
+                    </script>
 					<!-- 搜尋列END  -->
+
+
 
 					<!-- 最新公佈欄 -->
 					<div class="col-9 col-12-medium">
@@ -255,3 +158,21 @@
 </body>
 
 </html>
+
+
+
+
+<!-- 功能 -->
+搜尋引擎
+<hr/>
+<a href="/sql/adopttable.html">認養目標展示</a>
+、回到頂部
+<br/>
+<a href="/member/adoptadd.html">新增送養通報</a>
+<!-- 功能 -->
+搜尋引擎
+<hr/>
+<a href="/sql/rescuetable.html">走失目標展示</a>
+、回到頂部
+<br/>
+<a href="/member/rescueadd.html">新增救援資訊</a>
