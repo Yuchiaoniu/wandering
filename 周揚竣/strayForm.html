@@ -44,14 +44,15 @@
         <h1 class="px-auto container ">新增遺失通報</h1>
         <br><br>
 
-        <form style="background-color: rgba(220, 220, 220, 0.534)" class=" container ">
+        <form style="background-color: rgba(220, 220, 220, 0.534)" class=" container col-md-6 ">
             <div class="form-group">
                 <label for="text">*項目標題</label>
                 <input id="text" name="text" placeholder="EX 我家寶貝走失了 拜託幫忙留意" type="text" class="form-control">
             </div>
 
-            <div class="row" style="margin: 0;">
-                <div class=" col-md-4">
+            <div class="form-row ">
+
+                <div class="col-md-4 col-6">
                     <label for="select">動物類別</label>
                     <select id="select" name="select" class="custom-select">
                         <option value="dog">狗</option>
@@ -60,47 +61,7 @@
 
                 </div>
 
-                <div class=" col-md-8">
-                    <div id="zipcodeSelect" class="row"></div>
-                </div>
-
-
-                <script>
-                    $("#zipcodeSelect").twzipcode({
-                        // countySel: "臺北市", // 城市預設值 
-                        // districtSel: "大安區", // 地區預設值
-                        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
-                        css: ["col-6 city form-control", "col-6 town form-control"], // 自訂 "城市"、"地區" class 名稱
-                        countyName: "city", // 自訂城市 select 標籤的 name 值
-                        districtName: "town" // 自訂地區 select 標籤的 name 值
-                    });
-                </script>
-
-            </div>
-
-
-
-
-
-            <div class="form-group">
-                <label for="text3">街道地址</label>
-                <input id="text3" name="text3" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="text1">*動物名稱</label>
-                <input id="text1" name="text1" placeholder="EX 小白" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="select3">動物性別</label>
-                <div>
-                    <select id="select3" name="select3" class="custom-select">
-                        <option value="boy">男</option>
-                        <option value="girl">女</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 ">
+                <div class="col-md-4 col-6">
                     <label for="select4">*剪耳狀態</label>
                     <div>
                         <select id="select4" name="select4" class="custom-select">
@@ -109,7 +70,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-4 ">
+                <div class="col-md-4 col-6">
                     <label for="select5">*有無晶片</label>
                     <div>
                         <select id="select5" name="select5" class="custom-select">
@@ -118,7 +79,59 @@
                         </select>
                     </div>
                 </div>
+
+
+
             </div>
+
+
+            <div class="form-row ">
+
+                <div class="col-md-4 col-6">
+                    <label for="text1">*動物名稱</label>
+                    <input id="text1" name="text1" placeholder="EX 小白" type="text" class="form-control">
+                </div>
+
+
+                <div class="col-md-4 col-6" >
+                    <label for="select3">動物性別</label>
+                    <div>
+                        <select id="select3" name="select3" class="custom-select">
+                            <option value="boy">男</option>
+                            <option value="girl">女</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <label for="zipcodeSelect">地址 </label>
+                <div id="zipcodeSelect" class="form-row"></div>
+            </div>
+
+            <script>
+                $("#zipcodeSelect").twzipcode({
+                    // countySel: "臺北市", // 城市預設值 
+                    // districtSel: "大安區", // 地區預設值
+                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+                    css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
+                    countyName: "city", // 自訂城市 select 標籤的 name 值
+                    districtName: "town" // 自訂地區 select 標籤的 name 值
+                });
+            </script>
+
+
+            <div class="form-group">
+                <label for="text3">街道地址</label>
+                <input id="text3" name="text3" type="text" class="form-control">
+            </div>
+
+
+
+
+
+
             <div class="form-group">
                 <label for="textarea">*特徵描述</label>
                 <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
@@ -142,7 +155,7 @@
 
 
 
-        
+
 
 
         <!-- Footer  -->

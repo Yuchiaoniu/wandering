@@ -20,7 +20,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script src="assets/js/jquery.twzipcode.min.js"></script>
 
 
 </head>
@@ -43,43 +43,47 @@
 		<!-- Main -->
 		<h1 class="px-auto container ">新增救援資訊</h1>
 		<br><br>
-		<form style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container">
+		<form style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-5">
 			<div class="form-group">
 				<label for="text">*救援標題</label>
 				<input id="text" name="text" placeholder="EX  發現受傷的小貓需要救援" type="text" class="form-control">
 			</div>
-			<div class="form-group">
-				<label for="select">*動物類別</label>
-				<div>
-					<select id="select" name="select" class="custom-select">
-						<option value="dog">狗</option>
-						<option value="cat">貓</option>
-					</select>
+
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="select">*動物類別</label>
+					<div>
+						<select id="select" name="select" class="custom-select">
+							<option value="dog">狗</option>
+							<option value="cat">貓</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group col-md-4">
+					<label for="text1">動物數量</label>
+					<input id="text1" name="text1" type="text" class="form-control">
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="text1">動物數量</label>
-				<input id="text1" name="text1" type="text" class="form-control">
-			</div>
-			<div class="form-group">
-				<label for="select1">*縣市</label>
-				<div>
-					<select id="select1" name="select1" class="custom-select">
-						<option value="taipei">台北市</option>
-						<option value="gilon">基隆市</option>
-						<option value="fish">等等</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="select2">*鄉鎮區</label>
-				<div>
-					<select id="select2" name="select2" class="custom-select">
-						<option value="rabbit">鄉鎮區</option>
-						<option value="duck">等等</option>
-					</select>
-				</div>
-			</div>
+
+			<div>
+                <label for="zipcodeSelect">地址 </label>
+                <div id="zipcodeSelect" class="form-row"></div>
+            </div>
+
+            <script>
+                $("#zipcodeSelect").twzipcode({
+                    // countySel: "臺北市", // 城市預設值 
+                    // districtSel: "大安區", // 地區預設值
+                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+                    css: [" city form-control col-4", "town   form-control col-4"], // 自訂 "城市"、"地區" class 名稱
+                    countyName: "city", // 自訂城市 select 標籤的 name 值
+                    districtName: "town" // 自訂地區 select 標籤的 name 值
+                });
+            </script>
+
+
+
 			<div class="form-group">
 				<label for="text2">*街道地址</label>
 				<input id="text2" name="text2" type="text" class="form-control" aria-describedby="text2HelpBlock">
@@ -99,23 +103,23 @@
 				<label>*救援需求</label>
 				<div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="checkbox" id="checkbox_0" type="checkbox" class="custom-control-input" value="1">
+						<input name="checkbox" id="checkbox_0" type="checkbox" class="custom-control-input" value="0">
 						<label for="checkbox_0" class="custom-control-label">傷病就醫</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="2">
+						<input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="1">
 						<label for="checkbox_1" class="custom-control-label">借誘捕籠</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="checkbox" id="checkbox_2" type="checkbox" class="custom-control-input" value="3">
+						<input name="checkbox" id="checkbox_2" type="checkbox" class="custom-control-input" value="2">
 						<label for="checkbox_2" class="custom-control-label">尋求誘捕協助</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="checkbox" id="checkbox_3" type="checkbox" class="custom-control-input" value="4">
+						<input name="checkbox" id="checkbox_3" type="checkbox" class="custom-control-input" value="3">
 						<label for="checkbox_3" class="custom-control-label">尋求抓紮協助</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="checkbox" id="checkbox_4" type="checkbox" class="custom-control-input" value="5">
+						<input name="checkbox" id="checkbox_4" type="checkbox" class="custom-control-input" value="4">
 						<label for="checkbox_4" class="custom-control-label">尋求安置協助</label>
 					</div>
 				</div>

@@ -23,10 +23,10 @@ input[type=checkbox]:checked+span {
     color: yellow;
     background-color: red;
 } */ 
-
+/* 
 input, select, textarea {
 	-moz-appearance: value;
 	-webkit-appearance: value ;
 	-ms-appearance: value ;
 	appearance: value ;
-}
+} */
