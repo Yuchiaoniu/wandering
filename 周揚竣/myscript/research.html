@@ -7,14 +7,13 @@
 
             <div class="pd-10 col-md-12">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="keyword" value=""
-                        placeholder="請輸入關鍵字">
+                    <input type="text" class="form-control" name="keyword" value="" placeholder="請輸入關鍵字">
                 </div>
 
             </div>
         </div>
 
-        <div class="row mg-10">
+        <div class="form-row mg-10">
             <div class="pd-10 col-md-3">
                 <div class="form-group">
 
@@ -31,52 +30,30 @@
                         <option value="3">暫時安置</option>
                     </select>
                 </div>
-            </div>
-            <div class="pd-10 col-md-3">
-                <div class="form-group">
 
-                    <select class="form-control" name="city" id="city">
-                        <option value="0">縣市</option>
-                        <option value="1">台北市</option>
-                        <option value="2">基隆市</option>
-                        <option value="4">宜蘭縣</option>
-                        <option value="3">新北市</option>
-                        <option value="5">新竹市</option>
-                        <option value="6">新竹縣</option>
-                        <option value="7">桃園市</option>
-                        <option value="11">南投縣</option>
-                        <option value="9">台中市</option>
-                        <option value="10">彰化縣</option>
-                        <option value="8">苗栗縣</option>
-                        <option value="12">雲林縣</option>
-                        <option value="15">台南市</option>
-                        <option value="13">嘉義市</option>
-                        <option value="14">嘉義縣</option>
-                        <option value="19">屏東縣</option>
-                        <option value="16">高雄市</option>
-                        <option value="20">台東縣</option>
-                        <option value="21">花蓮縣</option>
-                        <option value="17">南海諸島</option>
-                        <option value="18">澎湖縣</option>
-                        <option value="23">連江縣(馬祖)</option>
-                        <option value="22">金門縣</option>
 
-                    </select>
-                </div>
             </div>
-            <div class="pd-10 col-md-3">
-                <div class="form-group">
 
-                    <select name="town" id="town" class="form-control" data-value="">
-                        <option value="0">鄉鎮區</option>
-                    </select>
-                </div>
+            <div class='col-md-6 '>
+                <div id="zipcodeSelect" class="form-row "></div>
             </div>
+
+            <script>
+                $("#zipcodeSelect").twzipcode({
+                    // countySel: "臺北市", // 城市預設值 
+                    // districtSel: "大安區", // 地區預設值
+                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+                    css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
+                    countyName: "city", // 自訂城市 select 標籤的 name 值
+                    districtName: "town" // 自訂地區 select 標籤的 name 值
+                });
+            </script>
+
         </div>
 
 
 
-        
+
         <div class="form-group">
             <div class="check-list">
                 <label class="list check-style1">
@@ -97,8 +74,8 @@
                 </label>
             </div>
         </div>
-    <button class="btn btn-narmal ">重設</button>
-    <button class="btn btn-narmal btn-primary mx-3">確定</button>
+        <button class="btn btn-narmal ">重設</button>
+        <button class="btn btn-narmal btn-primary mx-3">確定</button>
 
     </form>
 </div>
