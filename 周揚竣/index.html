@@ -14,7 +14,7 @@
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css" />
 
-	<link rel="stylesheet" href="assets/css/my.css" />
+	<link rel="stylesheet" hr	ef="assets/css/my.css" />
 
 
 	<script src="assets/js/jquery.min.js"></script>
@@ -28,27 +28,23 @@
 	<div id="page-wrapper">
 
 		<!-- 匯入NAVBAR  -->
-		<div id="header-wrapper"></div>
-		<script>
-			$(document).ready(function () {
-				$("#header-wrapper").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
-			});
-
-		</script>
+		<div id="navbar"></div>
+	
 		<!-- 匯入NAVBAR  END -->
-
-
 		<!-- Banner 幻燈片 -->
 
 		<div id="banner123"></div>
 		<script>
 			$(document).ready(function () {
+				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
 				$("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
 			});
 		</script>
-
+		
 		<!-- Banner 幻燈片 END-->
 
+
+		
 
 
 		<!-- Main -->
@@ -56,7 +52,7 @@
 			<div class="container">
 				<div class="row main-row">
 
-
+		
 					<!-- 最新公佈欄 -->
 					<div class="col-9 col-12-medium">
 
@@ -146,10 +142,11 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
+
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<!-- <script src="assets/js/main.js"></script> -->
 
 
 
