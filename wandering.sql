@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:3306
--- 產生時間： 2022 年 02 月 16 日 02:38
+-- 產生時間： 2022 年 02 月 16 日 06:57
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 7.4.16
 
@@ -33,6 +33,7 @@ CREATE TABLE `adopt` (
   `type` tinyint(1) DEFAULT NULL,
   `ear` tinyint(1) DEFAULT NULL,
   `chip` tinyint(1) DEFAULT NULL,
+  `ligation` tinyint(1) NOT NULL,
   `name` varchar(10) DEFAULT NULL,
   `gender` tinyint(1) DEFAULT NULL,
   `city` varchar(1) DEFAULT NULL,
@@ -48,10 +49,10 @@ CREATE TABLE `adopt` (
 -- 傾印資料表的資料 `adopt`
 --
 
-INSERT INTO `adopt` (`id`, `title`, `type`, `ear`, `chip`, `name`, `gender`, `city`, `zone`, `address`, `appearance`, `img`, `contact`, `context`) VALUES
-(1, 'My dog go disappear', 0, 1, 1, 'yumi', 1, '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'lost at central park this afternoon 20210101'),
-(2, 'My cat run away', 1, 1, 1, 'tracy', 1, '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210102'),
-(3, 'My cat run away', 1, 1, 1, 'amy', 1, '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210103');
+INSERT INTO `adopt` (`id`, `title`, `type`, `ear`, `chip`, `ligation`, `name`, `gender`, `city`, `zone`, `address`, `appearance`, `img`, `contact`, `context`) VALUES
+(1, 'My dog go disappear', 0, 1, 1, 0, 'yumi', 1, '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/dog1.jpg', 'cell phone 0123456789', 'lost at central park this afternoon 20210101'),
+(2, 'My cat run away', 1, 1, 1, 0, 'tracy', 1, '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/cat1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210102'),
+(3, 'My cat run away', 1, 1, 1, 0, 'amy', 1, '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/cat2.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210103');
 
 -- --------------------------------------------------------
 
@@ -65,6 +66,7 @@ CREATE TABLE `cofind` (
   `type` varchar(1) DEFAULT NULL,
   `ear` varchar(1) DEFAULT NULL,
   `chip` varchar(1) DEFAULT NULL,
+  `ligation` tinyint(1) NOT NULL,
   `name` varchar(10) DEFAULT NULL,
   `gender` varchar(1) DEFAULT NULL,
   `city` varchar(1) DEFAULT NULL,
@@ -80,10 +82,10 @@ CREATE TABLE `cofind` (
 -- 傾印資料表的資料 `cofind`
 --
 
-INSERT INTO `cofind` (`ID`, `title`, `type`, `ear`, `chip`, `name`, `gender`, `city`, `zone`, `address`, `appearance`, `img`, `contact`, `context`) VALUES
-(1, 'My dog go disappear', '0', '1', '1', 'yumi', '1', '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'lost at central park this afternoon 20210101'),
-(2, 'My cat run away', '1', '1', '1', 'tracy', '1', '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210102'),
-(3, 'My cat run away', '1', '1', '1', 'amy', '1', '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210103');
+INSERT INTO `cofind` (`ID`, `title`, `type`, `ear`, `chip`, `ligation`, `name`, `gender`, `city`, `zone`, `address`, `appearance`, `img`, `contact`, `context`) VALUES
+(1, 'My dog go disappear', '0', '1', '1', 0, 'yumi', '1', '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'lost at central park this afternoon 20210101'),
+(2, 'My cat run away', '1', '1', '1', 0, 'tracy', '1', '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210102'),
+(3, 'My cat run away', '1', '1', '1', 0, 'amy', '1', '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210103');
 
 -- --------------------------------------------------------
 
@@ -123,27 +125,27 @@ CREATE TABLE `rescue` (
   `id` int(1) NOT NULL,
   `title` varchar(20) DEFAULT NULL,
   `type` tinyint(1) DEFAULT NULL,
-  `ear` tinyint(1) DEFAULT NULL,
-  `chip` tinyint(1) DEFAULT NULL,
-  `name` varchar(10) DEFAULT NULL,
-  `gender` tinyint(1) DEFAULT NULL,
+  `amount` int(255) NOT NULL,
   `city` varchar(1) DEFAULT NULL,
   `zone` varchar(1) DEFAULT NULL,
   `address` varchar(40) DEFAULT NULL,
+  `lost` tinyint(1) NOT NULL,
   `appearance` varchar(100) DEFAULT NULL,
   `img` varchar(100) DEFAULT NULL,
   `contact` varchar(30) DEFAULT NULL,
-  `context` varchar(100) DEFAULT NULL
+  `context` varchar(100) DEFAULT NULL,
+  `requirement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `responsibility` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 傾印資料表的資料 `rescue`
 --
 
-INSERT INTO `rescue` (`id`, `title`, `type`, `ear`, `chip`, `name`, `gender`, `city`, `zone`, `address`, `appearance`, `img`, `contact`, `context`) VALUES
-(1, 'My dog go disappear', 0, 1, 1, 'yumi', 1, '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'lost at central park this afternoon 20210101'),
-(2, 'My cat run away', 1, 1, 1, 'tracy', 1, '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210102'),
-(3, 'My cat run away', 1, 1, 1, 'amy', 1, '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210103');
+INSERT INTO `rescue` (`id`, `title`, `type`, `amount`, `city`, `zone`, `address`, `lost`, `appearance`, `img`, `contact`, `context`, `requirement`, `responsibility`) VALUES
+(1, 'My dog go disappear', 0, 0, '5', '3', '227 Sec3 Taiwan Blvd', 0, 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'lost at central park this afternoon 20210101', '', ''),
+(2, 'My cat run away', 1, 0, '5', '3', '306 Sec1 Taiwan Blvd', 0, 'black and huge', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210102', '', ''),
+(3, 'My cat run away', 1, 0, '5', '3', '808 Sec6 Taiwan Blvd', 0, 'black and tiny', 'images/?1.jpg', 'cell phone 0123456789', 'near central park this afternoon 20210103', '', '');
 
 --
 -- 已傾印資料表的索引
