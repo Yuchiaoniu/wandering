@@ -6,36 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>會員中心</title>
+    
     <link rel="stylesheet" type="text/css" href="./memstyle.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
 </head>
 
 <body>
 
     <div id="page-wrapper">
 
-        <!-- Header -->
-        <div id="header-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-
-                        <header id="header">
-                            <h1><a href="#" id="logo">Minimaxing</a></h1>
-                            <nav id="nav">
-                                <a href="#" class="current-page-item">Homepage</a>
-                                <a href="#">Two Column #1</a>
-                                <a href="#">Two Column #2</a>
-                                <a href="#">One Column</a>
-                                <a href="#">Three Column</a>
-                            </nav>
-                        </header>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- 匯入NAVBAR  -->
+		<div id="navbar"></div>
+	
+        <script>
+			$(document).ready(function () {
+				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			});
+		</script>
+		<!-- 匯入NAVBAR  END -->
 
         <!-- Main -->
         <div id="main">
@@ -204,14 +194,28 @@
             </div>
         </div>
 
+        <!-- Footer  -->
+
+		<div id="footer-wrapper">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-12">
+
+						<div id="copyright">
+							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
 
 
 </body>
