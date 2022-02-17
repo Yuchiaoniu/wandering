@@ -1,0 +1,181 @@
+<!-- 遺失協尋 -->
+遺失協尋<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>浪跡天涯</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+
+
+	<script src="assets/js/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+	<div id="page-wrapper">
+
+		<!-- 匯入NAVBAR  -->
+		<div id="navbar"></div>
+		<script>
+			$(document).ready(function () {
+				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			});
+		</script>
+		<!-- 匯入NAVBAR  END -->
+
+
+	
+
+
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row main-row">
+
+					<!-- 搜尋列 -->
+                    <div id="research" class="col-8"></div>
+                    <script>
+                        $(document).ready(function () {
+                            $("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+                        });
+                    </script>
+					<!-- 搜尋列END  -->
+
+
+                    
+					<!-- 最新公佈欄 -->
+					<div class=" col-md-9 col-sm-12">
+
+						<section>
+							<h2>最新上傳的幾筆/認養資料</h2>
+							<p>只是內容Duis neque nisi, dapibus sed mattis quis, rutrum et accumsan.
+								Suspendisse nibh. Suspendisse vitae magna eget odio amet mollis
+								justo facilisis quis. Sed sagittis mauris amet tellus gravida
+								lorem ipsum dolor sit amet consequat blandit lorem ipsum dolor
+								sit amet consequat sed dolore.</p>
+							<ul class="big-image-list">
+								<li>
+									<a href="#"><img src="images/pic3.jpg" alt="" class="left" /></a>
+									<h3>最新上傳的救援 / 認養標題</h3>
+									動物類別： ... <br>
+									動物數量： ... <br>
+									救援需求： ... <br>
+									通報人可負擔事項： ...<br>
+
+								</li>
+								<li>
+									<a href="#"><img src="images/pic4.jpg" alt="" class="left" /></a>
+									<h3>第二新上傳的救援 / 認養標題</h3>
+									動物類別： ... <br>
+									動物數量： ... <br>
+									救援需求： ... <br>
+									通報人可負擔事項： ...<br>
+
+								</li>
+								<li>
+									<a href="#"><img src="images/pic5.jpg" alt="" class="left" /></a>
+									<h3>第三新上傳的救援 / 認養標題</h3>
+									動物類別： ... <br>
+									動物數量： ... <br>
+									救援需求： ... <br>
+									通報人可負擔事項： ...<br>
+
+								</li>
+							</ul>
+						</section>
+					</div>
+					<!-- 最新公佈欄  END-->
+
+					<div class=" col-md-3 col-sm-12">
+						<!-- 下半部右側區域 -->
+						<article class="blog-post">
+							
+							<div class="btn btn-info mb-5 " >
+								<a href="strayForm.html"><h2 class="text-white" >新增遺失通報</h2></a>
+							</div>
+							
+							<h3>相關連結</h3>
+							<p>可以放一些相關收容所 或是養護園區連結之類的?</p>
+
+							<P>只是隨便內容 Aenean non massa sapien. In hac habitasse platea dictumst.
+								Maecenas sodales purus et nulla sodales aliquam. Aenean ac
+								porttitor metus. In hac habitasse platea dictumst. Phasellus
+								blandit turpis in leo scelerisque mollis. Nulla venenatis
+								ipsum nec est porta rhoncus. Mauris sodales sed pharetra
+								nisi nec consectetur. Cras elit magna, hendrerit nec
+								consectetur in, sollicitudin vitae justo. Cras amet aliquet
+								Aliquam ligula turpis, feugiat id fermentum malesuada,
+								rutrum eget turpis.</P>
+
+						</article>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer  -->
+
+		<div id="footer-wrapper">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-12">
+
+						<div id="copyright">
+							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!-- <script src="assets/js/main.js"></script> -->
+
+
+
+</body>
+
+</html>
+
+
+
+
+<!-- 功能 -->
+搜尋引擎
+<hr/>
+<a href="/sql/adopttable.html">認養目標展示</a>
+、回到頂部
+<br/>
+<a href="/member/adoptadd.html">新增送養通報</a>
+
+<!-- 功能 -->
+搜尋引擎
+<hr/>
+<a href="/sql/straytable.html">遺失目標展示</a>
+、回到頂部
+<br/>
+<a href="/member/strayadd.html">新增遺失通報</a>
