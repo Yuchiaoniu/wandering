@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>會員中心</title>
-    
+
     <link rel="stylesheet" type="text/css" href="./memstyle.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
     <script src="assets/js/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -18,14 +19,14 @@
     <div id="page-wrapper">
 
         <!-- 匯入NAVBAR  -->
-		<div id="navbar"></div>
-	
+        <div id="navbar"></div>
+
         <script>
-			$(document).ready(function () {
-				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
-			});
-		</script>
-		<!-- 匯入NAVBAR  END -->
+            $(document).ready(function () {
+                $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+            });
+        </script>
+        <!-- 匯入NAVBAR  END -->
 
         <!-- Main -->
         <div id="main">
@@ -34,10 +35,10 @@
                 <div class="row main-row" id="member-row">
                     <div class=" col-8 col-12-medium" id="member-int">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-3 col-12-medium">
                                 <img src="./image/head.jpg" class="avatar">
                             </div>
-                            <div class="col-9">
+                            <div class="col-9 col-12-medium">
                                 <ul class="list-unstyled">
                                     <li class="name">會員名稱</li>
                                     <li style="font-size: 18px;">會員ID: 00000000</li>
@@ -78,6 +79,7 @@
                                 </a>
                             </div>
                             <div class="card-list">
+
                                 <a href="" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
@@ -104,6 +106,7 @@
                                 </a>
                             </div>
                             <div class="card-list">
+
                                 <a href="" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
@@ -130,6 +133,7 @@
                                 </a>
                             </div>
                             <div class="card-list">
+
                                 <div class="card-box">
                                     <div class="number">
                                         2
@@ -168,9 +172,9 @@
                                     功能選單
                                 </h5>
                             </div>
-                            <ul class="list-unstyled">
+                            <ul class="menu-unstyled">
                                 <li>
-                                    <a href="" title="會員個人頁面">會員個人頁面</a>
+                                    <a href="./member.html" title="會員個人頁面">會員個人頁面</a>
                                 </li>
                                 <li>
                                     <a href="" title="會員基本資料">會員基本資料</a>
@@ -186,7 +190,8 @@
                                 </li>
                             </ul>
                             <div>
-                                <a href="" title="登出" class="logout-btn">登出<i class="fa fa-sign-out pl-10"></i></a>
+                                <a href="./login.html" title="登出" class="logout-btn">登出<i
+                                        class="fa fa-sign-out pl-10"></i></a>
                             </div>
                         </div>
                     </div>
@@ -195,21 +200,20 @@
         </div>
 
         <!-- Footer  -->
+        <div id="footer-wrapper">
+            <div class="container">
 
-		<div id="footer-wrapper">
-			<div class="container">
+                <div class="row">
+                    <div class="col-12">
 
-				<div class="row">
-					<div class="col-12">
+                        <div id="copyright">
+                            &copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
+                        </div>
 
-						<div id="copyright">
-							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
