@@ -110,7 +110,7 @@ body{
 }
 
 .number{
-    font-size: 45px;
+    font-size: 40px;
     color: #000;
     font-weight: 500;
     line-height: 1;
@@ -174,4 +174,25 @@ body{
     font-size: 16px;
     color: #222;
     text-align: left;
+}
+
+.menu-box ul li a{
+    padding: 12px 0;
+    display: block;
+    font-size: 17px;
+    color: #444;
+    text-align: center;
+    border-bottom: 2px solid #D9D9D9;
+    outline: none;
+    text-decoration: none;
+}
+
+.menu-box ul li:hover a {
+    font-weight: 600;
+    background: #FBF6ED;
+}
+
+.menu-box ul li a:hover {
+    background: #5dd1b8;
+    color: #fff;
 }
