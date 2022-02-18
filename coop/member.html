@@ -1,0 +1,69 @@
+<!-- 動物認養 -->
+會員中心
+<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>浪跡天涯</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<link rel="stylesheet" href="assets/css/my.css" />
+
+
+	<script src="assets/js/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    
+
+	<div id="page-wrapper">
+
+		<!-- 匯入NAVBAR  -->
+		<div id="navbar"></div>
+		<script>
+			$(document).ready(function () {
+				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			});
+		</script>
+		<!-- 匯入NAVBAR  END -->
+
+    
+</body>
+
+
+
+<!-- 功能 -->
+<hr/>
+<div>
+非會員功能
+<br/>
+<a href="/member/login.html">登入</a>、
+<a href="/member/register.html">註冊</a>
+
+
+</div>
+<hr/>
+
+<div>會員功能
+<ul>
+    <li><a href="/member/profire.html"> 會員個人頁面</a></li>
+    <li><a href="/member/memberedit.html">會員基本資料</a>  </li>
+    <li><a href="/member/memberrescure.html">流浪救援管理</a> </li>
+    <li><a href="/member/memberadopt.html">動物送養管理</a> </li>
+    <li><a href="/member/memberapply.html">動物領養管理</a> </li>
+    <li><a href="/member/memberstray.html">遺失協尋管理</a> </li>
+    <li><a href="/member/membertrack.html">追蹤案件管理</a>  </li>
+</ul>
+<a href="/member/login.html">登出 </a>
+</div>
