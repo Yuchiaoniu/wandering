@@ -1,0 +1,81 @@
+<script src="assets/js/jquery.twzipcode.min.js"></script>
+
+<div class="col-12  ">
+    <form method="GET">
+
+        <div class="row mg-10 pb-3">
+
+            <div class="pd-10 col-md-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="keyword" value="" placeholder="請輸入關鍵字">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-row mg-10">
+            <div class="pd-10 col-md-3">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="no" value="" placeholder="案件編號">
+                </div>
+            </div>
+            <div class="pd-10 col-md-3">
+                <div class="form-group">
+
+                    <select class="form-control" name="status" id="status">
+                        <option value="0">救援狀態</option>
+                        <option value="1">等待救援</option>
+                        <option value="2">完成救援</option>
+                        <option value="3">暫時安置</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+            <div class='col-md-6 '>
+                <div id="zipcodeSelect" class="form-row "></div>
+            </div>
+
+            <script>
+                $("#zipcodeSelect").twzipcode({
+                    // countySel: "臺北市", // 城市預設值 
+                    // districtSel: "大安區", // 地區預設值
+                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+                    css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
+                    countyName: "city", // 自訂城市 select 標籤的 name 值
+                    districtName: "town" // 自訂地區 select 標籤的 name 值
+                });
+            </script>
+
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="check-list">
+                <label class="list check-style1">
+                    狗
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="list check-style1">
+                    貓
+                    <input type="checkbox" name="class[]" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="list check-style1">
+                    走失標記
+                    <small class="text-red">(如果是疑似走失，請勾選。)</small>
+                    <input type="checkbox" name="stray" id="stray" value="1">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-narmal ">重設</button>
+        <button class="btn btn-narmal btn-primary mx-3">確定</button>
+
+    </form>
+</div>
