@@ -6,35 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員登入</title>
-    <link rel="stylesheet" type="text/css" href="./logstyle.css">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./logstyle.css">
+
 </head>
 
 <body>
 
-    <div class="loginbox">
-        <img src="./image/indexlogo.jpg" class="avatar">
-        <h1>會員登入</h1>
-        <form>
-            <div>
-                <p>
-                    <i class="fa fa-envelope"></i>
-                    帳號(信箱):
-                    <input type="text" name="" placeholder="請輸入帳號" required>
-                </p>
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar"></div>
+
+        <script>
+            $(document).ready(function () {
+                $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+            });
+        </script>
+        <!-- 匯入NAVBAR  END -->
+
+        <!-- login -->
+        <div id="main">
+            <div class="loginbox">
+                <img src="./image/indexlogo.jpg" class="avatar">
+                <h1>會員登入</h1>
+                <form>
+                    <div>
+                        <p>
+                            <i class="fa fa-envelope"></i>
+                            帳號(信箱):
+                            <input type="text" name="" placeholder="請輸入帳號" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <i class="fa fa-key"></i>
+                            密碼:
+                            <input type="password" name="" placeholder="請輸入密碼" required>
+                        </p>
+                    </div>
+                    <input type="submit" name="" value="登入">
+                    <a href="#">忘記密碼</a><br>
+                    <a href="./register.html">會員註冊</a>
+                </form>
             </div>
-            <div>
-                <p>
-                    <i class="fa fa-key"></i>
-                    密碼:
-                    <input type="password" name="" placeholder="請輸入密碼" required>
-                </p>
+        </div>
+
+        <!-- Footer  -->
+        <div id="footer-wrapper">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <div id="copyright">
+                            &copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <input type="submit" name="" value="登入">
-            <a href="#">忘記密碼</a><br>
-            <a href="./register.html">會員註冊</a>
-        </form>
+        </div>
+
     </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
 
 </body>
 
