@@ -34,9 +34,12 @@
 		<!-- 匯入NAVBAR  -->
 		<div id="navbar"></div>
 		
+
+		<div id="research" class="col-8"></div>
 		<script>
 			$(document).ready(function () {
 				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+				$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
 			});
 
           
@@ -57,7 +60,7 @@
 						<div id="research" class="col-8"></div>
 						<script>
 							$(document).ready(function () {
-								$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+								
 							});
 						</script>
 						<!-- 搜尋列END  -->
@@ -76,66 +79,66 @@
 
 								<ul class="big-image-list">
 
-                                <li>
+                                <!-- <li> -->
 
 									<div class="card mb-3" style="max-width: 800px;">
 										<div class="row g-0">
-										  <div class="col-md-4">
-											<img src="/images/16.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="img-fluid rounded-start" alt="...">
+										  <div class="col-md-4" type="button">
+										<a href="/rescue_Detail.html"><img src="/images/16.png" type="button" class="img-fluid rounded-start" alt="..."></a>
 										  </div>
 										  <div class="col-md-8">
 											<div class="card-body">
-											  <h5 class="card-title">開放認養中</h5>
+												<a href="/rescue_Detail.html"><h5 class="card-title">開放認養中</h5></a>
 											  <p class="card-text">台中市南區，親人親狗的牛牛，在等一個幸褔的家</p>
-											  <p class="card-text"><small class="text-muted" type="button" data-bs-toggle="modal" data-bs-target="#loModal">詳細資訊</small></p>
+											  <a href="/rescue_Detail.html">詳細資訊</a>
 											</div>
 										  </div>
 										</div>
 									  </div>
 
 
-								</li>
+								<!-- </li> -->
 
 									
-								<li>
+								<!-- <li> -->
 
 									<div class="card mb-3" style="max-width: 800px;">
 										<div class="row g-0">
 										  <div class="col-md-4">
-											<img src="/images/20.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="img-fluid rounded-start" alt="...">
+											<a href="/rescue_Detail 1.html"><img src="/images/20.png" type="button"  class="img-fluid rounded-start" alt="..."></a>
 										  </div>
 										  <div class="col-md-8">
 											<div class="card-body">
-											  <h5 class="card-title">開放認養中</h5>
+												<a href="/rescue_Detail 1.html"><h5 class="card-title">開放認養中</h5></a>
 											  <p class="card-text">聰明的乖乖想要一個愛他的家</p>
-											  <p class="card-text"><small class="text-muted" type="button" data-bs-toggle="modal" data-bs-target="#loModal">詳細資訊</small></p>
+											  <a href="/rescue_Detail 1.html"> 詳細資訊</a>
 											</div>
 										  </div>
 										</div>
 									  </div>
 
 
-								</li>
+								<!-- </li>
 
-								<li>
+								<li> -->
 
 									<div class="card mb-3" style="max-width: 800px;">
 										<div class="row g-0">
 										  <div class="col-md-4">
-											<img src="/images/30.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="img-fluid rounded-start" alt="...">
+											<a href="/rescue_Detail 2.html"><img src="/images/30.png" type="button"  class="img-fluid rounded-start" alt="..."></a>
 										  </div>
 										  <div class="col-md-8">
 											<div class="card-body">
-											  <h5 class="card-title">開放認養中</h5>
+												<a href="/rescue_Detail 2.html">  <h5 class="card-title">開放認養中</h5></a>
 											  <p class="card-text">帥氣的茶凍想要一個溫暖的家</p>
-											  <p class="card-text"><small class="text-muted" type="button" data-bs-toggle="modal" data-bs-target="#loModal">詳細資訊</small></p>
+											  <a href="/rescue_Detail 2.html">詳細資訊</a>
 											</div>
 										  </div>
 										</div>
 									  </div>
 
 
-								</li>
+								<!-- </li> -->
 
 								
 									
@@ -187,38 +190,38 @@
 
 
 
- <!--彈跳視窗-->
- <div class="modal fade" id="loModal">
+ <!-- 彈跳視窗
+ <!-- <!-- <div class="modal fade" id="loModal">
 	<div class="modal-dialog">
 	 <div class="modal-content">
 	
 	
 	<!--header-->
-	<div class="modal-header">
+	<!-- <div class="modal-header">
 	   <h3>動物認養</h3>
 	   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-	</div>
-	
+	</div> -->
+	 
 	<!--body-小視窗的輪播-->
-	<div class="modal-body">
-	   <!-- <div class="container"> -->
+	<!-- <div class="modal-body">
+	    <div class="container">
 		   <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
 			  
 				  
 			   </button> 
 	
 			   <div id="woo" class="carousel slide" data-ride="carousel">
-	
+	 -->
 				<!-- Indicators -->
 				
-				<ol class="carousel-indicators">
+				<!-- <ol class="carousel-indicators">
 				   
 				</ol>
-				
+				 -->
 				
 		  
 				<!-- The slideshow -->
-				<div class="carousel-inner" >   
+				<!-- <div class="carousel-inner" >   
 				  <div class="carousel-item active">
 					  
 				  <img src="/images/17.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="d-block w-100" alt="...">
@@ -229,36 +232,36 @@
 				   </div>
 					
 				   <div class="carousel-item">
-					  <img src="/images//18.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="d-block w-100" alt="...">
+					  <img src="/images/18.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="d-block w-100" alt="...">
 					  
 					  <div class="carousel-caption d-none d-md-block">
 						
 					</div>
-				   </div>
+				   </div> -->
 		  
 	
-				   <div class="carousel-item">
-					<img src="/images//18.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="d-block w-100" alt="...">
+				   <!-- <div class="carousel-item">
+					<img src="/images/18.png" type="button" data-bs-toggle="modal" data-bs-target="#loModal" class="d-block w-100" alt="...">
 					
 					<div class="carousel-caption d-none d-md-block">
 					  
 				  </div>
-				 </div>
+				 </div> -->
 	
 		  
 				<!-- Left and right controls -->
-				<a class="carousel-control-prev" href="#woo" data-slide="prev">
+				<!-- <a class="carousel-control-prev" href="#woo" data-slide="prev">
 				   <span class="carousel-control-prev-icon"></span>
 				</a>
 				<a class="carousel-control-next" href="#woo" data-slide="next">
 				   <span class="carousel-control-next-icon"></span>
 			   </a>
-		  </div>
+		  </div> -->
 	<!---->
 	
 <!--視窗內容-->
 
-<div class="col-md-4 col-lg-12 pl-md-4">
+<!-- <div class="col-md-4 col-lg-12 pl-md-4">
 <div class="text-box">
 <div class="row mb-4">
 <div id="wewe"> 
@@ -306,14 +309,14 @@
 			</button>
 		</div>
 	</div>	
-</div>
+</div> --> 
 <!---->
 
 
 
-</div>
-</div>
-<!--小圖-->
+<!-- </div>
+</div> -->
+
 
 
 
