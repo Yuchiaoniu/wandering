@@ -10,9 +10,9 @@
 	<title>浪跡天涯</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 
@@ -29,22 +29,23 @@
 
 		<!-- 匯入NAVBAR  -->
 		<div id="navbar"></div>
-	
+
 		<!-- 匯入NAVBAR  END -->
 		<!-- Banner 幻燈片 -->
 
 		<div id="banner123"></div>
 		<script>
 			$(document).ready(function () {
-				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
-				$("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
+				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html   navbar
+				$("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html   banner
+				$("#rightspace").load("myscript/rightspace.html");//以ID找DOM，更改裡面的html    右側連結
 			});
 		</script>
-		
+
 		<!-- Banner 幻燈片 END-->
 
 
-		
+
 
 
 		<!-- Main -->
@@ -52,7 +53,7 @@
 			<div class="container">
 				<div class="row main-row">
 
-		
+
 					<!-- 最新公佈欄 -->
 					<div class="col-md-9 col-sm-12">
 
@@ -98,24 +99,7 @@
 
 					<div class="col-md-3 col-sm-12 ">
 						<!-- 下半部右側區域 -->
-						<article class="blog-post">
-							<h2>下半部右側區域 可以放一些相關連結之類的?</h2>
-
-							<a href="#"><img src="images/pic6.jpg" alt="" class="top blog-post-image" /></a>
-							<h3>相關連結</h3>
-							<p>可以放一些相關收容所 或是養護園區連結之類的?</p>
-
-							<P>只是隨便內容 Aenean non massa sapien. In hac habitasse platea dictumst.
-								Maecenas sodales purus et nulla sodales aliquam. Aenean ac
-								porttitor metus. In hac habitasse platea dictumst. Phasellus
-								blandit turpis in leo scelerisque mollis. Nulla venenatis
-								ipsum nec est porta rhoncus. Mauris sodales sed pharetra
-								nisi nec consectetur. Cras elit magna, hendrerit nec
-								consectetur in, sollicitudin vitae justo. Cras amet aliquet
-								Aliquam ligula turpis, feugiat id fermentum malesuada,
-								rutrum eget turpis.</P>
-
-						</article>
+						<div id="rightspace"></div>
 
 					</div>
 				</div>
