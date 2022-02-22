@@ -1,26 +1,16 @@
-<!-- 流浪救援 -->
-
-<!DOCTYPE HTML>
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<title>浪跡天涯</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>浪跡天涯 | 流浪救援</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="assets/css/main.css" />
-
-
 	<script src="assets/js/jquery.min.js"></script>
-
 
 </head>
 
@@ -30,43 +20,25 @@
 	<div id="page-wrapper">
 
 		<!-- 匯入NAVBAR  -->
-		<div id="navbar"></div>
-		<script>
-			$(document).ready(function () {
-				$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
-				$("#rightspace").load("myscript/rightspace.html");//以ID找DOM，更改裡面的html    右側連結
-			});
-		</script>
-		<!-- 匯入NAVBAR  END -->
-
-
-
-
-
+		<div id="navbar">
+		</div>
 
 		<!-- Main -->
 		<div id="main">
 			<div class="container">
+				<h2>流浪救援</h2>
 				<div class="row main-row">
 
+					<!-- 匯入RESEARCH -->
 					<!-- 搜尋列 -->
-					<div id="research" class="col-8 "></div>
-					<script>
-						$(document).ready(function () {
-							$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
-						});
-					</script>
-					<!-- 搜尋列END  -->
-
-
+					<div id="research" class="col-8">
+					</div>
 
 					<!-- 最新公佈欄 -->
 					<div class=" col-md-9 col-sm-12  ">
 
 						<section>
-							<h2>最新上傳的幾筆/認養資料</h2>
-							<p>只是隨便內容
-							</p>
+
 							<ul class="big-image-list">
 
 								<li>
@@ -81,7 +53,7 @@
 											</div>
 											<div class="col-md-8">
 												<div class="card-body">
-													<small>救援案件編號： <br>
+													<small>救援案件編號： R2022022101<br>
 														建立日期：2022-02-20</small> <br><br>
 													<b>
 														<a href="rescue_Detail_1.html">
@@ -116,7 +88,7 @@
 											</div>
 											<div class="col-md-8">
 												<div class="card-body">
-													<small>救援案件編號：R2022022102 <br>
+													<small>救援案件編號： R2022022102<br>
 														建立日期：2022-02-19</small><br><br>
 													<b>
 														<a href="rescue_Detail_2.html">
@@ -150,7 +122,7 @@
 											</div>
 											<div class="col-md-8">
 												<div class="card-body">
-													<small>救援案件編號：R2022022101 <br>
+													<small>救援案件編號： R2022022103<br>
 														建立日期：2022-02-18</small><br><br>
 													<b>
 														<a href="rescue_Detail_3.html">
@@ -177,8 +149,10 @@
 					<!-- 最新公佈欄  END-->
 
 					<div class="col-md-3 col-sm-12 ">
-						<div class="btn btn-info mb-5 " >
-							<a href="rescueForm.html"><h2 class="text-white" >新增救援資訊</h2></a>
+						<div class="btn btn-info mb-5 ">
+							<a href="rescueForm.html">
+								<h2 class="text-white">新增救援資訊</h2>
+							</a>
 						</div>
 						<!-- 下半部右側相關連結 -->
 						<div id="rightspace"></div>
@@ -188,33 +162,20 @@
 			</div>
 		</div>
 
-		<!-- Footer  -->
-
-		<div id="footer-wrapper">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-12">
-
-						<div id="copyright">
-							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
-						</div>
-
-					</div>
-				</div>
-			</div>
+		<!-- 匯入Footer  -->
+		<div id="footer">
 		</div>
 
 	</div>
 
-	<!-- Scripts -->
-
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!-- <script src="assets/js/main.js"></script> -->
-
-
+	<script>
+		$(document).ready(function () {
+			$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+			$("#rightspace").load("myscript/rightspace.html");//以ID找DOM，更改裡面的html    右側連結
+			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+		});
+	</script>
 
 </body>
 
