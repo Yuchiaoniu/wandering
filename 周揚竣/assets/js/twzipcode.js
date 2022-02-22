@@ -7,7 +7,7 @@
  * @author  Essoduke Chang<essoduke@gmail.com>
  * @license MIT License
  */
-(function (root, factory) {
+ (function (root, factory) {
 
     'use strict';
 
