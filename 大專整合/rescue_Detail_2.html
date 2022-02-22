@@ -63,7 +63,7 @@
 							<ul class="big-image-list">
 								<li>
 									<a href="#"><img src="images/rescue2.png" alt="" class="left" style="height: auto ; width: auto;" /></a>
-									<small>救援案件編號：rescue02 <br>
+									<small>救援案件編號： R2022022102<br>
 										建立日期：2022-02-19</small> <br><br>
 									<h2> 
 										2/10晚上在中興大學附近撿到親人品種貓</h2>
@@ -135,55 +135,28 @@
 					<!-- 點進後的救援詳細資料  END-->
 
 					<div class="col-3 col-12-medium">
-						<!-- 下半部右側區域 -->
-						<article class="blog-post">
-						
-
-							<h3>相關連結</h3>
-							<p>可以放一些相關收容所 或是養護園區連結之類的?</p>
-
-							<P>只是隨便內容 Aenean non massa sapien. In hac habitasse platea dictumst.
-								Maecenas sodales purus et nulla sodales aliquam. Aenean ac
-								porttitor metus. In hac habitasse platea dictumst. Phasellus
-								blandit turpis in leo scelerisque mollis. Nulla venenatis
-								ipsum nec est porta rhoncus. Mauris sodales sed pharetra
-								nisi nec consectetur. Cras elit magna, hendrerit nec
-								consectetur in, sollicitudin vitae justo. Cras amet aliquet
-								Aliquam ligula turpis, feugiat id fermentum malesuada,
-								rutrum eget turpis.</P>
-
-						</article>
+						<!-- 下半部右側相關連結 -->
+						<div id="rightspace"></div>
 
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Footer  -->
-
-		<div id="footer-wrapper">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-12">
-
-						<div id="copyright">
-							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
-						</div>
-
-					</div>
-				</div>
-			</div>
+		<!-- 匯入Footer  -->
+		<div id="footer">
 		</div>
 
 	</div>
 
-	<!-- Scripts -->
-
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!-- <script src="assets/js/main.js"></script> -->
+	<script>
+		$(document).ready(function () {
+			$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+			$("#rightspace").load("myscript/rightspace.html");//以ID找DOM，更改裡面的html    右側連結
+			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+		});
+	</script>
 
 
 
