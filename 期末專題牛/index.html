@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+  <!-- 以下為html頁面的css -->
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      font-family: Times New 'Times New Roman', Times, serif, sans-serif;
+      width: 100%;
+      height: 80%;
+      background-color: #dbdffc;
+      justify-content: center;
+    }
+
+  </style>
+
+  <!-- 以下為旋轉木馬的css -->
+  <style>
+    .carousel {
+      width: 100%;
+      height: 500px;
+      margin-top: 15px;
+
+    }
+    .carousel iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+
+    }
+
+    
+  </style>
+
+  <!-- 以下為tabs的css -->
+  <!-- 以下為tabs的css -->
+  <style>
+    .tabs {
+      width: 100%;
+      height: 100%;
+      
+    }
+
+    .c-wrapper, #tabs {
+      width: 100%;
+      height: 180%;
+    }
+
+
+  </style>
+  <!-- 以上為tabs的css -->
+  <!-- 以上為tabs的css -->
+
+  <!-- 以下為底部按鈕的css -->
+  <!-- 以下為底部按鈕的css -->
+  <style>
+    .button2 {
+      width: 98%;
+      height: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .button2 a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20vw;
+      height: 100%;
+      background-color: rgb(122, 245, 7);
+      border-radius: 1ch;
+      margin: 10px;
+      color: linen;
+      font-size: 30%;
+    }
+
+    .button2 a:hover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20vw;
+      height: 100%;
+      border-radius: 1ch;
+      margin: 10px;
+      color: black;
+      transition: 0.1s;
+      transform: translate(-5px, -5px);
+      box-shadow: 5px 5px 0 white;
+      font-size: 30%;
+      background-color: rgb(8, 77, 2)
+    }
+  </style>
+  <!-- 以上為底部按鈕的css -->
+  <!-- 以上為底部按鈕的css -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="assets/css/main.css" />
+
+<link rel="stylesheet" href="assets/css/my.css" />
+
+<script>
+  $(document).ready(function () {
+    $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+    $("#carousel").load("myscript/carousel.html");//以ID找DOM，更改裡面的html
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <!-- 以上為導覽列按鈕 -->
+  <!-- 以上為導覽列按鈕 -->
+
+  
+  
+  
+  <!-- 幻燈片 -->
+  <!-- 幻燈片 -->
+  <div class="carousel" id="carousel"></div>
+  <!-- 幻燈片 -->
+  <!-- 幻燈片 -->
+
+
+
+
+  <!-- tabs區塊 -->
+  <!-- tabs區塊 -->
+  
+    
+  <!-- tabs區塊 -->
+  <!-- tabs區塊 -->
+  <div id="c-wrapper">
+    <div class="container">
+  
+      <div class="row">
+        <div class="col-12">
+  
+          <iframe id="tabs" src="Tabs1.html"></iframe>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 底部按鈕區塊 -->
+<!-- 底部按鈕區塊 -->
+<div id="d-wrapper">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+
+        <div class="button2">
+          <a>寵物協尋</a>
+          <a>寵物救援</a>
+          <a>寵物認養</a>
+          <a>物資捐獻</a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- 底部按鈕區塊 -->
+<!-- 底部按鈕區塊 -->
+
+<div id="footer-wrapper">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+
+        <div id="copyright">
+          &copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>    
+    <script src="js/bootstrap.min.js" ></script>
+    <style>
+      html{
+          height: 100%;
+      }
+      body {
+          width:100%;
+          height: 100%;
+      }
+
+      /* .container-fluid{
+          width: 100%;
+          height: 100%;
+          background-color: rgb(241, 235, 248);
+          display: flex;
+          justify-content: center; 
+          align-items: center;
+      } */
+
+      .carousel-inner {
+          margin: auto;
+          width: 100%;
+          height: 100%;
+      }
+
+      .c1{
+          width: 100%;
+          height: 100%;
+          
+      }
+
+      .carousel-item img{
+        display: flex;
+          justify-content: center; 
+          align-items: center; 
+          font-size: 100px;
+          width: 100%;
+          height: 100vh;
+      }
+
+      
+  </style>
+</head>
+<body>
+
+    
+
+      <div id="playList" class="carousel slide carousel-fade" data-ride="carousel" style="width: 100%;">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators" ">
+          <li data-target="#playList" data-slide-to="0" class="active" 
+                style="background-color:red;"></li>
+          <li data-target="#playList" data-slide-to="1"
+                style="background-color:red;"></li>
+          <li data-target="#playList" data-slide-to="2"
+                 style="background-color:red;"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+
+          <div class="carousel-item active c1" data-interval="100000">
+              <img src="/期末專題牛/images/dog1.jpg">
+          </div>
+
+          <div class="carousel-item c2" data-interval="300000">
+            <img src="/期末專題牛/images/dog2.jpg">
+          </div>
+
+          <div class="carousel-item c3" data-interval="300000">
+            <img src="/期末專題牛/images/cat1.jpg">
+          </div>
+
+        </div>
+
+        
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#playList" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#playList" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+   
+
+
+    
+
+
+
+
+</body>
+</html>
