@@ -30,17 +30,17 @@
             <div class="container">
                 <div class="row main-row" id="member-row">
                     <div class=" col-8 col-12-medium" id="member-int">
-                        
+
                         <div class="mb-4">
                             <h4 class="title font-weight-600">會員資料修改</h4>
                         </div>
 
                         <div class='col-md-12'>
                             <img style="margin-bottom: 5%;" src="images/logo.jpg" class="avatar"><br />
-                            <button style="margin-bottom: 5%;"> 上傳照片</button>
+                            <button name="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5%;"> 上傳照片</button>
                             <div class="row" style=" display: flex; justify-content: center; 
                                 align-items: center;">
-                                <div class='col-md-5'>
+                                <div class='col-md-5' style="padding-top: 0; margin-top: 50px;">
                                     <form class="input">
 
                                         姓名<input style="margin-bottom: 10%;" class="form-control" type="text"
@@ -48,7 +48,6 @@
 
 
                                         性別<select style="margin-bottom: 10%;" class="form-control">
-                                            <option>請選擇性別</option>
                                             <option>男</option>
                                             <option>女</option>
                                         </select>
@@ -57,12 +56,12 @@
                                     </form>
                                 </div>
 
-                                <div class='col-md-5'>
+                                <div class='col-md-5' style="padding-top: 0; margin-top: 50px;">
                                     <form>
                                         E-mail<input style="margin-bottom: 10%;" class="form-control" type="text"
-                                        value="XXX@gmail.com" name="e-mail">
+                                            value="XXX@mail.com" name="e-mail">
                                         生日<input style="margin-bottom: 10%;" class="form-control" type="date"
-                                            name="birthday">
+                                            value="2022-02-22" name="birthday">
 
                                     </form>
                                 </div>
@@ -89,13 +88,13 @@
                         margin-left: 2px;
                         margin-right: 2px;">
                                 <input style="margin-bottom: 5%;" class="form-control col-md-5" type="text"
-                                value="xxxx-xxx xxx" name="phone">
+                                    value="xxxx-xxx xxx" name="phone">
                                 <select style="margin-bottom: 5%;" class="form-control col-md-5">
                                     <option>隱藏</option>
                                     <option>公開</option>
                                 </select>
                             </div>
-                            <button style="margin-bottom: 5%;">送出</button>
+                            <button name="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5%;">送出</button>
                             <!-- <div class="member-content">
                                 <div class="title-w-dot-left green mb-4">
                                     <h4 class="title font-weight-600">最新公告與通知</h4>
@@ -113,8 +112,8 @@
 
                             <script>
                                 $("#zipcodeSelect").twzipcode({
-                                    // countySel: "臺北市", // 城市預設值 
-                                    // districtSel: "大安區", // 地區預設值
+                                    countySel: "臺北市", // 城市預設值 
+                                    districtSel: "大安區", // 地區預設值
                                     zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
                                     css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
                                     countyName: "city", // 自訂城市 select 標籤的 name 值
@@ -128,45 +127,14 @@
 
                     <!-- menu -->
                     <div class="col-4 col-12-medium" id="menu-int">
-                        <div class="menu-box">
-                            <div class="title-box">
-                                <h5 class="title">
-                                    功能選單
-                                </h5>
-                            </div>
-                            <ul class="menu-unstyled">
-                                <li>
-                                    <a href="/member.html" title="會員個人頁面">會員個人頁面</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">會員基本資料</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">流浪救援管理</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">動物送養管理</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">動物領養管理</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">遺失協尋管理</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">追蹤案件管理</a>
-                                </li>
-                            </ul>
-                            <div>
-                                <a href="/login.html" title="登出" class="logout-btn">登出<i
-                                        class="fa fa-sign-out pl-10"></i></a>
-                            </div>
+
+                        <div id="memberMenu">
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
 
         <!-- 匯入Footer  -->
         <div id="footer">
@@ -174,12 +142,12 @@
 
     </div>
 
-
     <script>
         $(document).ready(function () {
             $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
             $("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
             $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+            $("#memberMenu").load("myscript/memberMenu.html");//以ID找DOM，更改裡面的html
         });
     </script>
 
