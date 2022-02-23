@@ -2,7 +2,7 @@
 	<div class="container">
 
 		<div id="banner" style="padding:2% 2%;">
-			<div id="carousel">
+			<div id="carousel data-ride=" carousel">
 				<div id="playList" class="carousel slide carousel-fade" data-ride="carousel" style="width: 100%;">
 
 					<!-- Indicators -->
@@ -46,3 +46,8 @@
 <!-- Scripts -->
 <script src="/assets\js\popper.min.js"></script>
 <script src="/assets\js/bootstrap.min.js"></script>
+<script>
+	$('.carousel').carousel({
+		interval: 4000
+	})
+</script>
