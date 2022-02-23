@@ -66,7 +66,7 @@
 								<li>
 									<a href="#"><img src="/images/stry1.png" alt="" class="left"
 											style="height: auto ; width: auto;" /></a>
-									<small>救援案件編號：stray01 <br>
+									<small>遺失案件編號： S164474488880<br>
 										建立日期：2022-02-19</small> <br><br>
 									<h2> [台北市中山區] 我家愛貓遺失了 請求幫助協尋!!!</h3>
 										動物類別： 貓 <br><br>
@@ -117,7 +117,7 @@
 							</div>
 							<div id="collapsetwo" class="panel-collapse collapse">
 								<div class="panel-body">
-									晚上去上班的時候發覺他自己打開家門溜到大樓底下，後面跳出大樓，大概是凌晨接近早上的時間。	
+									晚上去上班的時候發覺他自己打開家門溜到大樓底下，後面跳出大樓，大概是凌晨接近早上的時間。
 
 								</div>
 							</div>
@@ -141,7 +141,7 @@
 							</div>
 							<div id="collapsethree" class="panel-collapse collapse">
 								<div class="panel-body">
-									張先生 (09XXXXXXXX)  <br>
+									張先生 (09XXXXXXXX) <br>
 									E-mail (XXXXX@yahoo.com.tw)
 
 								</div>
@@ -155,60 +155,44 @@
 						</script>
 
 
+						<br><br>
+						<div id="fb-root"></div>
+						<script async defer crossorigin="anonymous"
+							src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0"
+							nonce="SeP84skv"></script>
+
+						<div class="fb-comments" data-href="http://127.0.0.1:5500/stray_Detail_1.html" data-width=""
+							data-numposts="10"></div>
+
+
+
 
 					</div>
 					<!-- 點進後的救援詳細資料  END-->
 
 					<div class="col-3 col-12-medium">
-						<!-- 下半部右側區域 -->
-						<article class="blog-post">
-
-
-							<h3>相關連結</h3>
-							<p>可以放一些相關收容所 或是養護園區連結之類的?</p>
-
-							<P>只是隨便內容 Aenean non massa sapien. In hac habitasse platea dictumst.
-								Maecenas sodales purus et nulla sodales aliquam. Aenean ac
-								porttitor metus. In hac habitasse platea dictumst. Phasellus
-								blandit turpis in leo scelerisque mollis. Nulla venenatis
-								ipsum nec est porta rhoncus. Mauris sodales sed pharetra
-								nisi nec consectetur. Cras elit magna, hendrerit nec
-								consectetur in, sollicitudin vitae justo. Cras amet aliquet
-								Aliquam ligula turpis, feugiat id fermentum malesuada,
-								rutrum eget turpis.</P>
-
-						</article>
+						<!-- 下半部右側相關連結 -->
+						<div id="rightspace"></div>
 
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Footer  -->
-
-		<div id="footer-wrapper">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-12">
-
-						<div id="copyright">
-							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
-						</div>
-
-					</div>
-				</div>
-			</div>
+		<!-- 匯入Footer  -->
+		<div id="footer">
 		</div>
 
 	</div>
 
-	<!-- Scripts -->
-
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!-- <script src="assets/js/main.js"></script> -->
+	<script>
+		$(document).ready(function () {
+			$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+			$("#rightspace").load("myscript/rightspace.html");//以ID找DOM，更改裡面的html    右側連結
+			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+		});
+	</script>
 
 
 

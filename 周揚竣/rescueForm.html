@@ -22,6 +22,36 @@
 	<!-- <script src="assets/js/main.js"></script> -->
 	<script src="assets/js/jquery.twzipcode.min.js"></script>
 
+	<style>
+		.imagePreview {
+			width: 123px;
+			height: 123px;
+			background: url(/images/no-img.jpg);
+			background-color: #fff;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			display: inline-block;
+			border-radius: 5px 5px 0 0;
+			border: 1px solid #e1e1e1;
+			box-shadow: inset 0 1px 2px rgb(0 0 0 / 8%);
+			overflow: hidden;
+		}
+
+		.imgUp .btn {
+			display: block;
+			margin-top: -6px;
+			font-size: 15px;
+			margin-bottom: 10px;
+			padding: 4px;
+			border-radius: 0 0 5px 5px;
+		}
+
+		.btn-green {
+			background: #51B9A3 !important;
+			color: #fff !important;
+		}
+	</style>
 
 </head>
 
@@ -43,14 +73,14 @@
 		<!-- Main -->
 		<h1 class="px-auto container ">新增救援資訊</h1>
 		<br><br>
-		<form style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-5">
+		<form style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-6">
 			<div class="form-group">
 				<label for="text">*救援標題</label>
-				<input id="text" name="text" placeholder="EX  發現受傷的小貓需要救援" type="text" class="form-control">
+				<input id="text" name="text" placeholder="EX:發現受傷的小貓需要救援" type="text" class="form-control">
 			</div>
 
 			<div class="form-row">
-				<div class="form-group col-md-4">
+				<div class="form-group col-md-6">
 					<label for="select">*動物類別</label>
 					<div>
 						<select id="select" name="select" class="custom-select">
@@ -60,15 +90,15 @@
 					</div>
 				</div>
 
-				<div class="form-group col-md-4">
+				<div class="form-group col-md-6">
 					<label for="text1">動物數量</label>
 					<input id="text1" name="text1" type="text" class="form-control">
 				</div>
 			</div>
 
 			<div>
-                <label for="zipcodeSelect">地址 </label>
-                <div id="zipcodeSelect" class="form-row"></div>
+                <label for="zipcodeSelect">*地址</label>
+                <div id="zipcodeSelect" class="form-row" style="margin-left: 0px; margin-right: 0px;"></div>
             </div>
 
             <script>
@@ -76,7 +106,7 @@
                     // countySel: "臺北市", // 城市預設值 
                     // districtSel: "大安區", // 地區預設值
                     zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
-                    css: [" city form-control col-4", "town   form-control col-4"], // 自訂 "城市"、"地區" class 名稱
+                    css: [" city form-control col-6", "town   form-control col-6"], // 自訂 "城市"、"地區" class 名稱
                     countyName: "city", // 自訂城市 select 標籤的 name 值
                     districtName: "town" // 自訂地區 select 標籤的 name 值
                 });
@@ -166,10 +196,39 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="textarea2">此欄位之後會改成圖片上傳樣式</label>
-				<textarea id="textarea2" name="textarea2" cols="40" rows="5" class="form-control"
-					aria-describedby="textarea2HelpBlock"></textarea>
-				<span id="textarea2HelpBlock" class="form-text text-muted">※ 小提醒：封面(第一張)可以放上最可愛或最有特徵的照片喔！</span>
+				<label for="textarea2">*照片上傳</label>
+				<div class="form-group row">
+
+					<div class="col-md-3 imgUp" style="max-width: 100%;">
+						<div class="imagePreview">
+							<img id="finalImg1" width="100%">
+						</div>
+						<label class="btn btn-green replaceImg" data-sid="1">
+							更改圖檔(封面)
+						</label>
+					</div>
+					<!-- <div class="col-md-3 imgUp" style="max-width: 100%;">
+						<div class="imagePreview">
+							<img id="finalImg2" width="100%">
+						</div>
+						<label class="btn btn-green replaceImg" data-sid="2">
+							更改圖檔
+						</label>
+					</div>
+					<div class="col-md-3 imgUp" style="max-width: 100%;">
+						<div class="imagePreview">
+							<img id="finalImg3" width="100%">
+						</div>
+						<label class="btn btn-green replaceImg" data-sid="3">
+							更改圖檔
+						</label>
+					</div> -->
+
+					<div class="col-md-12">
+						<span class="mb-0 text-red">※ 小提醒：封面(第一張)可以放上最可愛或最有特徵的照片喔！</span>
+					</div>
+
+				</div>
 			</div>
 			<div class="form-group">
 				<button name="submit" type="submit" class="btn btn-primary">確認送出</button>
