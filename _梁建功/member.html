@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>會員中心</title>
 
-    <link rel="stylesheet" type="text/css" href="./memstyle.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
     <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/member.css">
 
 </head>
 
@@ -21,13 +21,6 @@
         <!-- 匯入NAVBAR  -->
         <div id="navbar"></div>
 
-        <script>
-            $(document).ready(function () {
-                $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
-            });
-        </script>
-        <!-- 匯入NAVBAR  END -->
-
         <!-- Main -->
         <div id="main">
 
@@ -36,12 +29,12 @@
                     <div class=" col-8 col-12-medium" id="member-int">
                         <div class="row">
                             <div class="col-3 col-12-medium">
-                                <img src="./image/head.jpg" class="avatar">
+                                <img src="/images/logo.jpg" class="avatar">
                             </div>
                             <div class="col-9 col-12-medium">
                                 <ul class="list-unstyled">
-                                    <li class="name">會員名稱</li>
-                                    <li style="font-size: 18px;">會員ID: 00000000</li>
+                                    <li class="name">王曉明</li>
+                                    <li style="font-size: 18px;">會員ID: 00000446</li>
                                 </ul>
                             </div>
                         </div>
@@ -52,7 +45,7 @@
                         <!-- card -->
                         <div class="member-case">
                             <div class="card-list">
-                                <a href="" class="card-a">
+                                <a href="/rescue_manager.html" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
                                             3
@@ -80,7 +73,7 @@
                             </div>
                             <div class="card-list">
 
-                                <a href="" class="card-a">
+                                <a href="/adopt_manager.html" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
                                             1
@@ -105,12 +98,40 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="card-list">
 
-                                <a href="" class="card-a">
+                            <div class="card-list">
+                                <a href="/mypet_manager.html" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            0
+                                            2
+                                        </div>
+                                        <div class="title">
+                                            <span class="sub-title">領養</span>
+                                            <span>案件數</span>
+                                        </div>
+                                        <div class="more">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-list">
+                                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="card-list">
+
+                                <a href="/stray_manager.html" class="card-a">
+                                    <div class="card-box">
+                                        <div class="number">
+                                            1
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">遺失</span>
@@ -132,18 +153,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="card-list">
 
-                                <div class="card-box">
-                                    <div class="number">
-                                        2
-                                    </div>
-                                    <div class="title">
-                                        <span class="sub-title">領養</span>
-                                        <span>案件數</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- card -->
 
@@ -166,61 +176,28 @@
 
                     <!-- menu -->
                     <div class="col-4 col-12-medium" id="menu-int">
-                        <div class="menu-box">
-                            <div class="title-box">
-                                <h5 class="title">
-                                    功能選單
-                                </h5>
-                            </div>
-                            <ul class="menu-unstyled">
-                                <li>
-                                    <a href="./member.html" title="會員個人頁面">會員個人頁面</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">會員基本資料</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">會員基本資料</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">會員基本資料</a>
-                                </li>
-                                <li>
-                                    <a href="" title="會員基本資料">會員基本資料</a>
-                                </li>
-                            </ul>
-                            <div>
-                                <a href="./login.html" title="登出" class="logout-btn">登出<i
-                                        class="fa fa-sign-out pl-10"></i></a>
-                            </div>
+                        <div id="memberMenu">
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Footer  -->
-        <div id="footer-wrapper">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12">
-
-                        <div id="copyright">
-                            &copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <!-- 匯入Footer  -->
+        <div id="footer">
         </div>
+
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+            $("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+            $("#memberMenu").load("myscript/memberMenu.html");//以ID找DOM，更改裡面的html
+        });
+    </script>
 
 </body>
 
