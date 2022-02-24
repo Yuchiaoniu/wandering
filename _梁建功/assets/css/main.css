@@ -64,7 +64,7 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, select, textarea {
+textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
@@ -99,12 +99,12 @@ input, select, textarea {
 		font-weight: normal;
 	}
 
-	h1 {
+	/* h1 {
 		text-transform: lowercase;
-	}
+	} */
 
 	h2 {
-		text-transform: lowercase;
+		/* text-transform: lowercase; */
 		font-size: 1.6em;
 		letter-spacing: -1px;
 		margin-bottom: 1em;
@@ -1631,13 +1631,13 @@ input, select, textarea {
 
 	#main {
 		background: #fff;
-		padding: 4em 0;
+		padding: 1em 0;
 	}
 
 /* Footer */
 
 	#footer-wrapper {
-		padding: 4em 0;
+		padding: 1em 0;
 	}
 
 /* Copyright */
