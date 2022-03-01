@@ -1,0 +1,32 @@
+/* label {
+    padding: 0;
+    margin-right: 3px;
+    cursor: pointer;
+}
+input[type=checkbox] {
+    display: none;
+}
+
+
+/* input[type=checkbox]+span {
+    display: inline-block;
+    background-color: #aaa;
+    padding: 3px 6px;
+    border: 1px solid gray;
+    color: #444;
+    user-select: none; 
+} */
+
+/* 
+
+input[type=checkbox]:checked+span {
+    color: yellow;
+    background-color: red;
+} */ 
+/* 
+input, select, textarea {
+	-moz-appearance: value;
+	-webkit-appearance: value ;
+	-ms-appearance: value ;
+	appearance: value ;
+} */
