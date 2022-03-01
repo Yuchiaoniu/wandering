@@ -174,10 +174,11 @@
     </div>
 
     <script>
-        $(document).ready(function () {
-            $("#navbar").load("./myscript/navbar.php");//以ID找DOM，更改裡面的html
-            $("#footer").load("./myscript/footer.php");//以ID找DOM，更改裡面的html
-            $("#memberMenu").load("./myscript/memberMenu.php");//以ID找DOM，更改裡面的html
+    $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+            $("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+            $("#memberMenu").load("myscript/memberMenu.html");//以ID找DOM，更改裡面的html
         });
     </script>
 

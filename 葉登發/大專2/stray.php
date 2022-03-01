@@ -5,20 +5,17 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>浪跡天涯 | 動物認養</title>
+	<title>浪跡天涯 | 遺失協尋</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-		crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<script src="assets/js/jquery.min.js"></script>
 
 </head>
 
 <body>
+
 
 	<div id="page-wrapper">
 
@@ -29,12 +26,13 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="container">
-				<h2>動物認養</h2>
+				<h2>遺失協尋</h2>
 				<div class="row main-row">
 
 					<!-- 匯入RESEARCH -->
 					<!-- 搜尋列 -->
-					<div id="research" class="col-8"></div>
+					<div id="research" class="col-8">
+					</div>
 
 					<!-- 最新公佈欄 -->
 					<div class=" col-md-9 col-sm-12  ">
@@ -53,7 +51,7 @@
 								$link = create_connection();    /// 設定連線的資料庫(外部匯入)
 
 
-								$sql = "select * from adopt";  /// 要做的SQL內容 >> 從RESCUE中取得全部資料  
+								$sql = "select * from cofind";  /// 要做的SQL內容 >> 從RESCUE中取得全部資料  
 								$result = execute_sql($link, "wandering", $sql);   ///  取得更新後的內容(外部匯入)
 
 								// for(
@@ -81,7 +79,7 @@
 									echo                '</h5>';
 									echo		'</a>';
 									echo		        '<h4>';
-									echo			'<div class="title">認養案件編號：adopt';
+									echo			'<div class="title">協尋案件編號：stray';
 									echo    $row->id;
 									echo    '</div>';
 									echo		        '</h4>';
@@ -101,10 +99,7 @@
 									echo				'有無晶片：';
 									echo    $row->chip;
 									echo			'</b>';
-									echo			'<br>';
-									echo				'是否結紮：';
-									echo    $row->ligation;
-									echo			'</b>';
+								
 									echo			'<br><br>';
 
 
@@ -129,13 +124,12 @@
 							</ul>
 						</section>
 					</div>
-
 					<!-- 最新公佈欄  END-->
 
 					<div class="col-md-3 col-sm-12 ">
 						<div class="btn btn-info mb-5 ">
-							<a href="adoptForm.html">
-								<h2 class="text-white">新增送養資訊</h2>
+							<a href="strayForm.html">
+								<h2 class="text-white">新增遺失通報</h2>
 							</a>
 						</div>
 						<!-- 下半部右側相關連結 -->
@@ -153,13 +147,15 @@
 	</div>
 
 	<script>
-		$(document).ready(function() {
-			$("#navbar").load("myscript/navbar.php"); //以ID找DOM，更改裡面的html
-			$("#research").load("myscript/research.html"); //以ID找DOM，更改裡面的html
-			$("#rightspace").load("myscript/rightspace.html"); //以ID找DOM，更改裡面的html    右側連結
-			$("#footer").load("myscript/footer.html"); //以ID找DOM，更改裡面的html
+		$(document).ready(function () {
+			$("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+			$("#research").load("myscript/research.html");//以ID找DOM，更改裡面的html
+			$("#rightspace").load("myscript/rightspace.html");//以ID找DOM，更改裡面的html    右側連結
+			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
 		});
 	</script>
+
+
 
 </body>
 
