@@ -7,9 +7,7 @@
   $name = $_POST["name"]; 
   $sex = $_POST["sex"];
   $birthday = $_POST["birthday"];
-  $cellphone = $_POST["cellphone"]; 	
   $address = $_POST["address"];
-  $img = $_POST["img"];
 
 
   //建立資料連接
@@ -40,9 +38,9 @@
 		
     //執行 SQL 命令，新增此帳號
     $sql = "INSERT INTO users (account, password, name, sex,
-            birthday, cellphone, address, img) 
+            birthday, address) 
             VALUES ('$account', '$password', '$name', '$sex',
-            '$birthday', '$cellphone', '$address', '$img')";
+            '$birthday', '$address')";
 
     $result = execute_sql($link, "wandering", $sql);
   }
@@ -57,11 +55,11 @@
     <title>新增帳號成功</title>
   </head>
   <body bgcolor="#FFFFFF">
-    <p align="center"><img src="Success.jpg">       
+    <p align="center"><img src="./images/success.jpg">       
     <p align="center">恭喜您已經註冊成功了，您的資料如下：（請勿按重新整理鈕）<br>
       帳號：<font color="#FF0000"><?php echo $account ?></font><br>
       密碼：<font color="#FF0000"><?php echo $password ?></font><br>       
-      請記下您的帳號及密碼，然後<a href="./index.php">登入網站</a>。
+      請記下您的帳號及密碼，然後<a href="./login.html">登入網站</a>。
     </p>
   </body>
 </html>
