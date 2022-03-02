@@ -4,7 +4,7 @@
   
   //取得表單資料
   $account = $_POST["account"]; 
-  $email = $_POST["email"];
+  $name = $_POST["name"];
   $show_method = $_POST["show_method"]; 
 
   //建立資料連接
@@ -12,8 +12,8 @@
 			
   //檢查查詢的帳號是否存在
   $sql = "SELECT name, password FROM users WHERE 
-          account = '$account' AND email = '$email'";
-  $result = execute_sql($link, "member", $sql);
+          account = '$account' AND name = '$name'";
+  $result = execute_sql($link, "wandering", $sql);
 
   //如果帳號不存在
   if (mysqli_num_rows($result) == 0)
@@ -37,11 +37,13 @@
           <meta charset='utf-8'>
         </head>
         <body>
+        <p align='center'>
           $name 您好，您的帳號資料如下：<br><br>
-          　　帳號：$account<br>
-          　　密碼：$password<br><br>
-            <a href='http://localhost/ch17/index.html'>按此登入本站</a>
-          </body>
+          帳號：$account<br>
+          密碼：$password<br><br>
+          <a href='login.html'>按此登入本站</a>
+        </p>
+        </body>
       </html>
     ";
 	
@@ -57,7 +59,7 @@
 
       //顯示訊息告知帳號密碼已寄至其電子郵件了
       echo "$name 您好，您的帳號資料已經寄至 $email<br><br>
-            <a href='index.html'>按此登入本站</a>";				
+            <a href='login.html'>按此登入本站</a>";				
     }
   }
 
