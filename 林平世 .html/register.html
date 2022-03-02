@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/register.css">
+    <script type="text/javascript">
+        function check_data()
+        {
+          if (document.myForm.account.value.length == 0)
+          {
+            alert("「使用者帳號」一定要填寫哦...");
+            return false;
+          }
+          if (document.myForm.account.value.length > 10)
+          {
+            alert("「使用者帳號」不可以超過 10 個字元哦...");
+            return false;
+          }
+          if (document.myForm.password.value.length == 0)
+          {
+            alert("「使用者密碼」一定要填寫哦...");
+            return false;
+          }
+          if (document.myForm.password.value.length > 10)
+          {
+            alert("「使用者密碼」不可以超過 10 個字元哦...");
+            return false;
+          }
+          if (document.myForm.re_password.value.length == 0)
+          {
+            alert("「密碼確認」欄位忘了填哦...");
+            return false;
+          }
+          if (document.myForm.password.value != document.myForm.re_password.value)
+          {
+            alert("「密碼確認」欄位與「使用者密碼」欄位一定要相同...");
+            return false;
+          }
+          if (document.myForm.name.value.length == 0)
+          {
+            alert("您一定要留下真實姓名哦！");
+            return false;
+          }	
+          if (document.myForm.year.value.length == 0)
+          {
+            alert("您忘了填「出生年」欄位了...");
+            return false;
+          }
+          if (document.myForm.month.value.length == 0)
+          {
+            alert("您忘了填「出生月」欄位了...");
+            return false;
+          }	
+          if (document.myForm.month.value > 12 | document.myForm.month.value < 1)
+          {
+            alert("「出生月」應該介於 1-12 之間哦！");
+            return false;
+          }
+          if (document.myForm.day.value.length == 0)
+          {
+            alert("您忘了填「出生日」欄位了...");
+            return false;
+          }
+          if (document.myForm.month.value == 2 & document.myForm.day.value > 29)
+          {
+            alert("二月只有 28 天，最多 29 天");
+            return false;
+          }	
+          if (document.myForm.month.value == 4 | document.myForm.month.value == 6
+            | document.myForm.month.value == 9 | document.myForm.month.value == 11)
+          {
+            if (document.myForm.day.value > 30)
+            {
+              alert("4 月、6 月、9 月、11 月只有 30 天哦！");
+              return false;					
+            }
+          }	
+          else
+          {
+            if (document.myForm.day.value > 31)
+            {
+              alert("1 月、3 月、5 月、7 月、8 月、10 月、12 月只有 31 天哦！");
+              return false;					
+            }				
+          }
+          if (document.myForm.day.value > 31 | document.myForm.day.value < 1)
+          {
+            alert("出生日應該在 1-31 之間");
+            return false;
+          }	
+          myForm.submit();					
+        }
+      </script>		
+</head>
+
+<body>
+
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar"></div>
+
+        <!-- register -->
+        <div id="main">
+            <div class="regbox">
+                <img src="/images/indexlogo.jpg" class="avatar">
+                <h1>會員註冊</h1>
+                <form action="addmember.php" method="post" name="myForm"> 
+                    <div>
+                        <p>
+                            會員帳號(信箱)*
+                            <input type="text" name="account" placeholder="請輸入帳號" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            會員名稱*
+                            <input type="text" name="name" placeholder="請輸入姓名" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            設定密碼*
+                            <input type="password" name="password" placeholder="請輸入密碼" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            確認密碼*
+                            <input type="password" name="re_password placeholder="請再次輸入密碼" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            會員性別*
+                        <div>
+                            <select name="sex">
+                                <option value="0">請選擇性別</option>
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                            </select>
+                        </div>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            出生日期*
+                            <input type="date" name="birthday" placeholder="請選擇生日" required>
+                        </p>
+                    </div>
+                    <input type="submit" name="" value="註冊">
+                    <a href="/login.html">會員登入</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- 匯入Footer  -->
+		<div id="footer">
+		</div>
+
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+			$("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
+			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+		});
+	</script>
+
+</body>
+
+</html>
