@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入</title>
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+
+    <script type="text/javascript">
+        function check_data()
+        {
+          if (document.myForm.account.value.length == 0)
+            alert("帳號欄位不可以空白哦！");
+          else if (document.myForm.password.value.length == 0)
+            alert("密碼欄位不可以空白哦！");
+          else 
+            myForm.submit();
+        }
+      </script>
+      
+</head>
+
+<body>
+
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar">
+        </div>
+
+        <!-- login -->
+        <div id="main">
+            <div class="loginbox">
+                <img src="./images/indexlogo.jpg" class="avatar">
+                <h1>會員登入</h1>
+                <form action="checkpwd.php" method="post" name="myForm">
+                    <div>
+                        <p>
+                            <i class="fa fa-envelope"></i>
+                            帳號(信箱):
+                            <input type="text" name="account" placeholder="請輸入帳號" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <i class="fa fa-key"></i>
+                            密碼:
+                            <input type="password" name="password" placeholder="請輸入密碼" required>
+                        </p>
+                    </div>
+                    <input type="button" onclick="check_data()" value="登入">
+                    <a href="#">忘記密碼</a><br>
+                    <a href="register.html">會員註冊</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- 匯入Footer  -->
+		<div id="footer">
+		</div>
+
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+		});
+	</script>
+
+</body>
+
+</html>

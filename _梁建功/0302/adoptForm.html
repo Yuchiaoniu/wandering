@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>浪跡天涯</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!-- <script src="assets/js/main.js"></script> -->
+	<script src="assets/js/jquery.twzipcode.min.js"></script>
+
+	<style>
+		.imagePreview {
+			width: 123px;
+			height: 123px;
+			background: url(/images/no-img.jpg);
+			background-color: #fff;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			display: inline-block;
+			border-radius: 5px 5px 0 0;
+			border: 1px solid #e1e1e1;
+			box-shadow: inset 0 1px 2px rgb(0 0 0 / 8%);
+			overflow: hidden;
+		}
+
+		.imgUp .btn {
+			display: block;
+			margin-top: -6px;
+			font-size: 15px;
+			margin-bottom: 10px;
+			padding: 4px;
+			border-radius: 0 0 5px 5px;
+		}
+
+		.btn-green {
+			background: #51B9A3 !important;
+			color: #fff !important;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="page-wrapper">
+
+		<!-- 匯入NAVBAR  -->
+		<div id="navbar"></div>
+		<script>
+			$(document).ready(function () {
+				$("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+			});
+		</script>
+		<!-- 匯入NAVBAR  END -->
+
+
+
+
+		<!-- Main -->
+		<h1 class="px-auto container ">新增送養資訊</h1>
+		<br><br>
+		<form style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-6">
+			<div class="form-group">
+				<label for="text">*送養標題</label>
+				<input id="text" name="text" placeholder="EX:非常親人的小黑狗，想要有個家！" type="text" class="form-control">
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="select">*動物類別</label>
+					<div>
+						<select id="select" name="select" class="custom-select">
+							<option value="dog">狗</option>
+							<option value="cat">貓</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group col-md-8">
+					<label for="zipcodeSelect">*地址 </label>
+					<div id="zipcodeSelect" class="form-row" style="margin-left: 0px; margin-right: 0px;"></div>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-12" style="padding-top: 0; margin-top: 50px;">
+					<label class="control-label col-form-label">
+						<!-- <span class="text-danger">*</span>可送養縣市範圍 -->
+						*可送養縣市範圍
+					</label>
+					<div class="form-group">
+						<label><input type="checkbox" name="adopt_city[]" value="1"
+								class="flat-blue">台北市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="2"
+								class="flat-blue">基隆市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="4"
+								class="flat-blue">宜蘭縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="3"
+								class="flat-blue">新北市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="5"
+								class="flat-blue">新竹市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="6"
+								class="flat-blue">新竹縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="7"
+								class="flat-blue">桃園市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="11"
+								class="flat-blue">南投縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="9"
+								class="flat-blue">台中市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="10"
+								class="flat-blue">彰化縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="8"
+								class="flat-blue">苗栗縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="12"
+								class="flat-blue">雲林縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="15"
+								class="flat-blue">台南市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="13"
+								class="flat-blue">嘉義市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="14"
+								class="flat-blue">嘉義縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="19"
+								class="flat-blue">屏東縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="16"
+								class="flat-blue">高雄市</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="20"
+								class="flat-blue">台東縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="21"
+								class="flat-blue">花蓮縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="17"
+								class="flat-blue">南海諸島</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="18"
+								class="flat-blue">澎湖縣</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="23"
+								class="flat-blue">連江縣(馬祖)</label>&nbsp;&nbsp;
+						<label><input type="checkbox" name="adopt_city[]" value="22"
+								class="flat-blue">金門縣</label>&nbsp;&nbsp;
+					</div>
+				</div>
+			</div>
+
+			<script>
+				$("#zipcodeSelect").twzipcode({
+					// countySel: "臺北市", // 城市預設值 
+					// districtSel: "大安區", // 地區預設值
+					zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+					css: [" city form-control col-6", "town   form-control col-6"], // 自訂 "城市"、"地區" class 名稱
+					countyName: "city", // 自訂城市 select 標籤的 name 值
+					districtName: "town" // 自訂地區 select 標籤的 name 值
+				});
+			</script>
+
+			<div class="row">
+				<div class="col-md-6" style="padding-top: 0; margin-top: 50px;">
+					<label class="control-label col-form-label">
+						*動物名稱
+					</label>
+					<div class="form-group">
+						<input type="text" class="form-control radius-4" name="nickname" value="" placeholder="EX:小黑">
+					</div>
+				</div>
+				<div class="col-md-6" style="padding-top: 0; margin-top: 50px;">
+					<label class="control-label col-form-label">
+						*動物性別
+					</label>
+					<div class="form-group">
+						<select class="form-control radius-4" name="gender" id="gender">
+							<option value="1">男</option>
+							<option value="2">女</option>
+
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6" style="padding-top: 0; margin-top: 50px;">
+					<label class="control-label col-form-label">
+						*結紮狀態
+					</label>
+					<div class="form-group">
+						<select class="form-control radius-4" name="fixed_status" id="fixed_status">
+							<option value="1">是</option>
+							<option value="2">否</option>
+
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6 fixed_cut_ears" style="padding-top: 0; margin-top: 50px;">
+					<label class="control-label col-form-label">
+						*剪耳狀態
+					</label>
+					<div class="form-group">
+						<select class="form-control radius-4" name="fixed_cut_ears" id="fixed_cut_ears">
+							<option value="1">是</option>
+							<option value="2">否</option>
+
+						</select>
+					</div>
+				</div>
+				<!-- <div class="col-md-6 fixed_time" style="display: none;">
+					<label class="control-label col-form-label">
+						*預定結紮日
+					</label>
+					<div class="form-group">
+						<input readonly="" type="text" class="form-control radius-4 dtpicker-date" name="fixed_time"
+							value="">
+					</div>
+				</div> -->
+			</div>
+
+			<div class="form-group">
+				<label for="textarea">*送養說明</label>
+				<textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="textarea1">*醫療狀態說明</label>
+				<textarea id="textarea1" name="textarea1" cols="40" rows="5" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="textarea2">*領養條件</label>
+				<textarea id="textarea2" name="textarea2" cols="40" rows="5" class="form-control"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="textarea2">*照片上傳</label>
+				<div class="form-group row">
+
+					<div class="col-md-3 imgUp" style="max-width: 100%;">
+						<div class="imagePreview">
+							<img id="finalImg1" width="100%">
+						</div>
+						<label class="btn btn-green replaceImg" data-sid="1">
+							更改圖檔(封面)
+						</label>
+					</div>
+					<!-- <div class="col-md-3 imgUp" style="max-width: 100%;">
+						<div class="imagePreview">
+							<img id="finalImg2" width="100%">
+						</div>
+						<label class="btn btn-green replaceImg" data-sid="2">
+							更改圖檔
+						</label>
+					</div>
+					<div class="col-md-3 imgUp" style="max-width: 100%;">
+						<div class="imagePreview">
+							<img id="finalImg3" width="100%">
+						</div>
+						<label class="btn btn-green replaceImg" data-sid="3">
+							更改圖檔
+						</label>
+					</div> -->
+
+					<div class="col-md-12">
+						<span class="mb-0 text-red">※ 小提醒：封面(第一張)可以放上最可愛或最有特徵的照片喔！</span>
+					</div>
+
+				</div>
+			</div>
+			<div class="form-group">
+				<button name="submit" type="submit" class="btn btn-primary">確認送出</button>
+			</div>
+		</form>
+
+
+		<!-- Footer  -->
+
+		<div style="background-color: aliceblue;" id="footer-wrapper">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-12">
+
+						<div id="copyright">
+							&copy; 浪跡天涯. | Design: <a href="http://html5up.net">HTML5 UP</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
