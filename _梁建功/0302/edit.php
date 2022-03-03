@@ -44,6 +44,28 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="./assets/js/jquery.twzipcode.min.js"></script>
 
+    <script type="text/javascript">
+        function check_data() {
+            if (document.myForm.account.value.length == 0) {
+                alert("「使用者帳號」一定要填寫哦...");
+                return false;
+            }
+            if (document.myForm.account.value.length > 50) {
+                alert("「使用者帳號」不可以超過 50 個字元哦...");
+                return false;
+            }
+            if (document.myForm.name.value.length == 0) {
+                alert("您一定要留下真實姓名哦！");
+                return false;
+            }
+            if (document.myForm.sex.value.length == 0) {
+                alert("您一定要留下性別哦！");
+                return false;
+            }
+            myForm.submit();
+        }
+    </script>
+
 </head>
 
 <body>
@@ -66,90 +88,80 @@
 
                         <div class='col-md-12'>
                             <img style="margin-bottom: 5%;" src="images/logo.jpg" class="avatar"><br />
-                            <button name="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5%;"> 上傳照片</button>
-                            <div class="row" style=" display: flex; justify-content: center; 
-                                align-items: center;">
-                                <div class='col-md-5' style="padding-top: 0; margin-top: 50px;">
-                                    <form class="input">
-                                        姓名
-                                        <input style="margin-bottom: 10%;" class="form-control" type="text"
-                                            value="王曉明" name="firstname">
-                                        性別
-                                        <select style="margin-bottom: 10%;" class="form-control">
-                                            <option>男</option>
-                                            <option>女</option>
+                            <button name="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5%;">
+                                上傳照片
+                            </button>
+
+                            <form class="input" name="myForm" method="post" action="update.php">
+                                <div class="container">
+                                    <div class="row"
+                                        style=" display: flex; justify-content: center; align-items: center;">
+
+                                        <div class="col-6" style="padding-top: 0; margin-top: 50px;">
+                                            <div class="col-md-12">姓名</div>
+                                            <input style="margin-bottom: 5%;" class="form-control" type="text"
+                                                value="<?php echo $row{"name"} ?>" name="name">
+                                        </div>
+                                        <div class="col-6" style="padding-top: 0; margin-top: 50px;">
+                                            <div class="col-md-12">帳號(信箱)</div>
+                                            <input style="margin-bottom: 5%;" class="form-control" type="text"
+                                                value="<?php echo $row{"account"} ?>" name="account">
+                                        </div>
+
+                                    </div>
+                                    <div class="row"
+                                        style=" display: flex; justify-content: center; align-items: center;">
+
+                                        <div class="col-6" style="padding-top: 0; margin-top: 50px;">
+                                            <div class="col-md-12">性別</div>
+                                            <select style="margin-bottom: 5%;" class="form-control" name="sex">
+                                                <option value="男">男</option>
+                                                <option value="女">女</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6" style="padding-top: 0; margin-top: 50px;">
+                                            <div class="col-md-12">生日</div>
+                                            <input style="margin-bottom: 5%;" class="form-control" type="date"
+                                                value="<?php echo $row{"birthday"} ?>" name="birthday">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="container" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="col-md-12">地區</div>
+                                    <div class="form-row col-md-12"
+                                        style="padding-left: 15px; padding-right: 15px; margin-left: 0px; margin-right: 0px;"
+                                        id="zipcodeSelect"></div>
+
+                                    <br>
+                                    <div class="col-md-12">手機</div>
+                                    <div class="form-row col-md-12"
+                                        style="padding-left: 15px; padding-right: 15px; margin-left: 0px; margin-right: 0px;">
+                                        <input style="margin-bottom: 5%;" class="form-control col-md-6" type="text"
+                                            value="<?php echo $row{"cellphone"} ?>" name="cellphone">
+                                        <select style="margin-bottom: 5%;" class="form-control col-md-6" name="hide">
+                                            <option value="隱藏">隱藏</option>
+                                            <option value="公開">公開</option>
                                         </select>
-
-
-                                    </form>
+                                    </div>
                                 </div>
 
-                                <div class='col-md-5' style="padding-top: 0; margin-top: 50px;">
-                                    <form>
-                                        E-mail
-                                        <input style="margin-bottom: 10%;" class="form-control" type="text"
-                                            value="XXX@mail.com" name="e-mail">
-                                        生日
-                                        <input style="margin-bottom: 10%;" class="form-control" type="date"
-                                            value="2022-02-22" name="birthday">
 
-                                    </form>
-                                </div>
-                            </div>
+                                <input type="button" value="送出資料" onClick="check_data()" class="btn btn-primary"
+                                    style="margin-bottom: 5%;">
 
-                            地區
-                            <div class="container" style="display: flex;
-                            justify-content: center; 
-                            align-items: center; 
-                            margin-left: 0px;
-                        margin-right: 5px;">
-
-                                <div class="form-row col-md-11" id="zipcodeSelect"></div>
-
-
-
-                            </div>
-
-                            <br />
-
-                            <div>手機</div><br /><br />
-                            <div class="row" style=" display: flex; justify-content: center; 
-                        align-items: center;
-                        margin-left: 2px;
-                        margin-right: 2px;">
-                                <input style="margin-bottom: 5%;" class="form-control col-md-5" type="text"
-                                    value="xxxx-xxx xxx" name="phone">
-                                <select style="margin-bottom: 5%;" class="form-control col-md-5">
-                                    <option>隱藏</option>
-                                    <option>公開</option>
-                                </select>
-                            </div>
-                            <button name="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5%;">送出</button>
-                            <!-- <div class="member-content">
-                                <div class="title-w-dot-left green mb-4">
-                                    <h4 class="title font-weight-600">最新公告與通知</h4>
-                                </div>
-                                <article class="article-box">
-                                    <p>歡迎回到浪跡天涯！！</p>
-                                    <p>非常感謝您的加入，<br>
-                                        希望各位會員都能夠一起參與網站上的通報案件，無論是救援、送/認養、協尋，<br>
-                                        一起發揮力量，讓更多需要救援的浪浪度過難關、無家可歸的浪浪找到溫暖的家、迷路在外的毛孩快點回家。
-                                    </p>
-                                    <p>&nbsp;</p>
-                                </article>
-
-                            </div> -->
-
-                            <script>
-                                $("#zipcodeSelect").twzipcode({
-                                    countySel: "臺北市", // 城市預設值 
-                                    districtSel: "大安區", // 地區預設值
-                                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
-                                    css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
-                                    countyName: "city", // 自訂城市 select 標籤的 name 值
-                                    districtName: "town" // 自訂地區 select 標籤的 name 值
-                                });
-                            </script>
+                                <script>
+                                    $("#zipcodeSelect").twzipcode({
+                                        countySel: "<?php echo $row{"city"} ?>", // 城市預設值 
+                                        districtSel: "<?php echo $row{"town"} ?>", // 地區預設值
+                                        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+                                        css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
+                                        countyName: "city", // 自訂城市 select 標籤的 name 值
+                                        districtName: "town" // 自訂地區 select 標籤的 name 值
+                                    });
+                                </script>
+                            </form>
                         </div>
                     </div>
                     <br>
