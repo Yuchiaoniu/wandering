@@ -13,46 +13,46 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/register.css">
 
     <script type="text/javascript">
-        function check_data()
-        {
-          if (document.myForm.account.value.length == 0)
-          {
-            alert("「使用者帳號」一定要填寫哦...");
-            return false;
-          }
-          if (document.myForm.account.value.length > 10)
-          {
-            alert("「使用者帳號」不可以超過 10 個字元哦...");
-            return false;
-          }
-          if (document.myForm.password.value.length == 0)
-          {
-            alert("「使用者密碼」一定要填寫哦...");
-            return false;
-          }
-          if (document.myForm.password.value.length > 10)
-          {
-            alert("「使用者密碼」不可以超過 10 個字元哦...");
-            return false;
-          }
-          if (document.myForm.re_password.value.length == 0)
-          {
-            alert("「密碼確認」欄位忘了填哦...");
-            return false;
-          }
-          if (document.myForm.password.value != document.myForm.re_password.value)
-          {
-            alert("「密碼確認」欄位與「使用者密碼」欄位一定要相同...");
-            return false;
-          }
-          if (document.myForm.name.value.length == 0)
-          {
-            alert("您一定要留下真實姓名哦！");
-            return false;
-          }	
-          myForm.submit();					
+        function isEmail(strEmail) {
+            if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/) != -1)
+                return true;
+            else
+                alert("電子信箱格式錯誤");
+                document.myForm.account.value = "";
         }
-      </script>		
+
+        function check_data() {
+            if (document.myForm.account.value.length == 0) {
+                alert("「使用者帳號」一定要填寫哦...");
+                return false;
+            }
+            if (document.myForm.account.value.length > 50) {
+                alert("「使用者帳號」不可以超過 50 個字元哦...");
+                return false;
+            }
+            if (document.myForm.password.value.length == 0) {
+                alert("「使用者密碼」一定要填寫哦...");
+                return false;
+            }
+            if (document.myForm.password.value.length > 10) {
+                alert("「使用者密碼」不可以超過 10 個字元哦...");
+                return false;
+            }
+            if (document.myForm.re_password.value.length == 0) {
+                alert("「密碼確認」欄位忘了填哦...");
+                return false;
+            }
+            if (document.myForm.password.value != document.myForm.re_password.value) {
+                alert("「密碼確認」欄位與「使用者密碼」欄位一定要相同...");
+                return false;
+            }
+            if (document.myForm.name.value.length == 0) {
+                alert("您一定要留下真實姓名哦！");
+                return false;
+            }
+            myForm.submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -67,11 +67,11 @@
             <div class="regbox">
                 <img src="./images/indexlogo.jpg" class="avatar">
                 <h1>會員註冊</h1>
-                <form action="addmember.php" method="post" name="myForm"> 
+                <form action="addmember.php" method="post" name="myForm">
                     <div>
                         <p>
                             會員帳號(信箱)*
-                            <input type="text" name="account" placeholder="請輸入帳號" required>
+                            <input type="text" name="account" onblur=isEmail(this.value) placeholder="請輸入帳號" required>
                         </p>
                     </div>
                     <div>
@@ -116,17 +116,17 @@
         </div>
 
         <!-- 匯入Footer  -->
-		<div id="footer">
-		</div>
+        <div id="footer">
+        </div>
 
-	</div>
+    </div>
 
-	<script>
-		$(document).ready(function () {
-			$("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
-			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
-		});
-	</script>
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+        });
+    </script>
 
 </body>
 

@@ -5,7 +5,7 @@
   //取得表單資料
   $account = $_POST["account"]; 
   $name = $_POST["name"];
-  $show_method = $_POST["show_method"]; 
+  // $show_method = $_POST["show_method"]; 
 
   //建立資料連接
   $link = create_connection();
@@ -47,20 +47,20 @@
       </html>
     ";
 	
-    if ($show_method == "網頁顯示")
-    {
+    // if ($show_method == "網頁顯示")
+    // {
       echo $message;   //顯示訊息告知使用者帳號密碼
-    }
-    else
-    {
-      $subject = "=?utf-8?B?" . base64_encode("帳號通知") . "?=";
-      $headers  = "MIME-Version: 1.0\r\nContent-type: text/html; charset=utf-8\r\n";
-      mail($email, $subject, $message, $headers);	
+    // }
+    // else
+    // {
+    //   $subject = "=?utf-8?B?" . base64_encode("帳號通知") . "?=";
+    //   $headers  = "MIME-Version: 1.0\r\nContent-type: text/html; charset=utf-8\r\n";
+    //   mail($account, $subject, $message, $headers);	
 
-      //顯示訊息告知帳號密碼已寄至其電子郵件了
-      echo "$name 您好，您的帳號資料已經寄至 $email<br><br>
-            <a href='login.html'>按此登入本站</a>";				
-    }
+    //   //顯示訊息告知帳號密碼已寄至其電子郵件了
+    //   echo "$name 您好，您的帳號資料已經寄至 $account<br><br>
+    //         <a href='login.html'>按此登入本站</a>";				
+    // }
   }
 
   //釋放 $result 佔用的記憶體

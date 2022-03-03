@@ -13,17 +13,24 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
 
     <script type="text/javascript">
-        function check_data()
-        {
-          if (document.myForm.account.value.length == 0)
-            alert("帳號欄位不可以空白哦！");
-          else if (document.myForm.password.value.length == 0)
-            alert("密碼欄位不可以空白哦！");
-          else 
-            myForm.submit();
+        function isEmail(strEmail) {
+            if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/) != -1)
+                return true;
+            else
+                alert("電子信箱格式錯誤");
+            document.myForm.account.value = "";
         }
-      </script>
-      
+
+        function check_data() {
+            if (document.myForm.account.value.length == 0)
+                alert("帳號欄位不可以空白哦！");
+            else if (document.myForm.password.value.length == 0)
+                alert("密碼欄位不可以空白哦！");
+            else
+                myForm.submit();
+        }
+    </script>
+
 </head>
 
 <body>
@@ -44,7 +51,7 @@
                         <p>
                             <i class="fa fa-envelope"></i>
                             帳號(信箱):
-                            <input type="text" name="account" placeholder="請輸入帳號" required>
+                            <input type="text" name="account" onblur=isEmail(this.value) placeholder="請輸入帳號" required>
                         </p>
                     </div>
                     <div>
@@ -55,24 +62,24 @@
                         </p>
                     </div>
                     <input type="button" onclick="check_data()" value="登入">
-                    <a href="#">忘記密碼</a><br>
+                    <a href="search.html">忘記密碼</a><br>
                     <a href="register.html">會員註冊</a>
                 </form>
             </div>
         </div>
 
         <!-- 匯入Footer  -->
-		<div id="footer">
-		</div>
+        <div id="footer">
+        </div>
 
-	</div>
+    </div>
 
-	<script>
-		$(document).ready(function () {
-			$("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
-			$("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
-		});
-	</script>
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+        });
+    </script>
 
 </body>
 

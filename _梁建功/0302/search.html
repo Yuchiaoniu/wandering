@@ -12,6 +12,16 @@
     <script src="./assets/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
 
+    <script type="text/javascript">
+        function isEmail(strEmail) {
+            if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/) != -1)
+                return true;
+            else
+                alert("電子信箱格式錯誤");
+            document.myForm.account.value = "";
+        }
+    </script>
+    
 </head>
 
 <body>
@@ -28,12 +38,12 @@
                 <img src="./images/indexlogo.jpg" class="avatar">
                 <h1>查詢密碼</h1>
                 <p>請輸入您的資料，然後按 [查詢] 鈕。</p>
-                <form method="post" action="search.php">
+                <form method="post" action="search.php"  name="myForm">
                     <div>
                         <p>
                             <i class="fa fa-envelope"></i>
                             帳號(信箱):
-                            <input type="text" name="account" placeholder="請輸入註冊信箱" required>
+                            <input type="text" name="account" onblur=isEmail(this.value) placeholder="請輸入註冊信箱" required>
                         </p>
                     </div>
                     <div>
@@ -43,7 +53,7 @@
                             <input type="text" name="name" placeholder="請輸入註冊姓名" required>
                         </p>
                     </div>
-                    <div>
+                    <!-- <div>
                         <p>
                             <i class="fa fa-search"></i>
                             顯示方式：
@@ -52,7 +62,7 @@
                             <option value="網頁顯示">網頁顯示</option>
                             <option value="E-mail 傳送">E-mail 傳送</option>
                         </select>
-                    </div>
+                    </div> -->
                     <input type="submit" value="查詢">
                     <a href="login.html">會員登入</a>
                 </form>
