@@ -78,7 +78,7 @@
 														動物數量： <?PHP echo    $row->amount?>	 
 														</b>
 														<br>
-														<a href="/rescue_Detail_1.html"><?PHP ?>詳細資訊</a>
+														<a href="rescue_showDetail.php?id=<?PHP echo 	$row->id?>">詳細資訊</a>
 													</div>
 												</div>
 											</div>
@@ -124,7 +124,7 @@
 
 	<script>
 		$(document).ready(function() {
-			$("#navbar").load("myscript/navbar.html"); //以ID找DOM，更改裡面的html
+			$("#navbar").load("myscript/navbar.php"); //以ID找DOM，更改裡面的html
 			$("#research").load("myscript/research.html"); //以ID找DOM，更改裡面的html
 			$("#rightspace").load("myscript/rightspace.html"); //以ID找DOM，更改裡面的html    右側連結
 			$("#footer").load("myscript/footer.html"); //以ID找DOM，更改裡面的html
