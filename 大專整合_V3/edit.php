@@ -16,13 +16,13 @@
   {
     require_once("dbtools.inc.php");
 		
-    $id = $_COOKIE{"id"};
+    $memberID = $_COOKIE{"memberID"};
 		
     //建立資料連接
     $link = create_connection();
 				
     //執行 SELECT 陳述式取得使用者資料
-    $sql = "SELECT * FROM users Where id = $id";
+    $sql = "SELECT * FROM users Where memberID = $memberID";
     $result = execute_sql($link, "wandering", $sql);
 		
     $row = mysqli_fetch_assoc($result);  
@@ -87,12 +87,11 @@
                         </div>
 
                         <div class='col-md-12'>
-                            <img style="margin-bottom: 5%;" src="images/logo.jpg" class="avatar"><br />
-                            <button name="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5%;">
-                                上傳照片
-                            </button>
 
-                            <form class="input" name="myForm" method="post" action="update.php">
+                            <form class="input" name="myForm" enctype="multipart/form-data" method="post" action="update.php">
+                                <img style="margin-bottom: 5%;" src="<?php echo $row{"img"} ?>" class="avatar"><br />
+                                <input type="file" name="upload" class="btn btn-primary" style="margin-bottom: 5%;">
+
                                 <div class="container">
                                     <div class="row"
                                         style=" display: flex; justify-content: center; align-items: center;">

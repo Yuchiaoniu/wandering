@@ -32,8 +32,8 @@
   //如果帳號密碼正確
   else
   {
-    //取得 id 欄位
-    $id = mysqli_fetch_object($result)->id;
+    //取得 memberID 欄位
+    $memberID = mysqli_fetch_object($result)->memberID;
 	
     //釋放 $result 佔用的記憶體	
     mysqli_free_result($result);
@@ -42,7 +42,7 @@
     mysqli_close($link);
 
     //將使用者資料加入 cookies
-    setcookie("id", $id);
+    setcookie("memberID", $memberID);
     setcookie("passed", "TRUE");		
     header("location:member.php");		
   }

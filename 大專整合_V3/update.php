@@ -16,8 +16,8 @@
   {
     require_once("dbtools.inc.php");
 	
-    //取得 edit.php 網頁的表單資料
-    $id = $_COOKIE["id"];
+    //取得 edit.php 網頁的資料
+    $memberID = $_COOKIE["memberID"];
     $name = $_POST["name"];
     $sex = $_POST["sex"];
     $birthday = $_POST["birthday"];
@@ -25,6 +25,30 @@
     $hide = $_POST["hide"];
     $city = $_POST["city"];
     $town = $_POST["town"];
+
+    ////  更改黨名函數
+    function createFilename($source, $index){
+      date_default_timezone_set('Asia/Taipei');
+      $data = explode('.',$source);
+      if (count($data)>=2){
+          $sname = '.' . $data[count($data)-1] ;
+      }else{
+          $sname = '';
+      }
+      $filename = date('Ymd_His') . $index  . $sname;
+      return $filename;
+    }
+
+    // 取得上傳內容後   將上傳內容傳到指定資料夾
+    $upload = $_FILES['upload'];
+    if ($upload['error'] == 0){
+      // $i
+      move_uploaded_file($upload['tmp_name'],
+          './upload/' . createFilename($upload['name'], $index));
+    }
+
+    // 將資料夾路徑回寫給變數  新增到資料庫
+    $img = './upload/' . createFilename($upload['name'], $index) ;
 
 		
     //建立資料連接
@@ -34,7 +58,8 @@
     $sql = "UPDATE users SET name = '$name', 
             sex = '$sex', birthday = '$birthday', 
             cellphone = '$cellphone', hide = '$hide',  
-            city = '$city', town = '$town' WHERE id = $id";
+            city = '$city', town = '$town',
+            img = '$img' WHERE memberID = $memberID";
     $result = execute_sql($link, "wandering", $sql);
 		
     //關閉資料連接
@@ -49,7 +74,7 @@
   </head>
   <body>
     <center>
-      <img src="images/indexlogo.jpg"
+      <img src="<?php echo $img ?>"
       style="width: 125px; 
       height: 125px; 
       border-radius: 100%; 

@@ -16,13 +16,13 @@
   {
     require_once("dbtools.inc.php");
 		
-    $id = $_COOKIE{"id"};
+    $memberID = $_COOKIE{"memberID"};
 		
     //建立資料連接
     $link = create_connection();
 				
     //執行 SELECT 陳述式取得使用者資料
-    $sql = "SELECT * FROM users Where id = $id";
+    $sql = "SELECT * FROM users Where memberID = $memberID";
     $result = execute_sql($link, "wandering", $sql);
 		
     $row = mysqli_fetch_assoc($result);  
@@ -58,12 +58,12 @@
                     <div class=" col-8 col-12-medium" id="member-int">
                         <div class="row">
                             <div class="col-3 col-12-medium">
-                                <img src="./images/logo.jpg" class="avatar">
+                                <img src="<?php echo $row{"img"} ?>" class="avatar">
                             </div>
                             <div class="col-9 col-12-medium">
                                 <ul class="list-unstyled">
                                     <li class="name"><?php echo $row{"name"} ?></li>
-                                    <li style="font-size: 18px;">會員ID: <?php echo $row{"id"} ?></li>
+                                    <li style="font-size: 18px;">會員ID: <?php echo $row{"memberID"} ?></li>
                                 </ul>
                             </div>
                         </div>
