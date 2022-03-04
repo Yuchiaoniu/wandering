@@ -23,19 +23,19 @@
 
         function check_data() {
             if (document.myForm.account.value.length == 0) {
-                alert("「使用者帳號」一定要填寫哦...");
+                alert("「會員帳號」一定要填寫哦...");
                 return false;
             }
             if (document.myForm.account.value.length > 50) {
-                alert("「使用者帳號」不可以超過 50 個字元哦...");
+                alert("「會員帳號」不可以超過 50 個字元哦...");
                 return false;
             }
             if (document.myForm.password.value.length == 0) {
-                alert("「使用者密碼」一定要填寫哦...");
+                alert("「會員密碼」一定要填寫哦...");
                 return false;
             }
             if (document.myForm.password.value.length > 10) {
-                alert("「使用者密碼」不可以超過 10 個字元哦...");
+                alert("「會員密碼」不可以超過 10 個字元哦...");
                 return false;
             }
             if (document.myForm.re_password.value.length == 0) {
@@ -43,11 +43,15 @@
                 return false;
             }
             if (document.myForm.password.value != document.myForm.re_password.value) {
-                alert("「密碼確認」欄位與「使用者密碼」欄位一定要相同...");
+                alert("「密碼確認」欄位與「會員密碼」欄位一定要相同...");
                 return false;
             }
             if (document.myForm.name.value.length == 0) {
-                alert("您一定要留下真實姓名哦！");
+                alert("您一定要留下姓名哦！");
+                return false;
+            }
+            if (document.myForm.birthday.value.length == 0) {
+                alert("「出生日期」欄位忘了填哦...");
                 return false;
             }
             myForm.submit();
@@ -110,7 +114,7 @@
                         </p>
                     </div>
                     <input type="button" value="註冊" onClick="check_data()">
-                    <a href="login.html">會員登入</a>
+                    <a href="login.html" style="font-size: large;">會員登入</a>
                 </form>
             </div>
         </div>

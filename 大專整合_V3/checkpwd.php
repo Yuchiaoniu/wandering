@@ -24,7 +24,7 @@
 		
     //顯示訊息要求使用者輸入正確的帳號密碼
     echo "<script type='text/javascript'>";
-    echo "alert('帳號密碼錯誤，請查明後再登入');";
+    echo "alert('無此帳號或密碼錯誤，請查明後再登入');";
     echo "history.back();";
     echo "</script>";
   }
