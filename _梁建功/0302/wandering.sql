@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:3306
--- 產生時間： 2022-03-02 05:42:18
+-- 產生時間： 2022-03-04 03:06:09
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 7.4.16
 
@@ -130,13 +130,15 @@ INSERT INTO `rescue` (`id`, `title`, `date`, `type`, `amount`, `city`, `zone`, `
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `account` varchar(50) NOT NULL DEFAULT '',
-  `password` varchar(10) NOT NULL DEFAULT '',
-  `name` varchar(10) NOT NULL DEFAULT '',
-  `sex` char(2) NOT NULL DEFAULT '',
-  `birthday` date DEFAULT NULL,
-  `cellphone` varchar(20) DEFAULT '',
-  `address` varchar(50) NOT NULL DEFAULT '',
+  `account` varchar(50) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `name` varchar(10) NOT NULL,
+  `sex` char(2) NOT NULL,
+  `birthday` date NOT NULL,
+  `cellphone` varchar(20) DEFAULT NULL,
+  `hide` varchar(10) DEFAULT NULL,
+  `city` varchar(20) DEFAULT NULL,
+  `town` varchar(20) DEFAULT NULL,
   `img` varchar(64) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -144,9 +146,10 @@ CREATE TABLE `users` (
 -- 傾印資料表的資料 `users`
 --
 
-INSERT INTO `users` (`id`, `account`, `password`, `name`, `sex`, `birthday`, `cellphone`, `address`, `img`) VALUES
-(1, 'guest', 'guest', '阿凱', '男', '1997-10-13', '(0968) 568-854', '台北市大安區師大路 20 號', 'http://www.kai.com.tw'),
-(3, '123', '123', '123', '男', '1230-12-30', '', '', 'http://');
+INSERT INTO `users` (`id`, `account`, `password`, `name`, `sex`, `birthday`, `cellphone`, `hide`, `city`, `town`, `img`) VALUES
+(1, 'guest@mail.com', '123', '阿凱', '男', '1997-10-13', '(0968) 568-854', '隱藏', '台北市', '大安區師大路 20 號', 'http://www.kai.com.tw'),
+(2, 'firemoon1013@gmail.com', '123', '梁建功', '男', '1997-10-13', '0988451401', '隱藏', '臺中市', '西區', NULL),
+(10, '123@mail.com', '123', '123', '女', '2022-03-04', '123456789', '公開', '臺中市', '中區', NULL);
 
 --
 -- 已傾印資料表的索引
@@ -202,7 +205,7 @@ ALTER TABLE `rescue`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
