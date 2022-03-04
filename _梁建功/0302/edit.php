@@ -104,7 +104,7 @@
                                         </div>
                                         <div class="col-6" style="padding-top: 0; margin-top: 50px;">
                                             <div class="col-md-12">帳號(信箱)</div>
-                                            <input style="margin-bottom: 5%;" class="form-control" type="text"
+                                            <input readonly style="margin-bottom: 5%;" class="form-control" type="text"
                                                 value="<?php echo $row{"account"} ?>" name="account">
                                         </div>
 
@@ -115,8 +115,8 @@
                                         <div class="col-6" style="padding-top: 0; margin-top: 50px;">
                                             <div class="col-md-12">性別</div>
                                             <select style="margin-bottom: 5%;" class="form-control" name="sex">
-                                                <option value="男">男</option>
-                                                <option value="女">女</option>
+                                                <option <?php  if ($row{"sex"} == 男) echo "selected"; ?> value="男">男</option>
+                                                <option <?php  if ($row{"sex"} == 女) echo "selected"; ?> value="女">女</option>
                                             </select>
                                         </div>
                                         <div class="col-6" style="padding-top: 0; margin-top: 50px;">
@@ -140,9 +140,9 @@
                                         style="padding-left: 15px; padding-right: 15px; margin-left: 0px; margin-right: 0px;">
                                         <input style="margin-bottom: 5%;" class="form-control col-md-6" type="text"
                                             value="<?php echo $row{"cellphone"} ?>" name="cellphone">
-                                        <select style="margin-bottom: 5%;" class="form-control col-md-6" name="hide">
-                                            <option value="隱藏">隱藏</option>
-                                            <option value="公開">公開</option>
+                                        <select name="hide" style="margin-bottom: 5%;" class="form-control col-md-6">
+                                            <option <?php  if ($row{"hide"} == 隱藏) echo "selected"; ?> value="隱藏">隱藏</option>
+                                            <option <?php  if ($row{"hide"} == 公開) echo "selected"; ?> value="公開">公開</option>
                                         </select>
                                     </div>
                                 </div>

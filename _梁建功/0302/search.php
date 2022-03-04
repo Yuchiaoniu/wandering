@@ -37,12 +37,18 @@
           <meta charset='utf-8'>
         </head>
         <body>
-        <p align='center'>
+        <center>
+          <img src='images/indexlogo.jpg'
+          style='width: 125px; 
+          height: 125px; 
+          border-radius: 100%; 
+          border: 2px solid rgb(180, 175, 175);'>
+          <br><br>
           $name 您好，您的帳號資料如下：<br><br>
           帳號：$account<br>
           密碼：$password<br><br>
           <a href='login.html'>按此登入本站</a>
-        </p>
+        </center>
         </body>
       </html>
     ";

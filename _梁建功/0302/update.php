@@ -6,7 +6,7 @@
   //表示尚未登入網站，將使用者導向登入
   if ($passed != "TRUE")
   {
-    header("location:index.html");
+    header("location:login.html");
     exit();
   }
 	
@@ -18,8 +18,7 @@
 	
     //取得 edit.php 網頁的表單資料
     $id = $_COOKIE["id"];
-    $account = $_POST["account"];
-    $name = $_POST["name"]
+    $name = $_POST["name"];
     $sex = $_POST["sex"];
     $birthday = $_POST["birthday"];
     $cellphone = $_POST["cellphone"];
@@ -32,7 +31,7 @@
     $link = create_connection();
 				
     //執行 UPDATE 陳述式來更新使用者資料
-    $sql = "UPDATE users SET account = '$account', name = '$name', 
+    $sql = "UPDATE users SET name = '$name', 
             sex = '$sex', birthday = '$birthday', 
             cellphone = '$cellphone', hide = '$hide',  
             city = '$city', town = '$town' WHERE id = $id";
@@ -50,7 +49,12 @@
   </head>
   <body>
     <center>
-      <img src="revise.jpg"><br><br>
+      <img src="images/indexlogo.jpg"
+      style="width: 125px; 
+      height: 125px; 
+      border-radius: 100%; 
+      border: 2px solid rgb(180, 175, 175);">
+      <br><br>
       <?php echo $name ?>，恭喜您已經修改資料成功了。
       <p><a href="edit.php">回會員專屬網頁</a></p>
     </center>        
