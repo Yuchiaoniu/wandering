@@ -98,11 +98,11 @@
 					<!-- 最新公佈欄  END-->
 
 					<div class="col-md-3 col-sm-12 ">
-						<div class="btn btn-info mb-5 ">
-							<a href="adoptForm.html">
+						<a href="adoptForm.html">
+							<div class="btn btn-info mb-5 ">
 								<h2 class="text-white">新增送養資訊</h2>
-							</a>
-						</div>
+							</div>
+						</a>
 						<!-- 下半部右側相關連結 -->
 						<div id="rightspace"></div>
 
