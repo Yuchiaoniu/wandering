@@ -42,10 +42,10 @@
     // $ADOPTresult = execute_sql($link, "wandering", $sqlADOPT);
     // $adoptCOUNT = mysqli_fetch_assoc($ADOPTresult);
 
-    //執行 SELECT 陳述式取得cofind資料
-    $sqlCOFIND = "SELECT COUNT(memberID) FROM cofind Where memberID = $memberID";
-    $COFINDresult = execute_sql($link, "wandering", $sqlCOFIND);
-    $cofindCOUNT = mysqli_fetch_assoc($COFINDresult);
+    //執行 SELECT 陳述式取得stray資料
+    $sqlSTRAY = "SELECT COUNT(memberID) FROM stray Where memberID = $memberID";
+    $STRAYresult = execute_sql($link, "wandering", $sqlSTRAY);
+    $strayCOUNT = mysqli_fetch_assoc($STRAYresult);
 
 ?>
 <!DOCTYPE html>
@@ -181,7 +181,7 @@
                                 <a href="stray_manager.php" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            <?php echo $cofindCOUNT{"COUNT(memberID)"} ?>
+                                            <?php echo $strayCOUNT{"COUNT(memberID)"} ?>
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">遺失</span>

@@ -27,8 +27,8 @@
     $result = execute_sql($link, "wandering", $sql);
     $row = mysqli_fetch_assoc($result);  
 
-    //執行 SELECT 陳述式取得cofind資料
-    $sql2 = "SELECT * FROM cofind Where memberID = $memberID order BY id desc";
+    //執行 SELECT 陳述式取得stray資料
+    $sql2 = "SELECT * FROM stray Where memberID = $memberID order BY id desc";
     $result2 = execute_sql($link, "wandering", $sql2); 
  
 ?>
