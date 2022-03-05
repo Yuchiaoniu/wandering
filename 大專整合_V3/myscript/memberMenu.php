@@ -12,19 +12,16 @@
             <a href="./edit.php" title="會員基本資料">會員基本資料</a>
         </li>
         <li>
-            <a href="./rescue_manager.html" title="會員基本資料">流浪救援管理</a>
+            <a href="./rescue_manager.php" title="會員基本資料">流浪救援管理</a>
         </li>
         <li>
-            <a href="./adopt_manager.html" title="會員基本資料">動物送養管理</a>
+            <a href="./adopt_manager.php" title="會員基本資料">動物送養管理</a>
         </li>
         <li>
-            <a href="./mypet_manager.html" title="會員基本資料">動物領養管理</a>
+            <a href="./mypet_manager.php" title="會員基本資料">動物領養管理</a>
         </li>
         <li>
-            <a href="./stray_manager.html" title="會員基本資料">遺失協尋管理</a>
-        </li>
-        <li>
-            <a href="./favorite_manager.html" title="會員基本資料">追蹤案件管理</a>
+            <a href="./stray_manager.php" title="會員基本資料">遺失協尋管理</a>
         </li>
     </ul>
     <div>
