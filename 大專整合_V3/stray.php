@@ -44,7 +44,7 @@
 								//// 資料庫連線使用外部匯入
 								require_once("dbtools.inc.php");
 								$link = create_connection();    /// 設定連線的資料庫(外部匯入)
-								$sql = "select * from stray order BY id desc";  /// 要做的SQL內容 >> 從RESCUE中取得全部資料  
+								$sql = "select * from cofind order BY id desc";  /// 要做的SQL內容 >> 從RESCUE中取得全部資料  
 								$result = execute_sql($link, "wandering", $sql);   ///  取得更新後的內容(外部匯入)
 								?>
 
@@ -75,7 +75,7 @@
 															動物性別： <?php echo    $row->gender ?>
 														</b>
 														<br>
-														動物名稱：<?php echo    $row->nickname ?>
+														動物名稱：<?php echo    $row->name ?>
 														<br>
 														有無晶片：<?php echo    $row->chip ?>
 														<br><br>
@@ -100,11 +100,11 @@
 					<!-- 最新公佈欄  END-->
 
 					<div class="col-md-3 col-sm-12 ">
-						<div class="btn btn-info mb-5 ">
-							<a href="strayForm.html">
+						<a href="strayForm.html">
+							<div class="btn btn-info mb-5 ">
 								<h2 class="text-white">新增遺失通報</h2>
-							</a>
-						</div>
+							</div>
+						</a>
 						<!-- 下半部右側相關連結 -->
 						<div id="rightspace"></div>
 
