@@ -32,7 +32,7 @@
         <div id="navbar"></div>
         <script>
             $(document).ready(function () {
-                $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+                $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
             });
         </script>
         <!-- 匯入NAVBAR  END -->
@@ -190,7 +190,31 @@
         </div>
 
 
+        <script>
+			window.onload = function () {
+				let user = getCookie("passed");
+				if (user != "TRUE") {
+					alert("本功能限定會員使用");
+					document.location.href = "./stray.php";
+				}
 
+			}
+			function getCookie(cname) {   //檢查是否通過
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);  //decodeURIComponent() 方法用於解碼由 encodeURIComponent 方法或者其它類似方法編碼的部分統一資源標識符（URI）。
+				let ca = decodedCookie.split(';');  //split(';'):使用 ; 符號指定分割字串位置
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {  //charAt 可以用來取得字串中特定位置的字元。
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {  //indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+		</script>
 
 
 </body>

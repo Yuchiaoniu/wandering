@@ -73,7 +73,8 @@
 		<!-- Main -->
 		<h1 class="px-auto container ">新增救援資訊</h1>
 		<br><br>
-		<form  enctype="multipart/form-data"  method="post" action="rescueForm.php" style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-6">
+		<form enctype="multipart/form-data" method="post" action="rescueForm.php"
+			style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-6">
 			<div class="form-group">
 				<label for="text">*救援標題</label>
 				<input id="text" name="title" placeholder="EX:發現受傷的小貓需要救援" type="text" class="form-control">
@@ -97,20 +98,20 @@
 			</div>
 
 			<div>
-                <label for="zipcodeSelect">*地址</label>
-                <div id="zipcodeSelect" class="form-row" style="margin-left: 0px; margin-right: 0px;"></div>
-            </div>
+				<label for="zipcodeSelect">*地址</label>
+				<div id="zipcodeSelect" class="form-row" style="margin-left: 0px; margin-right: 0px;"></div>
+			</div>
 
-            <script>
-                $("#zipcodeSelect").twzipcode({
-                    // countySel: "臺北市", // 城市預設值 
-                    // districtSel: "大安區", // 地區預設值
-                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
-                    css: [" city form-control col-6", "town   form-control col-6"], // 自訂 "城市"、"地區" class 名稱
-                    countyName: "city", // 自訂城市 select 標籤的 name 值
-                    districtName: "town" // 自訂地區 select 標籤的 name 值
-                });
-            </script>
+			<script>
+				$("#zipcodeSelect").twzipcode({
+					// countySel: "臺北市", // 城市預設值 
+					// districtSel: "大安區", // 地區預設值
+					zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+					css: [" city form-control col-6", "town   form-control col-6"], // 自訂 "城市"、"地區" class 名稱
+					countyName: "city", // 自訂城市 select 標籤的 name 值
+					districtName: "town" // 自訂地區 select 標籤的 name 值
+				});
+			</script>
 
 
 
@@ -133,23 +134,28 @@
 				<label>*救援需求</label>
 				<div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="helpneed[]" id="checkbox_0" type="checkbox" class="custom-control-input" value="傷病就醫">
+						<input name="helpneed[]" id="checkbox_0" type="checkbox" class="custom-control-input"
+							value="傷病就醫">
 						<label for="checkbox_0" class="custom-control-label">傷病就醫</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="helpneed[]" id="checkbox_1" type="checkbox" class="custom-control-input" value="借誘捕籠">
+						<input name="helpneed[]" id="checkbox_1" type="checkbox" class="custom-control-input"
+							value="借誘捕籠">
 						<label for="checkbox_1" class="custom-control-label">借誘捕籠</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="helpneed[]" id="checkbox_2" type="checkbox" class="custom-control-input" value="尋求誘捕協助">
+						<input name="helpneed[]" id="checkbox_2" type="checkbox" class="custom-control-input"
+							value="尋求誘捕協助">
 						<label for="checkbox_2" class="custom-control-label">尋求誘捕協助</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="helpneed[]" id="checkbox_3" type="checkbox" class="custom-control-input" value="尋求抓紮協助">
+						<input name="helpneed[]" id="checkbox_3" type="checkbox" class="custom-control-input"
+							value="尋求抓紮協助">
 						<label for="checkbox_3" class="custom-control-label">尋求抓紮協助</label>
 					</div>
 					<div class="custom-control custom-checkbox custom-control-inline">
-						<input name="helpneed[]" id="checkbox_4" type="checkbox" class="custom-control-input" value="尋求安置協助">
+						<input name="helpneed[]" id="checkbox_4" type="checkbox" class="custom-control-input"
+							value="尋求安置協助">
 						<label for="checkbox_4" class="custom-control-label">尋求安置協助</label>
 					</div>
 				</div>
@@ -246,7 +252,7 @@
 					<div class="col-12">
 
 						<div id="copyright">
-							&copy; 浪跡天涯. | Design: 
+							&copy; 浪跡天涯. | Design:
 						</div>
 
 					</div>
@@ -256,6 +262,31 @@
 
 
 
+		<script>
+			window.onload = function () {
+				let user = getCookie("passed");
+				if (user != "TRUE") {
+					alert("本功能限定會員使用");
+					document.location.href = "./rescue.php";
+				}
+
+			}
+			function getCookie(cname) {   //檢查是否通過
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);  //decodeURIComponent() 方法用於解碼由 encodeURIComponent 方法或者其它類似方法編碼的部分統一資源標識符（URI）。
+				let ca = decodedCookie.split(';');  //split(';'):使用 ; 符號指定分割字串位置
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {  //charAt 可以用來取得字串中特定位置的字元。
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {  //indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+		</script>
 
 
 
