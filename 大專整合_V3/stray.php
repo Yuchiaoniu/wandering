@@ -44,7 +44,7 @@
 								//// 資料庫連線使用外部匯入
 								require_once("dbtools.inc.php");
 								$link = create_connection();    /// 設定連線的資料庫(外部匯入)
-								$sql = "select * from cofind order BY id desc";  /// 要做的SQL內容 >> 從RESCUE中取得全部資料  
+								$sql = "select * from stray order BY id desc";  /// 要做的SQL內容 >> 從RESCUE中取得全部資料  
 								$result = execute_sql($link, "wandering", $sql);   ///  取得更新後的內容(外部匯入)
 								?>
 
@@ -75,7 +75,7 @@
 															動物性別： <?php echo    $row->gender ?>
 														</b>
 														<br>
-														動物名稱：<?php echo    $row->name ?>
+														動物名稱：<?php echo    $row->nickname ?>
 														<br>
 														有無晶片：<?php echo    $row->chip ?>
 														<br><br>

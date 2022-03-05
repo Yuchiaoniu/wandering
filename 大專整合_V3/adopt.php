@@ -66,14 +66,14 @@
 														<h5 class="card-title"> <?php echo    $row->title ?></h5>
 													</a>
 													<h4>
-														<div class="title">認養案件編號：adopt <?php echo    $row->id ?> </div>
+														<div class="title">認養案件編號：<?php echo    $row->id ?> </div>
 													</h4>
 													<div class="datecreate mb-1">
 														<b class="card-text">
 															動物類別：<?php echo    $row->type ?> <br>
 															動物性別： <?php echo    $row->gender ?> <br>
-															動物名稱： <?php echo    $row->name ?> <br>
-															有無晶片：<?php echo    $row->chip ?> <br>
+															動物名稱： <?php echo    $row->nickname ?> <br>
+															有無剪耳：<?php echo    $row->ear ?> <br>
 															是否結紮： <?php echo    $row->ligation ?> <br><br>
 
 															<a href='adopt_showDetail.php?id=<?php echo 	$row->id ?> '>詳細資料</a></td>

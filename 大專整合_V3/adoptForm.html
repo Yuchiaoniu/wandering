@@ -52,7 +52,45 @@
 			color: #fff !important;
 		}
 	</style>
-
+<script type="text/javascript">
+	function check_data()
+	{
+	  if (document.adoptForm.title.value.length == 0 | document.adoptForm.title.value.length > 255)
+	  {	
+		alert("「標題」一定要填寫或不可以超過 255 個字元");
+		return false;
+	  }
+	  if (document.adoptForm.city.value.length == 0)
+	  {
+		alert("「城市」欄位忘了填哦");
+		return false;
+	  }
+	  
+	  if (document.adoptForm.nickname.value.length > 255 | document.adoptForm.nickname.value == 0)
+	  {
+		alert("「動物名稱」未填寫或者不可以超過 255 個哦");
+		return false;
+	  }
+	  if (document.adoptForm.reason.value.length == 0)
+	  {
+		alert("請填寫送養原因");
+		return false;
+	  }	
+	  if (document.adoptForm.status.value.length == 0)
+	  {
+		alert("請填寫醫療狀態欄位");
+		return false;
+	  }	
+	  if (document.adoptForm.adoptcondition.value.length == 0)
+	  {
+		alert("請填寫領養條件欄位");
+		return false;
+	  }	
+	  
+	  
+	  adoptForm.submit();					
+	}
+  </script>		
 </head>
 
 <body>
@@ -73,19 +111,20 @@
 		<!-- Main -->
 		<h1 class="px-auto container ">新增送養資訊</h1>
 		<br><br>
-		<form style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-6">
+		<form name="adoptForm" action="addadoptForm.php"  method="post" enctype="multipart/form-data"
+		 style="background-color: rgba(220, 220, 220, 0.534)" class="px-auto container col-6">
 			<div class="form-group">
 				<label for="text">*送養標題</label>
-				<input id="text" name="text" placeholder="EX:非常親人的小黑狗，想要有個家！" type="text" class="form-control">
+				<input id="text" name="title" placeholder="EX:非常親人的小黑狗，想要有個家！" type="text" class="form-control">
 			</div>
 
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="select">*動物類別</label>
 					<div>
-						<select id="select" name="select" class="custom-select">
-							<option value="dog">狗</option>
-							<option value="cat">貓</option>
+						<select id="select" name="type" class="custom-select">
+							<option value="狗">狗</option>
+							<option value="貓">貓</option>
 						</select>
 					</div>
 				</div>
@@ -101,7 +140,7 @@
 				<div class="col-md-12" style="padding-top: 0; margin-top: 50px;">
 					<label class="control-label col-form-label">
 						<!-- <span class="text-danger">*</span>可送養縣市範圍 -->
-						*可送養縣市範圍
+						*可送養縣市範圍(不勾選則不限區域)
 					</label>
 					<div class="form-group">
 						<label><input type="checkbox" name="adopt_city[]" value="1"
@@ -150,6 +189,8 @@
 								class="flat-blue">連江縣(馬祖)</label>&nbsp;&nbsp;
 						<label><input type="checkbox" name="adopt_city[]" value="22"
 								class="flat-blue">金門縣</label>&nbsp;&nbsp;
+								<label><input type="checkbox" name="adopt_city[]" value="全區"
+									class="flat-blue" checked style="display:none"></label>&nbsp;&nbsp;
 					</div>
 				</div>
 			</div>
@@ -171,7 +212,7 @@
 						*動物名稱
 					</label>
 					<div class="form-group">
-						<input type="text" class="form-control radius-4" name="nickname" value="" placeholder="EX:小黑">
+						<input type="text" class="form-control radius-4" name="nickname" placeholder="EX:小黑">
 					</div>
 				</div>
 				<div class="col-md-6" style="padding-top: 0; margin-top: 50px;">
@@ -180,8 +221,8 @@
 					</label>
 					<div class="form-group">
 						<select class="form-control radius-4" name="gender" id="gender">
-							<option value="1">男</option>
-							<option value="2">女</option>
+							<option value="男">男</option>
+							<option value="女">女</option>
 
 						</select>
 					</div>
@@ -194,9 +235,9 @@
 						*結紮狀態
 					</label>
 					<div class="form-group">
-						<select class="form-control radius-4" name="fixed_status" id="fixed_status">
-							<option value="1">是</option>
-							<option value="2">否</option>
+						<select class="form-control radius-4" name="ligation" id="fixed_status">
+							<option value="是">是</option>
+							<option value="否">否</option>
 
 						</select>
 					</div>
@@ -206,9 +247,9 @@
 						*剪耳狀態
 					</label>
 					<div class="form-group">
-						<select class="form-control radius-4" name="fixed_cut_ears" id="fixed_cut_ears">
-							<option value="1">是</option>
-							<option value="2">否</option>
+						<select class="form-control radius-4" name="ear" id="fixed_cut_ears">
+							<option value="是">是</option>
+							<option value="否">否</option>
 
 						</select>
 					</div>
@@ -226,29 +267,29 @@
 
 			<div class="form-group">
 				<label for="textarea">*送養說明</label>
-				<textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
+				<textarea id="textarea" name="reason" cols="40" rows="5" class="form-control"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="textarea1">*醫療狀態說明</label>
-				<textarea id="textarea1" name="textarea1" cols="40" rows="5" class="form-control"></textarea>
+				<textarea id="textarea1" name="status" cols="40" rows="5" class="form-control"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="textarea2">*領養條件</label>
-				<textarea id="textarea2" name="textarea2" cols="40" rows="5" class="form-control"></textarea>
+				<textarea id="textarea2" name="adoptcondition" cols="40" rows="5" class="form-control"></textarea>
 			</div>
 
 			<div class="form-group">
 				<label for="textarea2">*照片上傳</label>
 				<div class="form-group row">
-
-					<div class="col-md-3 imgUp" style="max-width: 100%;">
+					<input type="file" name="upload">
+					<!-- <div class="col-md-3 imgUp" style="max-width: 100%;">
 						<div class="imagePreview">
 							<img id="finalImg1" width="100%">
 						</div>
 						<label class="btn btn-green replaceImg" data-sid="1">
 							更改圖檔(封面)
 						</label>
-					</div>
+					</div> -->
 					<!-- <div class="col-md-3 imgUp" style="max-width: 100%;">
 						<div class="imagePreview">
 							<img id="finalImg2" width="100%">
@@ -266,20 +307,20 @@
 						</label>
 					</div> -->
 
-					<div class="col-md-12">
+					<!-- <div class="col-md-12">
 						<span class="mb-0 text-red">※ 小提醒：封面(第一張)可以放上最可愛或最有特徵的照片喔！</span>
-					</div>
+					</div> -->
 
 				</div>
 			</div>
 			<div class="form-group">
-				<button name="submit" type="submit" class="btn btn-primary">確認送出</button>
+				<input class="btn btn-primary" type="button" onclick="check_data()" value="確認送出">
 			</div>
 		</form>
 
 
 		<!-- Footer  -->
-
+		<br/>
 		<div style="background-color: aliceblue;" id="footer-wrapper">
 			<div class="container">
 
@@ -294,6 +335,7 @@
 				</div>
 			</div>
 		</div>
+
 
 
 
@@ -322,7 +364,6 @@
 				return "";
 			}
 		</script>
-
 
 
 
