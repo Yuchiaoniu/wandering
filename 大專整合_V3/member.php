@@ -6,6 +6,7 @@
   //表示尚未登入網站，將使用者導向登入
   if ($passed != "TRUE")
   {
+    
     header("location:login.html");
     exit();
   }
@@ -24,8 +25,28 @@
     //執行 SELECT 陳述式取得使用者資料
     $sql = "SELECT * FROM users Where memberID = $memberID";
     $result = execute_sql($link, "wandering", $sql);
-		
     $row = mysqli_fetch_assoc($result);  
+
+    //執行 SELECT 陳述式取得rescue資料
+    $sqlRESCUE = "SELECT COUNT(memberID) FROM rescue Where memberID = $memberID";
+    $RESCUEresult = execute_sql($link, "wandering", $sqlRESCUE);
+    $rescueCOUNT = mysqli_fetch_assoc($RESCUEresult); 
+
+    //執行 SELECT 陳述式取得adopt資料
+    $sqlADOPT = "SELECT COUNT(memberID) FROM adopt Where memberID = $memberID";
+    $ADOPTresult = execute_sql($link, "wandering", $sqlADOPT);
+    $adoptCOUNT = mysqli_fetch_assoc($ADOPTresult);
+
+    // //執行 SELECT 陳述式取得adopt資料
+    // $sqlADOPT = "SELECT COUNT(memberID) FROM adopt Where memberID = $memberID";
+    // $ADOPTresult = execute_sql($link, "wandering", $sqlADOPT);
+    // $adoptCOUNT = mysqli_fetch_assoc($ADOPTresult);
+
+    //執行 SELECT 陳述式取得cofind資料
+    $sqlCOFIND = "SELECT COUNT(memberID) FROM cofind Where memberID = $memberID";
+    $COFINDresult = execute_sql($link, "wandering", $sqlCOFIND);
+    $cofindCOUNT = mysqli_fetch_assoc($COFINDresult);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,10 +95,10 @@
                         <!-- card -->
                         <div class="member-case">
                             <div class="card-list">
-                                <a href="/rescue_manager.html" class="card-a">
+                                <a href="rescue_manager.php" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            3
+                                        <?php echo $rescueCOUNT{"COUNT(memberID)"} ?>
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">救援</span>
@@ -102,10 +123,10 @@
                             </div>
                             <div class="card-list">
 
-                                <a href="/adopt_manager.html" class="card-a">
+                                <a href="adopt_manager.php" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            1
+                                            <?php echo $adoptCOUNT{"COUNT(memberID)"} ?>
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">送養</span>
@@ -129,10 +150,10 @@
                             </div>
 
                             <div class="card-list">
-                                <a href="/mypet_manager.html" class="card-a">
+                                <a href="mypet_manager.php" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            2
+                                            <?php echo $adoptCOUNT{"COUNT(memberID)"} ?>
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">領養</span>
@@ -157,10 +178,10 @@
                             
                             <div class="card-list">
 
-                                <a href="/stray_manager.html" class="card-a">
+                                <a href="stray_manager.php" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            1
+                                            <?php echo $cofindCOUNT{"COUNT(memberID)"} ?>
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">遺失</span>
