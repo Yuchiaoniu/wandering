@@ -84,5 +84,5 @@ if(isset($_POST['img'])){
   mysqli_close($link);
 
   // 重新導向回rescue.php 檢視頁面
-  header("location:rescue.php");
+  header("location:adopt.php");
 ?>
