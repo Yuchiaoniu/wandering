@@ -16,15 +16,15 @@
 					<div class="carousel-inner" >
 
 						<div class="carousel-item active c1">
-							<img src="./images/doga.jpg">
+							<img src="./images/cute-dog2.jpeg">
 						</div>
 
 						<div class="carousel-item c2">
-							<img src="./images/dogb.jpg">
+							<img src="./images/aaa.jpg">
 						</div>
 
 						<div class="carousel-item c3">
-							<img src="./images/catc.jpg">
+							<img src="./images/bbb.png">
 						</div>
 
 					</div>
