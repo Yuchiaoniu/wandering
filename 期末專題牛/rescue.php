@@ -148,7 +148,9 @@
 														<b class="card-text">
 														動物類別： <?PHP echo    $row->type ?>
 														 <br>
-														動物數量： <?PHP echo    $row->amount?>	 
+														動物數量： <?PHP echo    $row->amount?>	<br>
+														縣市： <?PHP echo    $row->city?><br>
+														鄉鎮區： <?PHP echo    $row->town?> 
 														</b>
 														<br>
 														<a href="rescue_showDetail.php?id=<?PHP echo 	$row->id?>">詳細資訊</a>
