@@ -71,5 +71,5 @@ if(isset($_POST['img'])){
 
   // 重新導向回rescue.php 檢視頁面
   // echo "<script>alert('新增成功')</script>";
-  // header("location:rescue.php");
+  header("location:stray.php");
 ?>
