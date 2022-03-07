@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 05, 2022 at 01:45 PM
+-- Generation Time: Mar 05, 2022 at 04:39 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.16
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adopt` (
   `id` int(1) NOT NULL,
-  `memberID` int(255) NOT NULL,
+  `memberID` int(255) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
   `type` enum('狗','貓') CHARACTER SET utf8mb4 NOT NULL,
   `ear` enum('是','否') NOT NULL,
@@ -42,18 +42,19 @@ CREATE TABLE `adopt` (
   `reason` varchar(30) DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
   `adoptcondition` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-  `adopt_city` varchar(255) CHARACTER SET utf8mb4 NOT NULL
+  `adopt_city` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `adopt`
 --
 
-INSERT INTO `adopt` (`id`, `memberID`, `title`, `type`, `ear`, `ligation`, `nickname`, `gender`, `city`, `town`, `img`, `reason`, `status`, `adoptcondition`, `adopt_city`) VALUES
-(1, 0, '台中市南區，親人親狗的牛牛，在等一個幸褔的家', '狗', '是', '是', '牛牛', '男', '5', '3', 'images/16.png', 'cell phone 0123456789', 'lost at central park this afternoon 20210101', '', ''),
-(2, 0, '聰明的乖乖想要一個愛他的家', '狗', '是', '是', '乖乖', '男', '5', '3', 'images/20.png', 'cell phone 0123456789', 'near central park this afternoon 20210102', '', ''),
-(3, 0, '帥氣的茶凍想要一個溫暖的家', '狗', '是', '否', '茶凍', '男', '5', '3', 'images/30.png', 'cell phone 0123456789', 'near central park this afternoon 20210103', '', ''),
-(5, 0, 's', '貓', '否', '否', 'ds', '女', '新北市', '萬里區', './upload/20220305_192756.jpg', 'fds', 'fds', 'dfs', '4, 12, 全區');
+INSERT INTO `adopt` (`id`, `memberID`, `title`, `type`, `ear`, `ligation`, `nickname`, `gender`, `city`, `town`, `img`, `reason`, `status`, `adoptcondition`, `adopt_city`, `date`) VALUES
+(1, 0, '台中市南區，親人親狗的牛牛，在等一個幸褔的家', '狗', '是', '是', '牛牛', '男', '5', '3', 'images/16.png', 'cell phone 0123456789', 'lost at central park this afternoon 20210101', '', '', NULL),
+(2, 0, '聰明的乖乖想要一個愛他的家', '狗', '是', '是', '乖乖', '男', '5', '3', 'images/20.png', 'cell phone 0123456789', 'near central park this afternoon 20210102', '', '', NULL),
+(3, 0, '帥氣的茶凍想要一個溫暖的家', '狗', '是', '否', '茶凍', '男', '5', '3', 'images/30.png', 'cell phone 0123456789', 'near central park this afternoon 20210103', '', '', NULL),
+(5, 0, 's', '貓', '否', '否', 'ds', '女', '新北市', '萬里區', './upload/20220305_192756.jpg', 'fds', 'fds', 'dfs', '4, 12, 全區', NULL);
 
 -- --------------------------------------------------------
 
@@ -63,10 +64,10 @@ INSERT INTO `adopt` (`id`, `memberID`, `title`, `type`, `ear`, `ligation`, `nick
 
 CREATE TABLE `rescue` (
   `id` int(1) NOT NULL,
-  `memberID` int(255) NOT NULL,
+  `memberID` int(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `type` enum('狗','貓') CHARACTER SET utf8mb4 NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `amount` int(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `town` varchar(255) DEFAULT NULL,
@@ -83,10 +84,14 @@ CREATE TABLE `rescue` (
 -- Dumping data for table `rescue`
 --
 
-INSERT INTO `rescue` (`id`, `memberID`, `title`, `type`, `date`, `amount`, `city`, `town`, `address`, `lost`, `img`, `reason`, `detail`, `need`, `responsibility`) VALUES
-(1, 0, '南投草屯受傷的流浪狗', '狗', '2022-02-20 07:10:38', 1, '5', '2', '227 Sec3 Taiwan Blvd', '', 'images/rescue1.png', 'lost at central park this afternoon 20210101', '', '', ''),
-(2, 0, '2/10晚上在中興大學附近撿到親人品種貓', '狗', '2022-02-27 07:10:38', 1, '5', '3', '306 Sec1 Taiwan Blvd', '', 'images/rescue2.png', 'near central park this afternoon 20210102', '', '', ''),
-(3, 0, '發現田間路旁有一隻狗，前腳好像被車撞', '狗', '2022-02-27 07:10:38', 1, '5', '3', '808 Sec6 Taiwan Blvd', '', 'images/rescue3.png', 'near central park this afternoon 20210103', '', '', '');
+INSERT INTO `rescue` (`id`, `memberID`, `title`, `date`, `type`, `amount`, `city`, `town`, `address`, `lost`, `img`, `reason`, `detail`, `need`, `responsibility`) VALUES
+(1, 0, '南投草屯受傷的流浪狗', '2022-03-05 14:26:02', '狗', 1, '5', '2', '227 Sec3 Taiwan Blvd', '', 'images/rescue1.png', 'lost at central park this afternoon 20210101', '', '', ''),
+(2, 0, '2/10晚上在中興大學附近撿到親人品種貓', '2022-03-05 14:26:02', '狗', 1, '5', '3', '306 Sec1 Taiwan Blvd', '', 'images/rescue2.png', 'near central park this afternoon 20210102', '', '', ''),
+(3, 0, '發現田間路旁有一隻狗，前腳好像被車撞', '2022-03-05 14:26:02', '狗', 1, '5', '3', '808 Sec6 Taiwan Blvd', '', 'images/rescue3.png', 'near central park this afternoon 20210103', '', '', ''),
+(4, NULL, 'aa', '2022-03-05 15:56:12', '狗', 1, '雲林縣', '斗南鎮', '2222', '是', './upload/20220305_235612.jpg', 'ss', 'dd', '借誘捕籠, 尋求誘捕協助', '可提供安置照顧空間, 不適用於通報案件'),
+(5, NULL, '西西西西', '2022-03-05 16:01:34', '狗', 1, '嘉義縣', '番路鄉', 'qwe', '是', './upload/20220306_000134.jpg', 'asd', 'dasd', '借誘捕籠', '可提供安置照顧空間'),
+(6, NULL, '西西西西', '2022-03-05 16:03:35', '狗', 1, '嘉義縣', '', 'qwe', '是', './upload/20220306_000335.jpg', 'asd', 'dasd', '借誘捕籠', '可提供安置照顧空間'),
+(7, NULL, '1236', '2022-03-05 16:36:56', '狗', 1, '臺南市', '中西區', 'asd', '是', './upload/20220306_003656.jpg', 'asd', 'asd', '借誘捕籠, 尋求誘捕協助', '可提供安置照顧空間, 願意負擔救援所需物資');
 
 -- --------------------------------------------------------
 
@@ -96,7 +101,7 @@ INSERT INTO `rescue` (`id`, `memberID`, `title`, `type`, `date`, `amount`, `city
 
 CREATE TABLE `stray` (
   `id` int(255) NOT NULL,
-  `memberID` int(255) NOT NULL,
+  `memberID` int(255) DEFAULT NULL,
   `title` varchar(20) DEFAULT NULL,
   `type` enum('狗','貓') NOT NULL,
   `ear` enum('是','否') NOT NULL,
@@ -111,20 +116,22 @@ CREATE TABLE `stray` (
   `img` varchar(100) DEFAULT NULL,
   `contact` varchar(30) DEFAULT NULL,
   `reason` varchar(100) DEFAULT NULL,
-  `detail` varchar(255) CHARACTER SET utf8mb4 NOT NULL
+  `detail` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `stray`
 --
 
-INSERT INTO `stray` (`id`, `memberID`, `title`, `type`, `ear`, `chip`, `ligation`, `nickname`, `gender`, `city`, `town`, `address`, `appearance`, `img`, `contact`, `reason`, `detail`) VALUES
-(1, 0, '我家愛貓遺失了 請求幫助協尋!!!', '', '是', '是', '', 'Uni(屋逆)', '男', '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/stry1.png', 'cell phone 0123456789', 'lost at central park this afternoon 20210101', ''),
-(2, 0, '黑狗娜娜走失了', '狗', '是', '是', '', '娜娜', '女', '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/stry2.png', 'cell phone 0123456789', 'near central park this afternoon 20210102', ''),
-(3, 0, '家犬走失，感謝金一萬，拜託大家', '狗', '是', '是', '', '吉利', '男', '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/stry3.png', 'cell phone 0123456789', 'near central park this afternoon 20210103', ''),
-(4, 0, 'TEST', '狗', '是', '是', '', 'amy', '男', '5', '3', '808 Sec6 Taiwan Blvd', 'TEST', 'TEST', 'cell phone 0123456789', 'near central park this afternoon 20210103', ''),
-(15, 0, 's', '狗', '是', '是', '是', 'qw', '男', '高雄市', '', 'wqe', 'wqe', './upload/20220305_210904.jpg', 'qwe', NULL, 'wqe'),
-(16, 0, 's', '狗', '是', '是', '是', 'qw', '男', '臺南市', '中西區', 'wqe', 'wqe', './upload/20220305_210947.jpg', 'qwe', NULL, 'wqe');
+INSERT INTO `stray` (`id`, `memberID`, `title`, `type`, `ear`, `chip`, `ligation`, `nickname`, `gender`, `city`, `town`, `address`, `appearance`, `img`, `contact`, `reason`, `detail`, `date`) VALUES
+(1, 0, '我家愛貓遺失了 請求幫助協尋!!!', '', '是', '是', '', 'Uni(屋逆)', '男', '5', '3', '227 Sec3 Taiwan Blvd', 'black and huge', 'images/stry1.png', 'cell phone 0123456789', 'lost at central park this afternoon 20210101', '', NULL),
+(2, 0, '黑狗娜娜走失了', '狗', '是', '是', '', '娜娜', '女', '5', '3', '306 Sec1 Taiwan Blvd', 'black and huge', 'images/stry2.png', 'cell phone 0123456789', 'near central park this afternoon 20210102', '', NULL),
+(3, 0, '家犬走失，感謝金一萬，拜託大家', '狗', '是', '是', '', '吉利', '男', '5', '3', '808 Sec6 Taiwan Blvd', 'black and tiny', 'images/stry3.png', 'cell phone 0123456789', 'near central park this afternoon 20210103', '', NULL),
+(4, 0, 'TEST', '狗', '是', '是', '', 'amy', '男', '5', '3', '808 Sec6 Taiwan Blvd', 'TEST', 'TEST', 'cell phone 0123456789', 'near central park this afternoon 20210103', '', NULL),
+(15, 0, 's', '狗', '是', '是', '是', 'qw', '男', '高雄市', '', 'wqe', 'wqe', './upload/20220305_210904.jpg', 'qwe', NULL, 'wqe', NULL),
+(16, 0, 's', '狗', '是', '是', '是', 'qw', '男', '臺南市', '中西區', 'wqe', 'wqe', './upload/20220305_210947.jpg', 'qwe', NULL, 'wqe', NULL),
+(17, NULL, '$title', '狗', '是', '是', '是', '$nickname', '男', '$city', '$town', '$address', '$appearance', '$img', NULL, '$reason', '$detail', NULL);
 
 -- --------------------------------------------------------
 
@@ -199,13 +206,13 @@ ALTER TABLE `adopt`
 -- AUTO_INCREMENT for table `rescue`
 --
 ALTER TABLE `rescue`
-  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `stray`
 --
 ALTER TABLE `stray`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`

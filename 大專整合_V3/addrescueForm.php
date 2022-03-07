@@ -17,17 +17,17 @@
   $reason = $_POST["reason"];
 	$detail = $_POST["detail"];
 
-//   if(isset($_POST['responsibility'])){
-//     $responsibility = $_POST['responsibility'];
-// }else{
-//     $responsibility = "";#default value
-// }
+  if(isset($_POST['responsibility'])){
+    $responsibility = $_POST['responsibility'];
+}else{
+    $responsibility = "無";#default value
+}
 
-// if(isset($_POST['need'])){
-//   $need = $_POST['need'];
-// }else{
-//   $need = "";#default value
-// }
+if(isset($_POST['need'])){
+  $need = $_POST['need'];
+}else{
+  $need = "無";#default value
+}
 
 // if(isset($_POST['img'])){
 //   $img = $_POST['img'];
@@ -36,11 +36,11 @@
 // }
 
   // 將陣列變成個別字串以解決上傳時array covert to string的問題
-  $r = $_REQUEST['responsibility'];
-  $n = $_REQUEST['need'];
+  // $r = $_REQUEST['responsibility'];
+  // $n = $_REQUEST['need'];
   
-  $nd = implode(', ',$n);
-  $ry = implode(', ',$r);
+  $nd = implode(', ',$need);
+  $ry = implode(', ',$responsibility);
 
 
   //圖片上傳

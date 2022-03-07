@@ -65,14 +65,15 @@
                                     <img src="<?php echo $row['img'] ?>" class="left" style="height: 50%; width:50%;float: left; margin: 10px;">
 
                                     <h2>
-                                        救援案件編號：rescue <?php echo $row['id'] ?> <br>
-                                        建立日期： <?php echo  $row['date'] ?>
+                                    <br><br><br><br><br><br>
+                                        救援案件編號：<?php echo $row['id'] ?> <br><br>
+                                        建立日期： <?php echo  $row['date'] ?><br><br>
                                     </h2>
                                     動物類別：<span class="label label-info"> <?php echo $row['type'] ?> </span> <br><br>
-                                    動物數量： <?php $row['amount'] ?> <br><br>
-                                    縣市鄉鎮區：<?php $row['address'] ?> <br><br>
-                                    救援需求：<br><br>
-                                    通報人可負擔事項：<br>
+                                    動物數量： <?php echo $row['amount'] ?> <br><br>
+                                    縣市鄉鎮區：<?php echo $row['city'] ?><?php echo $row['town'] ?> <br><br>
+                                    救援需求：<?php echo $row['need'] ?><br><br>
+                                    通報人可負擔事項：<?php echo $row['responsibility'] ?><br>
                                 </li>
                             </ul>
                             </section>
@@ -88,7 +89,7 @@
                                 </div>
 
                                 <div id="collapseThree" class="panel-collapse collapse">
-                                    <div class="panel-body"><?php echo $row['context'] ?> </div>
+                                    <div class="panel-body"><?php echo $row['detail'] ?> </div>
                                 </div>
                             </div>
                             <hr>
@@ -101,7 +102,7 @@
                                 </div>
 
                                 <div id="collapsefour" class="panel-collapse collapse">
-                                    <div class="panel-body"><?php echo $row['requirement'] ?> </div>
+                                    <div class="panel-body"><?php echo $row['reason'] ?> </div>
                                 </div>
                             </div>
                         <?php } ?>
