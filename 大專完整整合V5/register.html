@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/register.css">
+
+    <script type="text/javascript">
+        function isEmail(strEmail) {
+            if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/) != -1)
+                return true;
+            else
+                alert("電子信箱格式錯誤");
+                document.myForm.account.value = "";
+        }
+
+        function check_data() {
+            if (document.myForm.account.value.length == 0) {
+                alert("「會員帳號」一定要填寫哦...");
+                return false;
+            }
+            if (document.myForm.account.value.length > 50) {
+                alert("「會員帳號」不可以超過 50 個字元哦...");
+                return false;
+            }
+            if (document.myForm.password.value.length == 0) {
+                alert("「會員密碼」一定要填寫哦...");
+                return false;
+            }
+            if (document.myForm.password.value.length > 10) {
+                alert("「會員密碼」不可以超過 10 個字元哦...");
+                return false;
+            }
+            if (document.myForm.re_password.value.length == 0) {
+                alert("「密碼確認」欄位忘了填哦...");
+                return false;
+            }
+            if (document.myForm.password.value != document.myForm.re_password.value) {
+                alert("「密碼確認」欄位與「會員密碼」欄位一定要相同...");
+                return false;
+            }
+            if (document.myForm.name.value.length == 0) {
+                alert("您一定要留下姓名哦！");
+                return false;
+            }
+            if (document.myForm.birthday.value.length == 0) {
+                alert("「出生日期」欄位忘了填哦...");
+                return false;
+            }
+            myForm.submit();
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar"></div>
+
+        <!-- register -->
+        <div id="main">
+            <div class="regbox">
+                <img src="./images/indexlogo.jpg" class="avatar">
+                <h1>會員註冊</h1>
+                <form action="addmember.php" method="post" name="myForm">
+                    <div>
+                        <p>
+                            會員帳號(信箱)*
+                            <input type="text" name="account" onblur=isEmail(this.value) placeholder="請輸入帳號" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            會員名稱*
+                            <input type="text" name="name" placeholder="請輸入姓名" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            設定密碼*
+                            <input type="password" name="password" placeholder="請輸入密碼" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            確認密碼*
+                            <input type="password" name="re_password" placeholder="請再次輸入密碼" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            會員性別*
+                        <div>
+                            <select name="sex">
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            出生日期*
+                            <input type="date" name="birthday" placeholder="請選擇生日" required>
+                        </p>
+                    </div>
+                    <input type="button" value="註冊" onClick="check_data()">
+                    <a href="login.html" style="font-size: large;">會員登入</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- 匯入Footer  -->
+        <div id="footer">
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+        });
+    </script>
+
+</body>
+
+</html>

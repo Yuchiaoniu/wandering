@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>動物送養管理</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/feed.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/member.css">
+
+</head>
+
+<body>
+
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar"></div>
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="container">
+                <div id="catt">
+                    <h4 class="font-weight-600">遺失協尋管理</h4>
+                </div>
+                <div class="row main-row" id="member-row">
+                    <div class=" col-8 col-12-medium" id="member-int">
+                        <div class="row">
+                            <div class="col-3 col-12-medium">
+                                <img src="/images/logo.jpg" class="avatar" id="photo">
+
+                            </div>
+
+                            <div id="cat">
+                                <h4 class="font-weight-600">遺失協尋管理</h4>
+                            </div>
+
+                        </div>
+                        <!-- <div class="card" id="dog">
+                            <div class="card-body">
+                                <a href="/stray_Detail_1.html">
+                                    <h5 class="card-title" id="word">我家愛貓遺失了 請求幫助協尋!!!</h5>
+                                </a>
+                                <h6 class="card-subtitle mb-2 text-muted" id="day">追蹤日期：2022-02-19</h6>
+                                <h6 class="card-subtitle mb-2 text-muted" id="kind">追蹤類別：遺失協尋</h6>
+
+                            </div>
+                        </div> -->
+                        <br>
+                        <div class="card" id="dog">
+                            <div class="card-body">
+                                <a href="/stray_Detail_2.html">
+                                    <h5 class="card-title" id="word">黑狗娜娜走失了</h5>
+                                </a>
+                                <h6 class="card-subtitle mb-2 text-muted" id="day">追蹤日期：2022-02-19</h6>
+                                <h6 class="card-subtitle mb-2 text-muted" id="kind">追蹤類別：遺失協尋</h6>
+
+                            </div>
+                        </div>
+                        <br>
+
+                        
+                        <br>
+
+
+
+                    </div>
+
+                    <!-- menu -->
+                    <div class="col-4 col-12-medium" id="menu-int">
+                        <div id="memberMenu">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 匯入Footer  -->
+        <div id="footer">
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.html");//以ID找DOM，更改裡面的html
+            $("#banner123").load("myscript/banner.html");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+            $("#memberMenu").load("myscript/memberMenu.html");//以ID找DOM，更改裡面的html
+        });
+    </script>
+
+</body>
+
+</html>
