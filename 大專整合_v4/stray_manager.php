@@ -65,13 +65,13 @@
                 </div>
                 <div class="row main-row" id="member-row">
                     <div class=" col-8 col-12-medium" id="member-int" style="padding-left: 0px;">
-                        <div class="row">
+                        <div class="row" style="margin-left: 0px;">
                             <div class="col-5">
                                 <img src="<?php echo $row{"img"} ?>"  class="avatar"  id="photo" style="float: right;">
                             
                             </div>
                        
-                            <div id="cat"  class="col-6" style="padding-left: 0px;">
+                            <div id="cat"  class="col-6" style="padding-left: 0px; padding-top: 45px; margin-left: 10px;">
                                 <h4 class="font-weight-600">遺失協尋管理</h4> 
                              </div>
                              
@@ -81,7 +81,7 @@
                             while ($row2 = mysqli_fetch_object($result2)) { 
                         ?>
 
-                        <div class="card" id="dog">
+                        <div class="card" id="dog" style="margin-left: 10%;">
                             <div class="card-body">
                                 <a href="stary_showDetail.php?id=<?PHP echo 	$row2->id?>">
                                     <h5 class="card-title" id="word"><?php echo    $row2->title ?></h5>
