@@ -150,7 +150,7 @@
                                     <div class="col-md-12">手機</div>
                                     <div class="form-row col-md-12"
                                         style="padding-left: 15px; padding-right: 15px; margin-left: 0px; margin-right: 0px;">
-                                        <input style="margin-bottom: 5%;" class="form-control col-md-6" type="text"
+                                        <input style="margin-bottom: 5%;" class="form-control col-md-6" type="tel"
                                             value="<?php echo $row["cellphone"] ?>" name="cellphone">
                                         <select name="hide" style="margin-bottom: 5%;" class="form-control col-md-6">
                                             <option <?php  if ($row["hide"] == '隱藏') echo "selected"; ?> value="隱藏">隱藏</option>

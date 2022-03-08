@@ -18,6 +18,7 @@
     require_once("dbtools.inc.php");
 		
     $memberID = $_COOKIE["memberID"];
+    $adoptID = $_COOKIE["memberID"];
 		
     //建立資料連接
     $link = create_connection();
@@ -28,7 +29,7 @@
     $row = mysqli_fetch_assoc($result);  
 
     //執行 SELECT 陳述式取得adopt資料
-    $sql2 = "SELECT * FROM adopt Where memberID = $memberID order BY id desc";
+    $sql2 = "SELECT * FROM adopt Where adoptID = $adoptID order BY id desc";
     $result2 = execute_sql($link, "wandering", $sql2); 
 
 ?>

@@ -18,6 +18,7 @@
     require_once("dbtools.inc.php");
 		
     $memberID = $_COOKIE["memberID"];
+    $adoptID = $_COOKIE["memberID"];
 		
     //建立資料連接
     $link = create_connection();
@@ -37,10 +38,10 @@
     $ADOPTresult = execute_sql($link, "wandering", $sqlADOPT);
     $adoptCOUNT = mysqli_fetch_assoc($ADOPTresult);
 
-    // //執行 SELECT 陳述式取得adopt資料
-    // $sqlADOPT = "SELECT COUNT(memberID) FROM adopt Where memberID = $memberID";
-    // $ADOPTresult = execute_sql($link, "wandering", $sqlADOPT);
-    // $adoptCOUNT = mysqli_fetch_assoc($ADOPTresult);
+    //執行 SELECT 陳述式取得adopt資料(mypet領養)
+    $sqlMYPET = "SELECT COUNT(adoptID) FROM adopt Where adoptID = $adoptID";
+    $MYPETresult = execute_sql($link, "wandering", $sqlMYPET);
+    $mypetCOUNT = mysqli_fetch_assoc($MYPETresult);
 
     //執行 SELECT 陳述式取得stray資料
     $sqlSTRAY = "SELECT COUNT(memberID) FROM stray Where memberID = $memberID";
@@ -153,7 +154,7 @@
                                 <a href="mypet_manager.php" class="card-a">
                                     <div class="card-box">
                                         <div class="number">
-                                            <?php echo $adoptCOUNT["COUNT(memberID)"] ?>
+                                            <?php echo $mypetCOUNT["COUNT(adoptID)"] ?>
                                         </div>
                                         <div class="title">
                                             <span class="sub-title">領養</span>
