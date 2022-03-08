@@ -24,50 +24,46 @@
 
 
     <script type="text/javascript">
-        function check_data()
-        {
-          if (document.strayForm.title.value.length == 0 | document.strayForm.title.value.length > 255)
-          {	
-            alert("「標題」一定要填寫或不可以超過 255 個字元");
-            return false;
-          }
-          if (document.strayForm.city.value.length == 0)
-          {
-            alert("「城市」欄位忘了填哦");
-            return false;
-          }
-          
-          if (document.strayForm.nickname.value.length > 255 | document.strayForm.nickname.value == 0)
-          {
-            alert("「動物名稱」未填寫或者不可以超過 255 個哦");
-            return false;
-          }
-          if (document.strayForm.address.value.length == 0)
-          {
-            alert("請填寫地址欄位");
-            return false;
-          }	
-          if (document.strayForm.appearance.value.length == 0)
-          {
-            alert("請填寫外觀特徵");
-            return false;
-          }	
-          if (document.strayForm.detail.value.length == 0)
-          {
-            alert("請填寫詳細過程欄位");
-            return false;
-          }	
-          
-          if (document.strayForm.contact.value.length == 0)
-          {
-            alert("請填寫聯繫方式欄位");
-            return false;
-          }	
-          
-          
-          strayForm.submit();					
+        function check_data() {
+            if (document.strayForm.title.value.length == 0 | document.strayForm.title.value.length > 255) {
+                alert("「標題」一定要填寫或不可以超過 255 個字元");
+                return false;
+            }
+            if (document.strayForm.city.value.length == 0) {
+                alert("「城市」欄位忘了填哦");
+                return false;
+            }
+
+            if (document.strayForm.nickname.value.length > 255 | document.strayForm.nickname.value == 0) {
+                alert("「動物名稱」未填寫或者不可以超過 255 個哦");
+                return false;
+            }
+            if (document.strayForm.address.value.length == 0) {
+                alert("請填寫地址欄位");
+                return false;
+            }
+            if (document.strayForm.appearance.value.length == 0) {
+                alert("請填寫外觀特徵");
+                return false;
+            }
+            if (document.strayForm.detail.value.length == 0) {
+                alert("請填寫詳細過程欄位");
+                return false;
+            }
+
+            if (document.strayForm.contact.value.length == 0) {
+                alert("請填寫聯繫方式欄位");
+                return false;
+            }
+            if (document.adoptForm.upload.value.length == 0) {
+                alert("請上傳一張照片哦");
+                return false;
+            }
+
+
+            strayForm.submit();
         }
-      </script>		
+    </script>
 
 </head>
 
@@ -90,8 +86,8 @@
         <h1 class="px-auto container ">新增遺失通報</h1>
         <br><br>
 
-        <form name="strayForm" action="addstrayForm.php"  method="post" enctype="multipart/form-data"
-        style="background-color: rgba(220, 220, 220, 0.534)" class=" container col-md-6 ">
+        <form name="strayForm" action="addstrayForm.php" method="post" enctype="multipart/form-data"
+            style="background-color: rgba(220, 220, 220, 0.534)" class=" container col-md-6 ">
             <div class="form-group">
                 <label for="text">*遺失標題</label>
                 <input id="text" name="title" placeholder="EX:我家寶貝走失了 拜託幫忙留意" type="text" class="form-control">
@@ -129,9 +125,9 @@
 
             <div class="form-row ">
 
-                
 
-                <div class="col-md-4 col-6" >
+
+                <div class="col-md-4 col-6">
                     <label for="select3">*動物性別</label>
                     <div>
                         <select id="select3" name="gender" class="custom-select">
@@ -142,8 +138,8 @@
                 </div>
 
 
-                
-             
+
+
                 <div class="col-md-4 col-6">
                     <label for="select5">*是否結紮</label>
                     <div>
@@ -220,7 +216,7 @@
 
 
         <!-- Footer  -->
-        <br/>
+        <br />
         <div style="background-color: aliceblue;" id="footer-wrapper">
             <div class="container">
 
@@ -228,7 +224,7 @@
                     <div class="col-12">
 
                         <div id="copyright">
-                            &copy; 浪跡天涯. | Design: 
+                            &copy; 浪跡天涯. | Design:
                         </div>
 
                     </div>
@@ -237,30 +233,30 @@
         </div>
 
         <script>
-			window.onload = function () {
-				let user = getCookie("passed");
-				if (user != "TRUE") {
-					alert("本功能限定會員使用");
-					document.location.href = "./adopt.php";
-				}
+            window.onload = function () {
+                let user = getCookie("passed");
+                if (user != "TRUE") {
+                    alert("本功能限定會員使用");
+                    document.location.href = "./adopt.php";
+                }
 
-			}
-			function getCookie(cname) {   //檢查是否通過
-				let name = cname + "=";
-				let decodedCookie = decodeURIComponent(document.cookie);  //decodeURIComponent() 方法用於解碼由 encodeURIComponent 方法或者其它類似方法編碼的部分統一資源標識符（URI）。
-				let ca = decodedCookie.split(';');  //split(';'):使用 ; 符號指定分割字串位置
-				for (let i = 0; i < ca.length; i++) {
-					let c = ca[i];
-					while (c.charAt(0) == ' ') {  //charAt 可以用來取得字串中特定位置的字元。
-						c = c.substring(1);
-					}
-					if (c.indexOf(name) == 0) {  //indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1
-						return c.substring(name.length, c.length);
-					}
-				}
-				return "";
-			}
-		</script>
+            }
+            function getCookie(cname) {   //檢查是否通過
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);  //decodeURIComponent() 方法用於解碼由 encodeURIComponent 方法或者其它類似方法編碼的部分統一資源標識符（URI）。
+                let ca = decodedCookie.split(';');  //split(';'):使用 ; 符號指定分割字串位置
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {  //charAt 可以用來取得字串中特定位置的字元。
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {  //indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+        </script>
 
 
 

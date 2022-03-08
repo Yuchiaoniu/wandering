@@ -64,6 +64,14 @@
             }
             myForm.submit();
         }
+
+        function check_data2() {
+            if (document.myFormImg.upload.value.length == 0) {
+                alert("尚未選擇檔案哦...");
+                return false;
+            }
+            myFormImg.submit();
+        }
     </script>
 
 </head>
@@ -88,10 +96,15 @@
 
                         <div class='col-md-12'>
 
-                            <form class="input" name="myForm" enctype="multipart/form-data" method="post" action="update.php">
+                            <form class="input" name="myFormImg" enctype="multipart/form-data" method="post" action="upimg.php">
                                 <img style="margin-bottom: 5%;" src="<?php echo $row["img"] ?>" class="avatar"><br />
                                 <input type="file" name="upload" class="btn btn-primary" style="margin-bottom: 5%;">
 
+                                <input type="button" value="上傳頭像" onClick="check_data2()" class="btn btn-primary" style="margin-bottom: 5%;">
+                            </form>
+
+
+                            <form class="input" name="myForm" method="post" action="update.php">
                                 <div class="container">
                                     <div class="row"
                                         style=" display: flex; justify-content: center; align-items: center;">

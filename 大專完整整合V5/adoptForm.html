@@ -86,6 +86,11 @@
 		alert("請填寫領養條件欄位");
 		return false;
 	  }	
+	  if (document.adoptForm.upload.value.length == 0)
+	  {
+		alert("請上傳一張照片哦");
+		return false;
+	  }	
 	  
 	  
 	  adoptForm.submit();					
