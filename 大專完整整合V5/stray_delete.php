@@ -19,10 +19,10 @@ require_once("dbtools.inc.php");
 //建立資料連接
 $link = create_connection();
 // //執行SQL查詢
-$sql = "DELETE FROM rescue Where id = $id";
+$sql = "DELETE FROM stray Where id = $id";
 $result = execute_sql($link, "wandering", $sql);
 
 
-header("location:rescue_manager.php");
+header("location:stray_manager.php");
 
 ?>

@@ -45,6 +45,32 @@ else {
         <link rel="stylesheet" type="text/css" href="assets/css/feed.css">
         <link rel="stylesheet" type="text/css" href="assets/css/member.css">
 
+        <script type="text/javascript">
+            function del() {
+                var msg = "是否刪除確認?";
+                // // msg = confirm(msg);
+
+                if (confirm(msg) == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // if (confirm(msg) == false) {
+            //     console.log(i);
+            //     return false;
+            // } else {
+            //     // true
+            //     // console.log(i);
+            //     myForm.submit();
+            // }
+            
+        </script>
+
+
+
+
     </head>
 
     <body>
@@ -89,14 +115,18 @@ else {
 
                                     </div>
                                 </div>
-                                    <a href="rescueForm_Edit.php?id=<?PHP echo     $row2->id ?>">
-                                         <input class="btn btn-primary" type="button" value="修改個案">
-                                    </a>
-                              
-                                    <a href="rescue_delete.php?id=<?PHP echo     $row2->id ?>">
-                                         <input class="btn btn-primary" type="button" value="刪除個案">
-                                    </a>
-                             
+                                <!-- <a href="rescueForm_Edit.php?id=<?PHP echo     $row2->id ?>">
+                                    <input class="btn btn-primary" type="button" value="修改個案">
+                                </a> -->
+
+                                <form method="post" action="rescue_delete.php">
+
+                                    <input style="display: none;" type="text" name="rescueID" value="<?PHP echo     $row2->id ?>">
+
+                                    <input class="btn btn-primary" onclick="return del()" type="submit" value="刪除個案">
+
+                                </form>
+
 
                                 <br>
 
