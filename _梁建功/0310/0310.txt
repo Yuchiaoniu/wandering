@@ -1,0 +1,7 @@
+php.ini
+seach.html
+seach.php
+addmember.php
+checkpwd.php
+repassword.html
+
