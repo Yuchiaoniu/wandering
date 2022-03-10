@@ -146,7 +146,7 @@
 
         $(document).ready(function() {
             $("#navbar").load("myscript/navbar.php"); //以ID找DOM，更改裡面的html
-            $("#research").load("myscript/research.html"); //以ID找DOM，更改裡面的html
+            // $("#research").load("myscript/research.html"); //以ID找DOM，更改裡面的html
             $("#rightspace").load("myscript/rightspace.html"); //以ID找DOM，更改裡面的html    右側連結
             $("#footer").load("myscript/footer.html"); //以ID找DOM，更改裡面的html
         });

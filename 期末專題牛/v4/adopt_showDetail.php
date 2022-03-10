@@ -18,6 +18,23 @@
 
     <script src="assets/js/jquery.min.js"></script>
 
+    <script type="text/javascript">
+        function check_data(i) {
+            var msg = "確認?";
+            // msg = confirm(msg);
+            
+            if (confirm(msg) == false) {
+                console.log(i);
+                return false;
+            }else{
+                // true
+                console.log(i);
+                myForm.submit();
+            }
+        }
+
+    </script>
+
 </head>
 
 <body>
@@ -57,7 +74,7 @@
                         $sql = "SELECT * FROM adopt WHERE id = $id";
                         $result = execute_sql($link, "wandering", $sql);
                         ?>
-                        <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
                             <h2><?php
                                 echo $row['title'] ?>
@@ -76,10 +93,14 @@
                                     </span> <br><br>
                                     動物名稱：<?php echo $row['nickname'] ?> <br><br>
                                     縣市鄉鎮區：<?php echo $row['city'] ?><?php echo $row['town'] ?> <br><br>
-                                    動物性別： <?php echo $row['gender'] ?><br><br>
+                                    動物性別：<?php echo $row['gender'] ?><br><br>
                                     剪耳狀態：<?php echo $row['ear'] ?><br><br>
-
                                     <br>
+                                    <form class="input" name="myForm" method="post" action="adopting.php">
+                                        <input name="test" type="text" value="<?php echo $row['id'] ?>" style="display: none;">
+                                        <input name="btn" type="button" onclick="check_data(<?php echo $row['id'] ?>)" value="我要認養" class="btn btn-primary"
+                                        style="margin-bottom: 5%;">
+                                    </form>
                                 </li>
                             </ul>
                             </section>

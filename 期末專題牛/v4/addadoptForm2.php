@@ -195,7 +195,7 @@
 						<label><input type="checkbox" name="adopt_city[]" value="22"
 								class="flat-blue">金門縣</label>&nbsp;&nbsp;
 								<label><input type="checkbox" name="adopt_city[]" value="全區"
-									class="flat-blue" checked>全區</label>&nbsp;&nbsp;
+									class="flat-blue" checked style="display:none"></label>&nbsp;&nbsp;
 					</div>
 				</div>
 			</div>

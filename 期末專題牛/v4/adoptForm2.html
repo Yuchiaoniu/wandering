@@ -86,11 +86,6 @@
 		alert("請填寫領養條件欄位");
 		return false;
 	  }	
-	  if (document.adoptForm.upload.value.length == 0)
-	  {
-		alert("請上傳一張照片哦");
-		return false;
-	  }	
 	  
 	  
 	  adoptForm.submit();					
@@ -195,7 +190,7 @@
 						<label><input type="checkbox" name="adopt_city[]" value="22"
 								class="flat-blue">金門縣</label>&nbsp;&nbsp;
 								<label><input type="checkbox" name="adopt_city[]" value="全區"
-									class="flat-blue" checked>全區</label>&nbsp;&nbsp;
+									class="flat-blue" checked style="display:none"></label>&nbsp;&nbsp;
 					</div>
 				</div>
 			</div>
@@ -349,7 +344,7 @@
 				let user = getCookie("passed");
 				if (user != "TRUE") {
 					alert("本功能限定會員使用");
-					document.location.href = "./login.html";
+					document.location.href = "./adopt.php";
 				}
 
 			}
