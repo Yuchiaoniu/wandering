@@ -104,28 +104,29 @@ else {
                             ?>
 
                                 <div class="card" id="dog" style="margin-left: 10%;">
-                                    <div class="card-body">
-                                        <a href="adopt_showDetail.php?id=<?PHP echo     $row2->id ?>">
-                                            <h5 class="card-title" id="word"><?php echo    $row2->title ?></h5>
-                                        </a>
-                                        <h6 class="card-subtitle mb-2 text-muted" id="day">新增日期：<?php echo    $row2->date ?></h6>
-                                        <h6 class="card-subtitle mb-2 text-muted" id="kind">類別：動物認養</h6>
+                                    <div class="row">
+                                        <div class="col-9">
 
+                                            <a href="adopt_showDetail.php?id=<?PHP echo     $row2->id ?>">
+                                                <h5 class="card-title" id="word"><?php echo    $row2->title ?></h5>
+                                            </a>
+                                            <h6 class="card-subtitle mb-2 text-muted" id="day">新增日期：<?php echo    $row2->date ?></h6>
+                                        </div>
+                                        <div class="col-3" style="margin-top: 12pt">
+                                            <form method="post" action="editadoptForm.php">
+                                                <input style="display: none;" type="text" name="rescueID" value="<?php echo     $row2->id ?>">
+                                                <input name="修改" class="btn btn-outline-dark" onclick="return edit()" type="submit" value="修改個案">
+                                            </form>
+
+
+                                            <form method="post" action="adopt_delete.php" style="margin-top: 1pt">
+                                                <input style="display: none;" type="text" name="rescueID" value="<?php echo     $row2->id ?>">
+                                                <input name="刪除" class="btn btn-outline-dark" onclick="return del()" type="submit" value="刪除個案">
+                                            </form>
+
+                                        </div>
                                     </div>
                                 </div>
-
-
-                                <form method="post" action="editadoptForm.php">
-                                    <input style="display: none;" type="text" name="rescueID" value="<?php echo     $row2->id ?>">
-                                    <input name="修改" class="btn btn-primary" onclick="return edit()" type="submit" value="修改個案">
-                                </form>
-
-
-                                <form method="post" action="adopt_delete.php">
-                                    <input style="display: none;" type="text" name="rescueID" value="<?php echo     $row2->id ?>">
-                                    <input name="刪除" class="btn btn-primary" onclick="return del()" type="submit" value="刪除個案">
-                                </form>
-
                                 <br>
 
                             <?php
