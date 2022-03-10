@@ -12,7 +12,7 @@
             <a href="./edit.php" title="會員基本資料">會員基本資料</a>
         </li>
         <li>
-            <a href="./rescue_manager.php" title="會員基本資料">流浪救援管理</a>
+            <a href="./rescue_manager.php?id=6" title="會員基本資料">流浪救援管理</a>
         </li>
         <li>
             <a href="./adopt_manager.php" title="會員基本資料">動物送養管理</a>
