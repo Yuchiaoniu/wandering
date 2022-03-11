@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員忘記密碼</title>
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/9b156b54f7.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+
+    <script type="text/javascript">
+        function isEmail(strEmail) {
+            if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/) != -1)
+                return true;
+            else
+                alert("電子信箱格式錯誤");
+            document.myForm.account.value = "";
+        }
+    </script>
+    
+</head>
+
+<body>
+
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar">
+        </div>
+
+        <!-- login -->
+        <div id="main">
+            <div class="loginbox">
+                <img src="./images/indexlogo.jpg" class="avatar">
+                <h1>忘記密碼</h1>
+                <p>請輸入您的註冊信箱後，點選 [確認] 鈕。</p>
+                <form method="post" action="search.php"  name="myForm">
+                    <div>
+                        <p>
+                            <i class="fa fa-envelope"></i>
+                            帳號(信箱):
+                            <input type="text" name="account" onblur=isEmail(this.value) placeholder="請輸入註冊帳號(信箱)" required>
+                        </p>
+                    </div>
+                    <!-- <div>
+                        <p>
+                            <i class="fa fa-user"></i>
+                            姓名:
+                            <input type="text" name="name" placeholder="請輸入註冊姓名" required>
+                        </p>
+                    </div> -->
+                    <!-- <div>
+                        <p>
+                            <i class="fa fa-search"></i>
+                            顯示方式：
+                        </p>
+                        <select name="show_method">
+                            <option value="網頁顯示">網頁顯示</option>
+                            <option value="E-mail 傳送">E-mail 傳送</option>
+                        </select>
+                    </div> -->
+                    <input type="submit" value="確認">
+                    <a href="login.html" style="font-size: large;">會員登入</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- 匯入Footer  -->
+        <div id="footer">
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+            $("#footer").load("myscript/footer.html");//以ID找DOM，更改裡面的html
+        });
+    </script>
+
+</body>
+
+</html>
