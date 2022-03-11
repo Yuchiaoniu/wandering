@@ -55,6 +55,18 @@ if ($upload['error'] == 0) {
         $upload['tmp_name'],
         './upload/' . createFilename($upload['name'], $index)
     );
+
+    // 將資料夾路徑回寫給變數  新增到資料庫
+    $img =  './upload/' . createFilename($upload['name'], $index);
+    echo $img;
+}else{
+    $sql = "SELECT img FROM rescue Where id = $id";
+    $result = execute_sql($link, "wandering", $sql);
+		
+    $row = mysqli_fetch_assoc($result); 
+
+    $img = $row["img"];
+    echo $img;
 }
 
 ////  更改檔名函數
@@ -71,8 +83,7 @@ function createFilename($source, $index)
     return $filename;
 }
 
-// 將資料夾路徑回寫給變數  新增到資料庫
-$img =  './upload/' . createFilename($upload['name'], $index);
+
 
 // $img = "upload/{$upload['name']}" ;
 
@@ -104,18 +115,20 @@ address = '$address' , lost = '$lost' , reason = '$reason' , detail = '$detail' 
 need = '$nd' , responsibility = '$ry' ,  img = '$img' 
 where id = '$id'  ";
 
-// $sql = "UPDATE rescue (memberID, title, type, amount, city, town, address, lost, need, reason, detail, img, responsibility) 
-// 		VALUES ('$memberID','$title', '$type', '$amount', '$city', '$town', '$address', 
-//           '$lost', '$nd', '$reason', 
-// 		        '$detail','$img', '$ry');"; 
+// // $sql = "UPDATE rescue (memberID, title, type, amount, city, town, address, lost, need, reason, detail, img, responsibility) 
+// // 		VALUES ('$memberID','$title', '$type', '$amount', '$city', '$town', '$address', 
+// //           '$lost', '$nd', '$reason', 
+// // 		        '$detail','$img', '$ry');"; 
 
 $result = execute_sql($link, "wandering", $sql);
 
+//釋放資源及關閉資料連接
+mysqli_free_result($result);
 //關閉資料連接	
 mysqli_close($link);
 
 
-// 重新導向回rescue.php 檢視頁面
+// // 重新導向回rescue.php 檢視頁面
 
 header("location:rescue_manager.php");
 
