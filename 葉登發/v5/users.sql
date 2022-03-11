@@ -2,10 +2,10 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 11, 2022 at 06:10 AM
--- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- 主機： localhost:3306
+-- 產生時間： 2022-03-11 07:14:12
+-- 伺服器版本： 5.7.24
+-- PHP 版本： 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wandering`
+-- 資料庫： `wandering`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- 資料表結構 `users`
 --
 
 CREATE TABLE `users` (
@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- 傾印資料表的資料 `users`
 --
 
 INSERT INTO `users` (`memberID`, `account`, `password`, `name`, `sex`, `birthday`, `cellphone`, `hide`, `city`, `town`, `img`) VALUES
@@ -57,27 +57,28 @@ INSERT INTO `users` (`memberID`, `account`, `password`, `name`, `sex`, `birthday
 (17, 'guest3@mail.com', '202cb962ac59075b964b07152d234b70', 'G3', '男', '2022-03-11', NULL, NULL, NULL, NULL, './images/indexlogo.jpg'),
 (18, 'apple1234@mail.com', 'e10adc3949ba59abbe56e057f20f883e', '路易吉', '男', '1993-10-11', '0912345678', '隱藏', '', '', './upload/20220311_0928480.png'),
 (20, 'JJJ@mail.com', '202cb962ac59075b964b07152d234b70', 'QQQ', '男', '2022-03-01', NULL, NULL, NULL, NULL, './images/indexlogo.jpg'),
-(22, 'mayr81214@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', '葉登發', '男', '2022-03-17', NULL, NULL, NULL, NULL, './images/indexlogo.jpg');
+(22, 'mayr81214@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', '葉登發', '男', '2022-03-17', NULL, NULL, NULL, NULL, './images/indexlogo.jpg'),
+(23, 'ps19431942@yahoo.com.tw', '2e65f2f2fdaf6c699b223c61b1b5ab89', 'JJJ', '男', '2022-03-03', NULL, NULL, NULL, NULL, './images/indexlogo.jpg');
 
 --
--- Indexes for dumped tables
+-- 已傾印資料表的索引
 --
 
 --
--- Indexes for table `users`
+-- 資料表索引 `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`memberID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
