@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>浪跡天涯</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
+    <script src="assets/js/jquery.twzipcode.min.js"></script>
+
+
+    <script type="text/javascript">
+        function check_data() {
+            if (document.strayForm.title.value.length == 0 | document.strayForm.title.value.length > 255) {
+                alert("「標題」一定要填寫或不可以超過 255 個字元");
+                return false;
+            }
+            if (document.strayForm.city.value.length == 0) {
+                alert("「城市」欄位忘了填哦");
+                return false;
+            }
+
+            if (document.strayForm.nickname.value.length > 255 | document.strayForm.nickname.value == 0) {
+                alert("「動物名稱」未填寫或者不可以超過 255 個哦");
+                return false;
+            }
+            if (document.strayForm.address.value.length == 0) {
+                alert("請填寫地址欄位");
+                return false;
+            }
+            if (document.strayForm.appearance.value.length == 0) {
+                alert("請填寫外觀特徵");
+                return false;
+            }
+            if (document.strayForm.detail.value.length == 0) {
+                alert("請填寫詳細過程欄位");
+                return false;
+            }
+
+            if (document.strayForm.contact.value.length == 0) {
+                alert("請填寫聯繫方式欄位");
+                return false;
+            }
+            
+            if (document.strayForm.upload.value.length == 0) {
+                alert("請上傳一張照片");
+                return false;
+            }
+
+
+            strayForm.submit();
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="page-wrapper">
+
+        <!-- 匯入NAVBAR  -->
+        <div id="navbar"></div>
+        <script>
+            $(document).ready(function () {
+                $("#navbar").load("myscript/navbar.php");//以ID找DOM，更改裡面的html
+            });
+        </script>
+        <!-- 匯入NAVBAR  END -->
+
+
+
+
+        <!-- Main -->
+        <h1 class="px-auto container ">新增遺失通報</h1>
+        <br><br>
+
+        <form name="strayForm" action="addstrayForm.php" method="post" enctype="multipart/form-data"
+            style="background-color: rgba(220, 220, 220, 0.534)" class=" container col-md-6 ">
+            <div class="form-group">
+                <label for="text">*遺失標題</label>
+                <input id="text" name="title" placeholder="EX:我家寶貝走失了 拜託幫忙留意" type="text" class="form-control">
+            </div>
+
+            <div class="form-row ">
+
+                <div class="col-md-4 col-6">
+                    <label for="select">*動物類別</label>
+                    <select id="select" name="type" class="custom-select">
+                        <option value="狗">狗</option>
+                        <option value="貓">貓</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-4 col-6">
+                    <label for="text1">*動物名稱</label>
+                    <input id="text1" name="nickname" placeholder="EX:小白" type="text" class="form-control">
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    <label for="select1">*有無晶片</label>
+                    <div>
+                        <select id="select1" name="chip" class="custom-select">
+                            <option value="是">是</option>
+                            <option value="否">否</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form-row ">
+
+
+
+                <div class="col-md-4 col-6">
+                    <label for="select3">*動物性別</label>
+                    <div>
+                        <select id="select3" name="gender" class="custom-select">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-4 col-6">
+                    <label for="select5">*是否結紮</label>
+                    <div>
+                        <select id="select5" name="ligation" class="custom-select">
+                            <option value="是">是</option>
+                            <option value="否">否</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-6">
+                    <label for="select4">*剪耳狀態</label>
+                    <div>
+                        <select id="select4" name="ear" class="custom-select">
+                            <option value="是">是</option>
+                            <option value="否">否</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <label for="zipcodeSelect">*地址 </label>
+                <div id="zipcodeSelect" class="form-row" style="margin-left: 0px; margin-right: 0px;"></div>
+            </div>
+
+            <script>
+                $("#zipcodeSelect").twzipcode({
+                    // countySel: "臺北市", // 城市預設值 
+                    // districtSel: "大安區", // 地區預設值
+                    zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
+                    css: [" city form-control col-6", "town col-6  form-control"], // 自訂 "城市"、"地區" class 名稱
+                    countyName: "city", // 自訂城市 select 標籤的 name 值
+                    districtName: "town" // 自訂地區 select 標籤的 name 值
+                });
+            </script>
+
+
+            <div class="form-group">
+                <label for="text3">街道地址</label>
+                <input id="text3" name="address" type="text" class="form-control">
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+                <label for="textarea">*特徵描述</label>
+                <textarea id="textarea" name="appearance" cols="40" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="textarea1">*遺失經過</label>
+                <textarea id="textarea1" name="detail" cols="40" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="textarea2">聯繫方式</label>
+                <textarea id="textarea2" name="contact" cols="40" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="text2">項目圖片</label>
+                <input id="text2" name="upload" type="file" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" onclick="check_data()" value="確認送出">
+            </div>
+        </form>
+
+
+
+
+
+
+        <!-- Footer  -->
+        <br />
+        <div style="background-color: aliceblue;" id="footer-wrapper">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <div id="copyright">
+                            &copy; 浪跡天涯. | Design:
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            window.onload = function () {
+                let user = getCookie("passed");
+                if (user != "TRUE") {
+                    alert("本功能限定會員使用");
+                    document.location.href = "./login.html";
+                }
+
+            }
+            function getCookie(cname) {   //檢查是否通過
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);  //decodeURIComponent() 方法用於解碼由 encodeURIComponent 方法或者其它類似方法編碼的部分統一資源標識符（URI）。
+                let ca = decodedCookie.split(';');  //split(';'):使用 ; 符號指定分割字串位置
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {  //charAt 可以用來取得字串中特定位置的字元。
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {  //indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+        </script>
+
+
+
+</body>
+
+</html>
